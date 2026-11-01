@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文献综述工作台 · 在线演示</title>
+<style>
+  :root{--paper:#f2f1ee;--ink:#0f0f0f;--mute:#5c5a55;--line:#d6d5d0;--accent:#d93a1f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:16px/1.65 "Helvetica Neue",Inter,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  main{max-width:720px;margin:0 auto;padding:72px 24px 96px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.2;letter-spacing:-.02em;margin:0 0 12px;font-weight:600}
+  .sub{color:var(--mute);margin:0 0 40px;font-size:17px}
+  .cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;
+       padding:14px 26px;font-size:16px;font-weight:500;border-radius:0}
+  .cta:hover{background:var(--accent)}
+  .cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+  h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
+     margin:0 0 14px;font-weight:600}
+  ul{margin:0;padding-left:1.1em}
+  li{margin:6px 0}
+  a{color:var(--ink)}
+  a:hover{color:var(--accent)}
+  .meta{margin-top:44px;color:var(--mute);font-size:14px}
+  code{font-family:ui-monospace,Consolas,monospace;font-size:14px;background:#e9e8e4;padding:1px 5px}
+</style>
+</head>
+<body>
+<main>
+  <h1>文献综述工作台</h1>
+  <p class="sub">把一批论文压成一份单文件、离线的 HTML 工作台。<br>
+  十视图、可筛选、可对比、可记录你的阅读与决策。</p>
+
+  <a class="cta" href="文献综述工作台/demo/dist/RGBFusion_%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E5%8F%B0.html">
+    打开在线演示（24 篇真实论文）→
+  </a>
+
+  <hr>
+
+  <h2>三个特点</h2>
+  <ul>
+    <li><strong>单文件离线</strong>：产物 1–2 MB，双击打开，不联网、不装环境。</li>
+    <li><strong>视觉锁死</strong>：样式与图表代码只在 skill 自己的 <code>assets/</code> 里，换人换机器产出一样。</li>
+    <li><strong>三道门禁</strong>：30 项结构检查 + 渲染冒烟 + 真浏览器点击，缺数据时标「未查」而不是算通过。</li>
+  </ul>
+
+  <h2>能用它做什么</h2>
+  <ul>
+    <li>读完 30 篇论文后，一张图回答「这个方向谁做过、缺什么」。</li>
+    <li>把「选这条路、放弃那条」的理由留在页面上，而不是留在脑子里。</li>
+    <li>发给同学，他双击就能看，不需要装 Python。</li>
+  </ul>
+
+  <hr>
+
+  <p class="meta">
+    源码与完整文档：<a href="https://github.com/yshdidngq-crypto/lit-review-workbench">github.com/yshdidngq-crypto/lit-review-workbench</a><br>
+    MIT 协议 · 演示数据是真实的 24 篇论文（含原文本身的错字，已在 <code>meta.json</code> 里登记）
+  </p>
+</main>
+</body>
+</html>
