@@ -1,0 +1,614 @@
+[
+ {
+  "id": "D1",
+  "level": 1,
+  "parentId": null,
+  "name": "配准可信度评估与结构合理性校验",
+  "oneLine": "不只问「配得准不准」，而是问「这个几何解在建筑上说得通吗」。",
+  "problem": "现有配准工作多用内点残差或少数配对图上的主观目视来判断成败。残差小并不等于几何正确：窗户阵列会把整层平移错位一整格，残差依然很小。缺少一个不依赖真值、又能判别结构合理性的评价口径，导致不同方法的报数无法互信。",
+  "whyOpportunity": "本批 24 篇中有 17 篇把「配准质量独立评价」列为涉及环节，但没有任何一篇给出可复用的判据；评价环节是这批文献里最厚的一层，却也是最同质的一层。厚度说明大家都意识到问题，同质说明还没人给出结构性答案。这是一个「讨论充分但定义缺失」的位置，适合做方法学贡献而非刷点。",
+  "keywords": [
+   "registration quality assessment",
+   "geometric validation",
+   "facade line structure",
+   "thermal visible alignment",
+   "no-reference metric",
+   "结构合理性"
+  ],
+  "techRoute": [
+   "先用现有方法在配对数据上生成配准结果，记录每组的变换参数与内点分布",
+   "从配准后的图像中提取建筑层线与竖线，把「线是否水平/垂直」「相邻层间距是否一致」量化为可计算的残差",
+   "把该结构残差与传统内点残差做相关性分析，找出两者不一致的样本（这些样本正是现有评价失效的地方）",
+   "以结构残差为主、内点残差与重叠度为辅，构造一个不依赖真值的复合评分",
+   "在公开配对集与你自己的建筑立面数据上验证该评分与人工判读的一致性"
+  ],
+  "minExperiment": "取 30–50 组已配准的 RGB-T 建筑立面图，人工标注其中 15–20 组为「几何错误但残差小」的困难样本，再计算结构残差。只要结构残差在这批困难样本上显著高于正常样本，就足以支撑「现有评价存在盲区」这一结论。不训练任何网络，单机可完成。",
+  "expectedOutput": "一套可复用的结构合理性判据 + 在困难样本上的对比实验；可作为论文的「评价方法」一节，也可直接接入你现有流程的验收环节。",
+  "novelty": 76,
+  "maturity": 28,
+  "risk": 42,
+  "localPaperIds": [
+   "E275",
+   "E298",
+   "E114",
+   "E230"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 6,
+   "avgRelevance": 55.8,
+   "paperIds": [
+    "E275",
+    "E298",
+    "E114",
+    "E230",
+    "E108",
+    "E186"
+   ]
+  },
+  "externalEvidence": {
+   "count": 5,
+   "recommendedExternalIds": [
+    "X6cf4823f",
+    "X9224066f",
+    "Xe0d77fc6",
+    "Xfb08575b",
+    "Xb5fc898e"
+   ],
+   "inLocalLibrary": 0,
+   "fromChildren": {
+    "X6cf4823f": [
+     "D1-1"
+    ],
+    "X9224066f": [
+     "D1-2"
+    ],
+    "Xe0d77fc6": [
+     "D1-1"
+    ],
+    "Xfb08575b": [
+     "D1-2"
+    ],
+    "Xb5fc898e": [
+     "D1-1"
+    ]
+   }
+  },
+  "derived": {
+   "opportunityScore": 63.2,
+   "crowdedness": 62,
+   "localCount": 6,
+   "externalCount": 5,
+   "riskNote": ""
+  },
+  "externalLinkMode": "aggregated"
+ },
+ {
+  "id": "D1-1",
+  "level": 2,
+  "parentId": "D1",
+  "name": "建筑层线约束下的几何解验证",
+  "oneLine": "用建筑自身的横竖结构当标尺，反推变换是否可信。",
+  "problem": "相似变换 [s, θ, tx, ty] 求解完成后，没有任何一步检查「这个解会让立面变成什么样」。四自由度里只要 tx 差了半个窗宽，结果就已经错了，但残差看不出来。",
+  "whyOpportunity": "建筑立面天然带强结构先验（层线水平、竖线垂直、层高一致），这是航拍建筑场景独有的、几乎免费的监督信号。现有工作把它当作「可以假设成立的前提」，而不是「可以用来检验的约束」。把前提变成检验，是一个低成本、可解释的切入点。",
+  "keywords": [
+   "facade line",
+   "vanishing point",
+   "homography validation",
+   "structural prior",
+   "楼层线",
+   "垂直校正"
+  ],
+  "techRoute": [
+   "在可见光图上用 LSD 或 Hough 提取长直线，按角度聚成水平/垂直两组",
+   "对配准后的变换做正向映射，检查水平线组的平均倾角与竖直线组的平均倾角是否落在容差内",
+   "计算相邻层线的间距序列，用其变异系数判断是否存在整层错位",
+   "把上述三项合成一个 0–1 的结构置信度，作为拒绝或接受该解的判据"
+  ],
+  "minExperiment": "在 20 组人工确认正确的配准结果上标定容差，再在 10 组人为制造的偏移样本（平移半格、旋转 2°、尺度 ±5%）上测试判据的检出率。目标是错误样本全部被拒、正确样本误拒率低于 10%。",
+  "expectedOutput": "一个约 150 行的判据模块 + 检出率/误拒率表格；可以直接嵌入你现有的 RANSAC 之后作为最后一道筛选。",
+  "novelty": 71,
+  "maturity": 33,
+  "risk": 38,
+  "localPaperIds": [
+   "E230",
+   "E108"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 2,
+   "avgRelevance": 63.0,
+   "paperIds": [
+    "E230",
+    "E108"
+   ]
+  },
+  "externalEvidence": {
+   "count": 3,
+   "recommendedExternalIds": [
+    "X6cf4823f",
+    "Xe0d77fc6",
+    "Xb5fc898e"
+   ],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 67.2,
+   "crowdedness": 38,
+   "localCount": 2,
+   "externalCount": 3,
+   "riskNote": ""
+  },
+  "externalLinkMode": "direct"
+ },
+ {
+  "id": "D1-2",
+  "level": 2,
+  "parentId": "D1",
+  "name": "无真值条件下的配准质量指标",
+  "oneLine": "没有标注数据时，怎么给一次配准打分。",
+  "problem": "真实采集的 RGB-T 数据没有配准真值。现有做法要么退回到内点残差，要么用小样本人工目视，两者都无法规模化，也无法在论文里作为客观依据。",
+  "whyOpportunity": "这是整批文献里出现频次最高的环节（17 篇），却没有一篇给出可迁移的指标定义。高频出现说明它是共同痛点；无人定义说明还没有形成共识口径，先给出定义的人就掌握了对齐权。",
+  "keywords": [
+   "no-reference quality",
+   "mutual information",
+   "edge alignment",
+   "phase congruency",
+   "无参考评价",
+   "配准误差"
+  ],
+  "techRoute": [
+   "枚举候选指标：互信息、归一化梯度相关、相位一致性对齐度、边缘重合率",
+   "在有人工真值的公开配对集上，把每个指标与真值误差做斯皮尔曼相关，筛掉不敏感的",
+   "对保留下来的指标做加权组合，权重用最小二乘或简单网格搜索确定",
+   "在你的建筑立面数据上检验该组合指标对「整层错位」这类结构化错误的敏感度"
+  ],
+  "minExperiment": "先用公开 RGB-T 配对集（含真值）算出 4 个候选指标与真值误差的相关系数，只需要一张相关表就能判断哪些指标值得留。整个实验不需要训练，一天内可跑完。",
+  "expectedOutput": "候选指标的相关性对照表 + 一个复合指标公式；可作为论文中「我们如何衡量配准质量」的方法依据。",
+  "novelty": 63,
+  "maturity": 45,
+  "risk": 47,
+  "localPaperIds": [
+   "E275",
+   "E298",
+   "E186"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 3,
+   "avgRelevance": 56.7,
+   "paperIds": [
+    "E275",
+    "E298",
+    "E186"
+   ]
+  },
+  "externalEvidence": {
+   "count": 2,
+   "recommendedExternalIds": [
+    "X9224066f",
+    "Xfb08575b"
+   ],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 64.2,
+   "crowdedness": 25,
+   "localCount": 3,
+   "externalCount": 2,
+   "riskNote": ""
+  },
+  "externalLinkMode": "direct"
+ },
+ {
+  "id": "D2",
+  "level": 1,
+  "parentId": null,
+  "name": "弱纹理与重复纹理下的匹配歧义",
+  "oneLine": "窗户阵列是建筑立面配准失效的第一原因，而不是噪声。",
+  "problem": "建筑立面由规则重复的窗户阵列构成，局部特征在多个位置高度相似，跨模态匹配会产生成批的系统性误匹配。这类错误不是随机外点，RANSAC 也无法通过随机采样剔除，因为错误对应关系本身自洽（整层平移一格仍是一个合法的相似变换）。",
+  "whyOpportunity": "本批文献里涉及「弱纹理与重复纹理处理」的不足 3 篇，且都停留在「加一个注意力模块」的层面，没有从几何多解的角度处理。而问题的本质是解的多义性，不是特征不够强——继续加强特征只会让多个错误解同时变强。从多解排序入手，方向更对，也更容易讲清楚贡献。",
+  "keywords": [
+   "repetitive texture",
+   "ambiguous matching",
+   "window grid",
+   "multiple solutions",
+   "弱纹理",
+   "重复纹理",
+   "误匹配剔除"
+  ],
+  "techRoute": [
+   "构造一个受控实验：在合成或半合成立面上人为复制窗格，观察匹配点数与配准误差如何随重复度变化",
+   "提取所有近似最优的变换候选（不只取残差最小那个），观察多解之间的差异是否恰好是整数倍窗格",
+   "设计多解打分：结构合理性（见 D1-1）+ 匹配覆盖度 + 边界一致性",
+   "在真实数据上验证「取结构最合理的解」是否优于「取残差最小的解」"
+  ],
+  "minExperiment": "只需在 10 组立面上人为制造重复结构，统计「残差最小解」与「正确解」不一致的比例。只要这个比例显著大于零，就证明现有流程存在系统性失败，后续所有改进都有了立足点。",
+  "expectedOutput": "一份「多解现象」的实证统计 + 一个多解排序规则；前者本身就是有价值的负面结果，可作为论文的动机部分。",
+  "novelty": 82,
+  "maturity": 22,
+  "risk": 55,
+  "localPaperIds": [
+   "E108",
+   "E230"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 4,
+   "avgRelevance": 48.5,
+   "paperIds": [
+    "E108",
+    "E230",
+    "E218",
+    "E194"
+   ]
+  },
+  "externalEvidence": {
+   "count": 4,
+   "recommendedExternalIds": [
+    "X6cf4823f",
+    "X46995db8",
+    "Xe98a79d5",
+    "X9a7f824d"
+   ],
+   "inLocalLibrary": 0,
+   "fromChildren": {
+    "X6cf4823f": [
+     "D2-2"
+    ],
+    "X46995db8": [
+     "D2-2"
+    ],
+    "Xe98a79d5": [
+     "D2-2"
+    ],
+    "X9a7f824d": [
+     "D2-2"
+    ]
+   }
+  },
+  "derived": {
+   "opportunityScore": 71.2,
+   "crowdedness": 50,
+   "localCount": 4,
+   "externalCount": 4,
+   "riskNote": ""
+  },
+  "externalLinkMode": "aggregated"
+ },
+ {
+  "id": "D2-1",
+  "level": 2,
+  "parentId": "D2",
+  "name": "窗格周期性导致的多解辨识",
+  "oneLine": "把「配错了一整格」当成一类可识别的错误，而不是随机失败。",
+  "problem": "整层错位在数值上是合法解，在视觉上也能骗过内点残差，但它会让上下层窗户对不齐，形成肉眼可见的错位。现有流程没有任何一步能发现它。",
+  "whyOpportunity": "这是一个定义明确、可复现、可量化的具体问题。问题越具体，越容易做出可验证的贡献；而「提升鲁棒性」这类表述无法证伪，反而难以发表。",
+  "keywords": [
+   "periodicity",
+   "window array",
+   "aliasing",
+   "translation ambiguity",
+   "周期结构",
+   "窗格阵列"
+  ],
+  "techRoute": [
+   "对配准后的立面做自相关分析，检测是否存在与窗格周期一致的平移分量",
+   "若检测到，把该平移量作为候选偏移，生成 ±1 格的备选解",
+   "用层线间距一致性在备选解中选出正确者",
+   "记录该方法在多少组数据上纠正了原本错误的解"
+  ],
+  "minExperiment": "在 15 组含明显窗户阵列的立面上跑一遍，统计「自相关能检出周期」的比例与「纠正成功」的比例。两个数字都只需人工核对，不需要额外标注。",
+  "expectedOutput": "一个周期性检测 + 偏移纠正的后处理模块；改动小、见效直接，适合作为期刊论文的一个技术点。",
+  "novelty": 78,
+  "maturity": 26,
+  "risk": 45,
+  "localPaperIds": [
+   "E230",
+   "E108"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 2,
+   "avgRelevance": 63.0,
+   "paperIds": [
+    "E230",
+    "E108"
+   ]
+  },
+  "externalEvidence": {
+   "count": 0,
+   "recommendedExternalIds": [],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 83.4,
+   "crowdedness": 0,
+   "localCount": 2,
+   "externalCount": 0,
+   "riskNote": "本库有支撑但外部未命中，可能是检索词没覆盖，不宜直接判为空白"
+  },
+  "externalLinkMode": "direct"
+ },
+ {
+  "id": "D2-2",
+  "level": 2,
+  "parentId": "D2",
+  "name": "跨模态描述子的辐射不变性",
+  "oneLine": "可见光的纹理与红外的温度，本来就不是同一种信息。",
+  "problem": "可见光反映反射率，红外反映温度，同一物理位置在两种模态下的外观差异远大于视角或光照变化。直接套用单模态描述子，匹配质量受场景温差支配，同一个算法在白天与夜间的表现可能完全不同。",
+  "whyOpportunity": "本批文献大量使用 SuperPoint/SuperGlue 这类单模态预训练模型，很少有人系统测量「温差如何影响匹配成功率」。这个关系一旦量化出来，就是一个可解释、可复用的结论，而且实验成本低。",
+  "keywords": [
+   "cross-modal descriptor",
+   "radiometric invariance",
+   "thermal contrast",
+   "modality gap",
+   "跨模态描述",
+   "辐射差异"
+  ],
+  "techRoute": [
+   "把采集数据按温差分层（如 <5K、5–10K、>10K），统计各层的匹配内点率",
+   "在同一批数据上对比若干描述子的衰减曲线，找出对温差最不敏感的一种",
+   "若都不理想，尝试在特征提取前做局部对比度归一化，观察衰减是否被拉平"
+  ],
+  "minExperiment": "若手头数据带有温度通道（APP3），直接按温差分组统计内点率即可；若没有，用灰度动态范围作为温差的代理变量，仍能看出趋势。一张分层统计表就能支撑结论。",
+  "expectedOutput": "温差—匹配率的定量关系曲线；这个曲线比任何单个算法的 SOTA 数字都更有解释力，适合放在论文的分析章节。",
+  "novelty": 66,
+  "maturity": 40,
+  "risk": 50,
+  "localPaperIds": [
+   "E230",
+   "E218",
+   "E194"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 3,
+   "avgRelevance": 44.0,
+   "paperIds": [
+    "E230",
+    "E218",
+    "E194"
+   ]
+  },
+  "externalEvidence": {
+   "count": 4,
+   "recommendedExternalIds": [
+    "X6cf4823f",
+    "X46995db8",
+    "Xe98a79d5",
+    "X9a7f824d"
+   ],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 59.4,
+   "crowdedness": 50,
+   "localCount": 3,
+   "externalCount": 4,
+   "riskNote": ""
+  },
+  "externalLinkMode": "direct"
+ },
+ {
+  "id": "D3",
+  "level": 1,
+  "parentId": null,
+  "name": "面向病害检测的物理一致性融合",
+  "oneLine": "融合结果要能支撑缺陷判定，而不只是看起来细节丰富。",
+  "problem": "现有融合方法的优化目标是视觉指标（EN、SD、SF、SSIM 等），这些指标奖励高对比与高细节，但缺陷判定需要的是「温度异常区域是否被保留且位置准确」。两者经常冲突：把红外热斑抹平可以让图像更自然，却直接抹掉了缺陷证据。",
+  "whyOpportunity": "本批 24 篇中融合类工作占多数，但全部以通用融合指标报数，没有一篇把下游缺陷检出率作为融合的评价目标。这意味着「融合指标更好、缺陷反而更难检出」这个矛盾在文献里是空白的——不是因为没人遇到，而是因为大家的评价体系看不到它。用下游任务反向定义融合目标，是这条线上最自然、也最容易讲清价值的切口。",
+  "keywords": [
+   "infrared visible fusion",
+   "defect detection",
+   "thermal anomaly",
+   "saliency guided",
+   "物理加权",
+   "缺陷可检出性"
+  ],
+  "techRoute": [
+   "固定一个简单的缺陷检测器（如阈值 + 连通域，或轻量 YOLO），先在红外原图上测出检出率上限",
+   "在同一批数据上分别用 3–5 种融合结果输入该检测器，记录检出率变化",
+   "分析哪类融合操作导致检出率下降（通常是热斑平滑与过度锐化）",
+   "据此设计一个带物理约束的融合权重：热异常区域的权重由温度显著性决定，而非由局部方差决定",
+   "用「检出率 + 通用指标」双口径报告结果，展示两者的不一致"
+  ],
+  "minExperiment": "只需一个现成检测器 + 5 种融合方法 + 同一批 50 组数据。核心产出是「通用指标排名」与「检出率排名」不一致的证据表。这张表一旦成立，整篇论文的立论就稳了，且不需要训练大模型，8 GB 显存足够。",
+  "expectedOutput": "双口径评价对照表 + 一个物理加权融合规则；既是方法贡献，也直接服务于你的建筑物缺陷检测目标。",
+  "novelty": 79,
+  "maturity": 30,
+  "risk": 44,
+  "localPaperIds": [
+   "E298",
+   "E276",
+   "E014",
+   "E167",
+   "E281",
+   "E011"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 7,
+   "avgRelevance": 37.1,
+   "paperIds": [
+    "E298",
+    "E276",
+    "E014",
+    "E167",
+    "E281",
+    "E011",
+    "E218"
+   ]
+  },
+  "externalEvidence": {
+   "count": 8,
+   "recommendedExternalIds": [
+    "Xe0408b70",
+    "X6cf4823f",
+    "X9224066f",
+    "X216569fc",
+    "X46995db8",
+    "X9a7f824d",
+    "X3ff2d91d",
+    "X90c93e12"
+   ],
+   "inLocalLibrary": 0,
+   "fromChildren": {
+    "Xe0408b70": [
+     "D3-2"
+    ],
+    "X6cf4823f": [
+     "D3-1"
+    ],
+    "X9224066f": [
+     "D3-2"
+    ],
+    "X216569fc": [
+     "D3-2"
+    ],
+    "X46995db8": [
+     "D3-1"
+    ],
+    "X9a7f824d": [
+     "D3-1"
+    ],
+    "X3ff2d91d": [
+     "D3-1"
+    ],
+    "X90c93e12": [
+     "D3-2"
+    ]
+   }
+  },
+  "derived": {
+   "opportunityScore": 52.6,
+   "crowdedness": 100,
+   "localCount": 7,
+   "externalCount": 8,
+   "riskNote": ""
+  },
+  "externalLinkMode": "aggregated"
+ },
+ {
+  "id": "D3-1",
+  "level": 2,
+  "parentId": "D3",
+  "name": "热辐射物理量约束的融合权重",
+  "oneLine": "权重由温度决定，而不是由局部方差决定。",
+  "problem": "主流融合用局部方差、梯度或注意力图决定像素权重，这些量衡量的是「哪里细节多」，而不是「哪里有热异常」。结果是把纹理丰富的窗框权重抬高、把温度均匀但异常的热斑权重压低，恰好把缺陷证据压掉了。",
+  "whyOpportunity": "手头的 APP3 数据带真实温度通道，这是一个别人不容易复现的优势：多数公开数据集只给伪彩红外图，无法把权重与真实温度挂钩。有温度就能把「物理加权」从口号变成可验证的公式。",
+  "keywords": [
+   "radiometric calibration",
+   "temperature weighting",
+   "thermal saliency",
+   "physics-based fusion",
+   "温度标定",
+   "热显著性"
+  ],
+  "techRoute": [
+   "完成温度通道标定，把红外灰度映射到摄氏度",
+   "用局部温度均值与全局温度的偏差构造热异常图，替代方差图作为权重来源",
+   "与 2–3 种基于方差的融合方法在同一批数据上对比，同时报告视觉指标与缺陷检出率",
+   "重点分析「视觉指标下降但检出率上升」的样本，说明评价口径差异"
+  ],
+  "minExperiment": "10–20 组带温度的立面数据即可看出趋势。关键是先把温度通道跑通（这是你当前已知的待办），之后所有实验都建立在这条通道上。",
+  "expectedOutput": "一个以温度为输入的权重函数 + 对照实验；这是整个 D3 方向里最依赖你数据优势的一环。",
+  "novelty": 74,
+  "maturity": 32,
+  "risk": 48,
+  "localPaperIds": [
+   "E298",
+   "E276",
+   "E014"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 3,
+   "avgRelevance": 39.0,
+   "paperIds": [
+    "E298",
+    "E276",
+    "E014"
+   ]
+  },
+  "externalEvidence": {
+   "count": 4,
+   "recommendedExternalIds": [
+    "X6cf4823f",
+    "X46995db8",
+    "X9a7f824d",
+    "X3ff2d91d"
+   ],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 65.0,
+   "crowdedness": 50,
+   "localCount": 3,
+   "externalCount": 4,
+   "riskNote": ""
+  },
+  "externalLinkMode": "direct"
+ },
+ {
+  "id": "D3-2",
+  "level": 2,
+  "parentId": "D3",
+  "name": "显著性引导的融合与缺陷可检出性",
+  "oneLine": "把「缺陷该被看见」写进融合目标函数。",
+  "problem": "融合网络的目标函数里没有任何一项与缺陷相关。网络只能学到「像一张好照片」，学不到「像一张能看出渗漏的照片」。",
+  "whyOpportunity": "把下游任务的损失回传到融合阶段，在医学与遥感里已有先例，在建筑病害这条线上还没有。做法上不需要端到端训练大模型：可以用一个冻结的轻量检测器提供梯度或伪标签，显存压力可控。",
+  "keywords": [
+   "saliency guided fusion",
+   "task-driven",
+   "defect visibility",
+   "weak supervision",
+   "显著性引导",
+   "任务驱动"
+  ],
+  "techRoute": [
+   "用冻结的检测器对红外原图生成缺陷伪标签",
+   "把「伪标签区域内红外与可见光的相对保真度」作为一项损失加入现有融合网络",
+   "固定其余超参，只比较加与不加这一项时的检出率",
+   "检查是否出现「为迎合伪标签而生成虚假热斑」的退化，必要时加约束"
+  ],
+  "minExperiment": "在现有融合网络上加一项损失、重训一个轻量版本即可。若显存不足，把分辨率降到 256×256 先验证趋势，结论成立再放大。",
+  "expectedOutput": "一个任务驱动的融合损失项 + 检出率提升的对照实验；这是 D3 里最接近「可发表方法创新」的一环。",
+  "novelty": 85,
+  "maturity": 18,
+  "risk": 58,
+  "localPaperIds": [
+   "E218",
+   "E167",
+   "E011"
+  ],
+  "status": "candidate",
+  "localSupport": {
+   "count": 3,
+   "avgRelevance": 39.0,
+   "paperIds": [
+    "E218",
+    "E167",
+    "E011"
+   ]
+  },
+  "externalEvidence": {
+   "count": 4,
+   "recommendedExternalIds": [
+    "Xe0408b70",
+    "X9224066f",
+    "X216569fc",
+    "X90c93e12"
+   ],
+   "inLocalLibrary": 0
+  },
+  "derived": {
+   "opportunityScore": 73.6,
+   "crowdedness": 50,
+   "localCount": 3,
+   "externalCount": 4,
+   "riskNote": ""
+  },
+  "externalLinkMode": "direct"
+ }
+]

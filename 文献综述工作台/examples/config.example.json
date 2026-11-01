@@ -1,0 +1,295 @@
+{
+ "_README": "最小可用配置骨架。复制到你的项目目录改名为 config.json，然后逐项替换成本项目的真实内容。topics 的 name/desc 与 stages 的 name/desc 必须按你的研究方向重写，不要照抄。字段说明见 reference/01_数据契约.md 与 03_配置说明.md。注意 bands 的 min 必须按你自己 relevance 的分位数重新定：下面这套 85/70/50/30/0 只是常见起点，若你的最高分只有 60 多，照抄会导致「核心相关」恒为 0 篇、主预设点下去是空表。正确做法见 demo/README.md。",
+ "project": {
+  "name": "在这里写你的研究方向全名",
+  "nameLine1": "六到八字简称",
+  "nameLine2": "文献决策系统",
+  "short": "MyTopic",
+  "mark": "MT",
+  "subtitle": "一句话说明这批文献的范围",
+  "pageTitle": "研究方向全名 · 文献分析学习决策系统",
+  "dataSource": "数据来源：如 英文 N 篇 + 中文 M 篇，截至 20XX.X"
+ },
+ "lsKey": "lit-mytopic-v1",
+ "topics": [
+  {
+   "id": "T1",
+   "name": "核心方法与主干",
+   "desc": "界定：本方向最主流的技术路线",
+   "color": "#2f6feb"
+  },
+  {
+   "id": "T2",
+   "name": "改进与优化",
+   "desc": "界定：在主干方法上做结构与训练策略改进",
+   "color": "#0e9c9c"
+  },
+  {
+   "id": "T3",
+   "name": "困难场景与鲁棒性",
+   "desc": "界定：失败条件、边界情况与鲁棒性分析",
+   "color": "#c0392b"
+  },
+  {
+   "id": "T4",
+   "name": "评价与基准",
+   "desc": "界定：指标、数据集、真值构造与对比实验",
+   "color": "#d97706"
+  },
+  {
+   "id": "T5",
+   "name": "下游任务集成",
+   "desc": "界定：面向具体应用的联合优化",
+   "color": "#6b4bbd"
+  },
+  {
+   "id": "T6",
+   "name": "综述与外围",
+   "desc": "界定：领域综述与关联较弱的工作",
+   "color": "#8d9db2"
+  }
+ ],
+ "stages": [
+  {
+   "id": "S1",
+   "name": "数据获取与预处理",
+   "desc": "采集、标定、去噪、增强"
+  },
+  {
+   "id": "S2",
+   "name": "第一环节（按你的流程改名）",
+   "desc": "这一步做什么"
+  },
+  {
+   "id": "S3",
+   "name": "第二环节",
+   "desc": "这一步做什么"
+  },
+  {
+   "id": "S4",
+   "name": "第三环节",
+   "desc": "这一步做什么"
+  },
+  {
+   "id": "S5",
+   "name": "第四环节",
+   "desc": "这一步做什么"
+  },
+  {
+   "id": "S6",
+   "name": "评价与验证",
+   "desc": "指标选择、真值构造、消融实验"
+  },
+  {
+   "id": "S7",
+   "name": "下游任务集成",
+   "desc": "检测/分割等任务的联合优化"
+  },
+  {
+   "id": "S8",
+   "name": "工程部署与效率",
+   "desc": "实时性、轻量化、嵌入式部署"
+  }
+ ],
+ "bands": [
+  {
+   "min": 85,
+   "name": "核心相关",
+   "color": "#c0392b",
+   "action": "优先精读"
+  },
+  {
+   "min": 70,
+   "name": "高度相关",
+   "color": "#d97706",
+   "action": "列入必读"
+  },
+  {
+   "min": 50,
+   "name": "中度相关",
+   "color": "#2f6feb",
+   "action": "补充理解"
+  },
+  {
+   "min": 30,
+   "name": "间接关联",
+   "color": "#6b7d94",
+   "action": "按需阅读"
+  },
+  {
+   "min": 0,
+   "name": "外围相关",
+   "color": "#c3ccda",
+   "action": "暂不优先"
+  }
+ ],
+ "statuses": [
+  "未阅读",
+  "待阅读",
+  "正在阅读",
+  "已初读",
+  "已精读",
+  "暂时跳过"
+ ],
+ "dlCategories": [
+  "深度学习核心方法",
+  "混合方法",
+  "深度学习辅助方法",
+  "传统方法",
+  "无法确定"
+ ],
+ "dlColors": {
+  "深度学习核心方法": "#2f6feb",
+  "混合方法": "#6b4bbd",
+  "深度学习辅助方法": "#0e9c9c",
+  "传统方法": "#8d9db2",
+  "无法确定": "#c47b12"
+ },
+ "scoreLabels": {
+  "relevance": "项目耦合度",
+  "learning": "学习价值",
+  "difficulty": "阅读难度"
+ },
+ "extraScores": [
+  {
+   "key": "datasetScore",
+   "label": "数据适配度",
+   "high": 75,
+   "mid": 50
+  }
+ ],
+ "extraTags": [
+  {
+   "key": "platform",
+   "label": "实验平台",
+   "order": [
+    "平台A",
+    "平台B",
+    "平台C",
+    "未说明"
+   ]
+  },
+  {
+   "key": "modality",
+   "label": "数据模态",
+   "order": [
+    "模态A",
+    "模态B",
+    "未说明"
+   ]
+  }
+ ],
+ "weights": {
+  "relevance": 0.55,
+  "learning": 0.45,
+  "difficulty": 4.0
+ },
+ "views": [
+  {
+   "id": "dash",
+   "name": "总览仪表板",
+   "desc": "",
+   "icon": "◧",
+   "count": true
+  },
+  {
+   "id": "map",
+   "name": "技术图谱",
+   "desc": "十个技术环节的文献覆盖数",
+   "icon": "⬡"
+  },
+  {
+   "id": "db",
+   "name": "文献数据库",
+   "desc": "多维筛选、排序与逐篇查阅",
+   "icon": "☰",
+   "count": true
+  },
+  {
+   "id": "cmp",
+   "name": "文献对比",
+   "desc": "2–4 篇横向对照方法、数据与结论",
+   "icon": "⇄"
+  },
+  {
+   "id": "decide",
+   "name": "学习决策中心",
+   "desc": "按耦合度与难度排出的阅读顺序",
+   "icon": "★"
+  },
+  {
+   "id": "prog",
+   "name": "阅读进度",
+   "desc": "阅读状态、笔记与备份",
+   "icon": "◔",
+   "count": true
+  }
+ ],
+ "presets": [
+  {
+   "id": "core",
+   "label": "最接近本方向",
+   "desc": "耦合度 ≥ 70 且学习价值 ≥ 60",
+   "set": {
+    "relMin": 70,
+    "learnMin": 60
+   }
+  },
+  {
+   "id": "unread-core",
+   "label": "高相关未读",
+   "desc": "耦合度 ≥ 70 且尚未阅读",
+   "set": {
+    "relMin": 70,
+    "status": [
+     "未阅读"
+    ]
+   }
+  },
+  {
+   "id": "classic",
+   "label": "传统方法",
+   "desc": "非深度学习路线，用于补基础",
+   "set": {
+    "dl": [
+     "传统方法"
+    ]
+   }
+  },
+  {
+   "id": "easy",
+   "label": "入门可读",
+   "desc": "难度 ≤ 3 且学习价值 ≥ 55",
+   "set": {
+    "diffMax": 3,
+    "learnMin": 55
+   }
+  }
+ ],
+ "detailTabs": [
+  {
+   "id": "understand",
+   "label": "三分钟理解"
+  },
+  {
+   "id": "project",
+   "label": "与本项目的关系"
+  },
+  {
+   "id": "eval",
+   "label": "科研评价"
+  },
+  {
+   "id": "guide",
+   "label": "学习指导"
+  },
+  {
+   "id": "notes",
+   "label": "我的笔记"
+  },
+  {
+   "id": "raw",
+   "label": "原文摘要"
+  }
+ ]
+}

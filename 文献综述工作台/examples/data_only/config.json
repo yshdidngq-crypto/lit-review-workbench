@@ -1,0 +1,375 @@
+{
+  "project": {
+    "name": "纯数据示例：不写一行代码",
+    "nameLine1": "纯数据",
+    "nameLine2": "零代码工作台",
+    "short": "DataOnly",
+    "mark": "DO",
+    "subtitle": "",
+    "pageTitle": "纯数据示例 · 文献分析学习决策系统",
+    "dataSource": ""
+  },
+  "publicDatasets": [
+    "TNO",
+    "M3FD",
+    "MSRS",
+    "RoadScene",
+    "VTUAV",
+    "RGBT234"
+  ],
+  "lsKey": "lit-demo-rgbfusion-v1",
+  "topics": [
+    {
+      "id": "T1",
+      "name": "配准与几何对齐",
+      "desc": "初始配准、特征匹配、变换求解与精化",
+      "color": "#2f6feb"
+    },
+    {
+      "id": "T2",
+      "name": "融合方法",
+      "desc": "像素级与特征级融合、网络架构与训练策略",
+      "color": "#0e9c9c"
+    },
+    {
+      "id": "T3",
+      "name": "困难场景与匹配歧义",
+      "desc": "弱纹理、重复纹理、大视角与模态差异",
+      "color": "#c0392b"
+    },
+    {
+      "id": "T4",
+      "name": "评价与基准",
+      "desc": "质量指标、真值构造、数据集与对比实验",
+      "color": "#d97706"
+    },
+    {
+      "id": "T5",
+      "name": "下游任务集成",
+      "desc": "面向检测/分割等任务的联合优化",
+      "color": "#6b4bbd"
+    },
+    {
+      "id": "T6",
+      "name": "综述与外围",
+      "desc": "领域综述、方法借鉴与关联较弱的工作",
+      "color": "#8d9db2"
+    }
+  ],
+  "stages": [
+    {
+      "id": "S1",
+      "name": "数据准备与跨模态预处理",
+      "desc": "按时间戳完成 RGB-T 配对、分辨率差异处理、必要增强"
+    },
+    {
+      "id": "S2",
+      "name": "局部特征检测与描述",
+      "desc": "SuperPoint 等检测器在建筑立面（窗框、边缘、角点）上的响应分布"
+    },
+    {
+      "id": "S3",
+      "name": "跨模态特征匹配",
+      "desc": "SuperGlue / LoFTR 产生候选对应关系，含粗匹配与精匹配"
+    },
+    {
+      "id": "S4",
+      "name": "初始配准与几何候选生成",
+      "desc": "由候选对应关系估计初始变换，形成多个候选解"
+    },
+    {
+      "id": "S5",
+      "name": "变换模型估计",
+      "desc": "四自由度相似变换 [s, θ, tx, ty] 的求解"
+    },
+    {
+      "id": "S6",
+      "name": "几何先验与候选筛选",
+      "desc": "按尺度范围、旋转范围、匹配点空间覆盖筛选候选"
+    },
+    {
+      "id": "S7",
+      "name": "RANSAC 与最小二乘精化",
+      "desc": "剔除外点后用内点集最小二乘重估变换"
+    },
+    {
+      "id": "S8",
+      "name": "建筑结构验证",
+      "desc": "检查层线水平、竖线垂直，判断几何解是否物理合理"
+    },
+    {
+      "id": "S9",
+      "name": "弱纹理与重复纹理处理",
+      "desc": "窗户阵列导致的多解、弱纹理区的匹配缺失"
+    },
+    {
+      "id": "S10",
+      "name": "配准质量独立评价",
+      "desc": "用独立指标评估最终配准结果，而非仅看拟合内点残差"
+    }
+  ],
+  "bands": [
+    {
+      "min": 60,
+      "name": "核心相关",
+      "color": "#c0392b",
+      "action": "优先精读"
+    },
+    {
+      "min": 45,
+      "name": "高度相关",
+      "color": "#d97706",
+      "action": "列入必读"
+    },
+    {
+      "min": 35,
+      "name": "中度相关",
+      "color": "#2f6feb",
+      "action": "补充理解"
+    },
+    {
+      "min": 28,
+      "name": "间接关联",
+      "color": "#6b7d94",
+      "action": "按需阅读"
+    },
+    {
+      "min": 0,
+      "name": "外围相关",
+      "color": "#c3ccda",
+      "action": "暂不优先"
+    }
+  ],
+  "statuses": [
+    "未阅读",
+    "待阅读",
+    "正在阅读",
+    "已初读",
+    "已精读",
+    "暂时跳过"
+  ],
+  "dlCategories": [
+    "深度学习核心方法",
+    "混合方法",
+    "深度学习辅助方法",
+    "传统方法",
+    "无法确定"
+  ],
+  "dlColors": {
+    "深度学习核心方法": "#2f6feb",
+    "混合方法": "#6b4bbd",
+    "深度学习辅助方法": "#0e9c9c",
+    "传统方法": "#8d9db2",
+    "无法确定": "#c47b12"
+  },
+  "scoreLabels": {
+    "relevance": "项目耦合度",
+    "learning": "学习价值",
+    "difficulty": "阅读难度"
+  },
+  "extraScores": [
+    {
+      "key": "datasetScore",
+      "label": "数据适配度",
+      "high": 75,
+      "mid": 50
+    }
+  ],
+  "extraTags": [
+    {
+      "key": "platform",
+      "label": "采集平台",
+      "order": [
+        "UAV无人机",
+        "地面固定相机",
+        "车载",
+        "未说明"
+      ]
+    },
+    {
+      "key": "modality",
+      "label": "成像模态",
+      "order": [
+        "RGB可见光",
+        "热红外",
+        "近/短波红外",
+        "未说明"
+      ]
+    },
+    {
+      "key": "scene",
+      "label": "拍摄场景",
+      "order": [
+        "建筑立面",
+        "城市建筑群",
+        "道路与交通",
+        "未说明"
+      ]
+    }
+  ],
+  "weights": {
+    "relevance": 0.55,
+    "learning": 0.45,
+    "difficulty": 4.0
+  },
+  "views": [
+    {
+      "id": "dash",
+      "name": "总览仪表板",
+      "desc": "",
+      "icon": "◧",
+      "count": true
+    },
+    {
+      "id": "landscape",
+      "name": "研究现状",
+      "desc": "",
+      "icon": "◎"
+    },
+    {
+      "id": "map",
+      "name": "技术图谱",
+      "desc": "",
+      "icon": "▤"
+    },
+    {
+      "id": "explore",
+      "name": "方向探索",
+      "desc": "",
+      "icon": "⑂",
+      "count": true
+    },
+    {
+      "id": "external",
+      "name": "外部文献",
+      "desc": "",
+      "icon": "⊕",
+      "count": true
+    },
+    {
+      "id": "db",
+      "name": "文献数据库",
+      "desc": "",
+      "icon": "☰",
+      "count": true
+    },
+    {
+      "id": "cmp",
+      "name": "文献对比",
+      "desc": "",
+      "icon": "⇄"
+    },
+    {
+      "id": "decide",
+      "name": "学习决策中心",
+      "desc": "",
+      "icon": "◈"
+    },
+    {
+      "id": "prog",
+      "name": "阅读进度",
+      "desc": "",
+      "icon": "·",
+      "count": true
+    },
+    {
+      "id": "session",
+      "name": "检索记录",
+      "desc": "",
+      "icon": "⌗"
+    }
+  ],
+  "presets": [
+    {
+      "id": "core",
+      "label": "最接近本方向",
+      "desc": "耦合度 ≥ 45 且学习价值 ≥ 45（按本批数据分位数定）",
+      "set": {
+        "relMin": 45,
+        "learnMin": 45
+      }
+    },
+    {
+      "id": "unread-core",
+      "label": "高相关未读",
+      "desc": "耦合度 ≥ 45 且尚未阅读",
+      "set": {
+        "relMin": 45,
+        "status": [
+          "未阅读"
+        ]
+      }
+    },
+    {
+      "id": "classic",
+      "label": "传统方法",
+      "desc": "非深度学习路线，用于补基础",
+      "set": {
+        "dl": [
+          "传统方法"
+        ]
+      }
+    },
+    {
+      "id": "easy",
+      "label": "入门可读",
+      "desc": "难度 ≤ 3 且学习价值 ≥ 40",
+      "set": {
+        "diffMax": 3,
+        "learnMin": 40
+      }
+    }
+  ],
+  "detailTabs": [
+    {
+      "id": "understand",
+      "label": "三分钟理解"
+    },
+    {
+      "id": "project",
+      "label": "与本项目的关系"
+    },
+    {
+      "id": "eval",
+      "label": "科研评价"
+    },
+    {
+      "id": "guide",
+      "label": "学习指导"
+    },
+    {
+      "id": "notes",
+      "label": "我的笔记"
+    },
+    {
+      "id": "raw",
+      "label": "原文摘要"
+    }
+  ],
+  "extScoreWeights": {
+    "relevance": 30,
+    "subdirection": 20,
+    "dataScenario": 15,
+    "learning": 15,
+    "evidence": 10,
+    "recency": 10
+  },
+  "extTabs": [
+    {
+      "id": "extAbs",
+      "label": "摘要原文"
+    },
+    {
+      "id": "extWhere",
+      "label": "出处与获取"
+    },
+    {
+      "id": "extDir",
+      "label": "关联方向"
+    },
+    {
+      "id": "notes",
+      "label": "我的笔记"
+    }
+  ]
+}

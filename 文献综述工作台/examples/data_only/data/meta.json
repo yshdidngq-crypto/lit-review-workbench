@@ -1,0 +1,75 @@
+{
+  "generated": "2026-10-29",
+  "review": [
+    {
+      "id": "R01",
+      "paperId": "E276",
+      "field": "title",
+      "problem": "标题开头重复「基于基于」，且中英文术语按乱序插入（variational auto-编码器 and infrared 特征 compensation），不构成通顺的中文语序。",
+      "basis": "源文件标题原文",
+      "fix": "基于变分自编码器与红外特征补偿的红外与可见光图像融合"
+    },
+    {
+      "id": "R02",
+      "paperId": "E276",
+      "field": "author",
+      "problem": "作者写作 Long Rena，末尾的 a 是原文上标单位标记被粘进姓名。",
+      "basis": "同批 E178 XiaowenLiua、E194 Jiawei Wanga、E188 XuboLuoa 为同一模式",
+      "fix": "Long Ren"
+    },
+    {
+      "id": "R03",
+      "paperId": "E178",
+      "field": "title",
+      "problem": "标题含机翻残留「用于的」——「语义-driven coupled 网络 用于的 红外与可见光图像融合」，谓语位置错乱。",
+      "basis": "源文件标题原文",
+      "fix": "基于语义驱动耦合网络的红外与可见光图像融合"
+    },
+    {
+      "id": "R04",
+      "paperId": "E194",
+      "field": "author",
+      "problem": "作者写作 Jiawei Wanga，结尾 a 与 R02 同源，均为上标标记粘连。",
+      "basis": "姓名尾字母不符合任何已知姓名拼写",
+      "fix": "Jiawei Wang"
+    },
+    {
+      "id": "R05",
+      "paperId": "E171",
+      "field": "title",
+      "problem": "英文题名与源文件登记不一致（解析标记 titleEnSuspect）。中文题名「PIVFusion：感知变换融合」与括号内补充说明的对应关系也需确认。",
+      "basis": "papers.json flags.titleEnSuspect = true",
+      "fix": "比对出版方页面确认英文题名后回填"
+    },
+    {
+      "id": "R06",
+      "paperId": "E281",
+      "field": "body",
+      "problem": "正文与标题疑似错配（解析标记 bodySuspect），英文题名同时存疑。该条摘要描述的硬件平台与标题所指不一致，暂不可作为证据引用。",
+      "basis": "papers.json flags.bodySuspect = true",
+      "fix": "回到原文核对后重新抽取，或从库中移出"
+    },
+    {
+      "id": "R07",
+      "paperId": "E108",
+      "field": "duplicate",
+      "problem": "该条与 E208 合并为一条记录（mergedIds），源文件里两条都还在。需确认确为同一篇，否则应拆回两条。",
+      "basis": "papers.json mergedIds = [\"E208\"]",
+      "fix": "比对 DOI 后确认合并或拆分"
+    },
+    {
+      "id": "R08",
+      "paperId": "E230",
+      "field": "venue",
+      "problem": "学位论文（Master's Thesis, Chalmers University of Technology）被记入期刊类 venue，文献类型字段需改为「学位论文」。",
+      "basis": "venue 字段原文含 Master's Thesis",
+      "fix": "类型改为学位论文；venue 保留授予单位"
+    }
+  ],
+  "gaps": [
+    { "id": "S8", "name": "建筑结构验证", "count": 0 },
+    { "id": "S9", "name": "弱纹理与重复纹理处理", "count": 0 },
+    { "id": "S4", "name": "初始配准与几何候选生成", "count": 1 },
+    { "id": "S5", "name": "变换模型估计", "count": 2 }
+  ]
+}

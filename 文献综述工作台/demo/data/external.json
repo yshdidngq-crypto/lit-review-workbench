@@ -1,0 +1,1725 @@
+[
+ {
+  "source": "OpenAlex",
+  "doi": "10.3390/s25237118",
+  "title": "UAV and Deep Learning for Automated Detection and Visualization of Façade Defects in Existing Residential Buildings",
+  "year": 2025,
+  "venue": "Sensors",
+  "authors": [
+   "Yue Fan",
+   "Jinghua Mai",
+   "Fei Xue",
+   "Stephen Siu Yu Lau",
+   "San Jiang",
+   "Yiqi Tao",
+   "Xiaoxing Zhang",
+   "Wing Chi Tsang"
+  ],
+  "institution": "Shenzhen University",
+  "abstract": "As urbanization accelerates, façade defects in existing residential buildings have become increasingly prominent, posing serious threats to structural safety and residents' quality of life. In the high-density built environment of Shenzhen, traditional manual inspection methods exhibit low efficiency and high susceptibility to omission errors. This study proposes an integrated framework for façade defect detection that combines unmanned aerial vehicle (UAV)-based visible-light and thermal infrared imaging with deep learning algorithms and parametric three-dimensional (3D) visualization. Three representative residential communities constructed between 1988 and 2010 in Shenzhen were selected as case studies. The main findings are as follows: (1) the fusion of visible and thermal infrared images enables the synergistic identification of cracks and moisture intrusion defects; (2) shooting distance significantly affects mapping efficiency and accuracy-for low-rise buildings, 5-10 m close-range imaging ensures high mapping precision, whereas for high-rise structures, medium-range imaging at approximately 20-25 m achieves the optimal balance between detection efficiency, accuracy, and dual-defect recognition capability; (3) the developed Grasshopper-integrated mapping tool enables real-time 3D visualization and parametric analysis of defect information. The Knet-based model achieves an mIoU of 87.86% for crack detection and 79.05% for leakage detection. This UAV-based automated inspection framework is particularly suitable for densely populated urban districts and large-scale residential areas, providing an efficient technical solution for city-wide building safety management. This framework provides a solid foundation for the development of automated building maintenance systems and facilitates their integration into future smart city infrastructures.",
+  "citationCount": 17,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.3390/s25237118",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "https://www.mdpi.com/1424-8220/25/23/7118/pdf?version=1763735099",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xe0408b70",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 85,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 85,
+   "dataScenarioFit": 75,
+   "learningValue": 93,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 87.7,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 25.6,
+    "子方向匹配20%": 17.0,
+    "数据场景15%": 11.2,
+    "学习价值15%": 13.9,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.mdpi.com/1424-8220/25/23/7118/pdf?version=1763735099",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/s25237118",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 17（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D3-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D3-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "defec",
+     "fusio",
+     "visib"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1109/icmsp68723.2025.11407885",
+  "title": "Multi-modal Correlation for UAV-Based Infrared Thermography Diagnosis of Facade Delamination",
+  "year": 2025,
+  "venue": "International Conference on Intelligent Control, Measurement and Signal Processing (ICMSP)",
+  "authors": [
+   "Jingwen Gao",
+   "Akram Akbar",
+   "Chun Liu"
+  ],
+  "institution": "Tongji University",
+  "abstract": "The structural integrity of building facades is a critical concern in urban safety management. Unmanned Aerial Vehicle (UAV) based Infrared Thermography (IRT) is effective for detecting subsurface delamination. However, its reliability is often compromised by false positives, as non-defect thermal anomalies like structural thermal bridges can produce similar signatures. To address this ambiguity, this paper proposes a multi-modal fusion framework for the intelligent diagnosis and risk assessment of facade defects. The framework integrates thermal infrared and visible imagery aquired by UAV. Our study first employs a multi-scale detection algorithm and morphological feature analysis on processed radiometric thermal data to identify high-confidence delamination candidates. Critically, it then introduces a diagnostic logic that assesses the risk level of each delamination by analyzing its spatial correlation with surface cracks segmented from the corresponding visible images. Field experiment validated the reliability of our method. The diagnostic results showed a strong correspondence with the ground truth data acquired from an on-site manual hammer sounding survey, achieving a high F1-Score of 0.88. The framework successfully distinguished true defects from false positives and generated an intuitive, prioritized risk map. This research provides a robust and actionable solution that bridges the gap between automated detection and practical engineering decision-making for building maintenance.",
+  "citationCount": 1,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1109/icmsp68723.2025.11407885",
+  "oaStatus": "closed",
+  "isOa": false,
+  "oaPdfUrl": "",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "X6cf4823f",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 89,
+   "platformCoverage": 75,
+   "objectCoverage": 62,
+   "subdirectionMatch": 89,
+   "dataScenarioFit": 75,
+   "learningValue": 79,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 87.6,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 26.7,
+    "子方向匹配20%": 17.8,
+    "数据场景15%": 11.2,
+    "学习价值15%": 11.9,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "paywalled",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1109/icmsp68723.2025.11407885",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；被引 1（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D1-1",
+   "D2-2",
+   "D3-1"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D1-1",
+    "overlap": 4,
+    "sharedTerms": [
+     "facad",
+     "prior",
+     "struc",
+     "valid"
+    ]
+   },
+   {
+    "directionId": "D2-2",
+    "overlap": 4,
+    "sharedTerms": [
+     "contr",
+     "gap",
+     "radio",
+     "therm"
+    ]
+   },
+   {
+    "directionId": "D3-1",
+    "overlap": 3,
+    "sharedTerms": [
+     "fusio",
+     "radio",
+     "therm"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "",
+  "title": "A Review of Road Defect Recognition Based on Unmanned Aerial Vehicles and Deep Learning",
+  "year": 2026,
+  "venue": "Journal of Research in Multidisciplinary Methods and Applications",
+  "authors": [
+   "Jianping Wang"
+  ],
+  "institution": "Hebei University of Technology",
+  "abstract": "Real-time monitoring of transportation infrastructure is crucial for ensuring the safety and operational efficiency of road networks. Traditional manual inspections involve high risks and low efficiency, whereas unmanned aerial vehicles (UAVs), with their high maneuverability and broad coverage, have gradually become an important data collection platform in the field of pavement defect detection. However, the large-scale application of UAVs in complex environments still faces technical bottlenecks such as environmental interference, inconsistent data quality, and slow processing of massive images. This paper systematically reviews the frontier progress of UAV-based pavement defect monitoring technologies in recent years: First, it outlines the limitations and challenges during the UAV field data collection phase; Second, it deeply analyzes the algorithmic evolution in office data processing, from image preprocessing and 3D pavement reconstruction to deep learning and semantic segmentation; Building upon this, the paper constructs a multi-dimensional evaluation system ranging from apparent 2D defects to hidden 3D defects and summarizes multi-modal fusion recognition methods, including visible light, LiDAR, infrared thermal imaging, and ground-penetrating radar (GPR). Finally, the paper discusses the limitations of current technologies regarding hardware battery life, legal privacy, and complex background interference, and points out the development potential of edge computing, UAV swarm collaboration, and cyber-physical systems in future intelligent road maintenance.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "http://www.satursonpublishing.com/jrmma/article/view/a01260505004",
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "http://www.satursonpublishing.com/jrmma/article/download/a01260505004/g01260505004",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X9224066f",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 85,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 85,
+   "dataScenarioFit": 75,
+   "learningValue": 93,
+   "evidenceQuality": 80,
+   "recency": 100,
+   "total": 85.7,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 25.6,
+    "子方向匹配20%": 17.0,
+    "数据场景15%": 11.2,
+    "学习价值15%": 13.9,
+    "证据质量10%": 8.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "http://www.satursonpublishing.com/jrmma/article/download/a01260505004/g01260505004",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D1-2",
+   "D3-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D1-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "edge",
+     "phase",
+     "quali"
+    ]
+   },
+   {
+    "directionId": "D3-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "defec",
+     "fusio",
+     "visib"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.3390/s26020694",
+  "title": "Intelligent Detection Method of Defects in High-Rise Building Facades Using Infrared Thermography",
+  "year": 2026,
+  "venue": "Sensors",
+  "authors": [
+   "Daiming Liu",
+   "Yongqiang Jin",
+   "Yuan Yang",
+   "Zhenyang Xiao",
+   "Zeming Zhao",
+   "Changling Gao",
+   "Dingcheng Zhang"
+  ],
+  "institution": "Sichuan University",
+  "abstract": "High-rise building facades are prone to defects due to prolonged exposure to complex environments. Infrared detection, as a commonly employed method for facade defect inspection, often results in low accuracy owing to abundant interferences and blurred defect boundaries. In this work, an intelligent defect detection method for high-rise building facades is proposed. In the first stage of the proposed method, a segmentation model based on DeepLabV3+ is proposed to remove interferences in infrared images using masks. The model incorporates a Post-Decoder Dual-Branch Boundary Refinement Module, which is subdivided into a boundary feature optimization branch and a boundary-guided attention branch. Sub-pixel-level contour refinement and boundary-adaptive weighting are hence achieved to mitigate edge blurring induced by thermal diffusion and to enhance the perception of slender cracks and cavity edges. A triple constraint mechanism is also introduced, combining cross-entropy, multi-scale Dice, and boundary-aware losses to address class imbalance and enhance segmentation performance for small targets. Furthermore, superpixel linear iterative clustering (SLIC) is utilized to enforce regional consistency, hence improving the smoothness and robustness of predictions. In the second stage of the proposed method, a defect detection model based on YOLOV11 is proposed to process masked infrared images for detecting hollow, seepage, cracks and detachment. This work validates the proposed method using 180 infrared images collected via unmanned aerial vehicles. The experimental results demonstrate that the proposed method achieves a detection precision of 89.7%, an mAP@0.5 of 87.9%, and a 57.8 mAP@50-95. surpassing other algorithms and confirming its effectiveness and superiority.",
+  "citationCount": 5,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.3390/s26020694",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "https://www.mdpi.com/1424-8220/26/2/694/pdf?version=1768976463",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X9cff8d01",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 78,
+   "platformCoverage": 50,
+   "objectCoverage": 38,
+   "subdirectionMatch": 100,
+   "dataScenarioFit": 50,
+   "learningValue": 89,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 84.2,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 23.3,
+    "子方向匹配20%": 20.0,
+    "数据场景15%": 7.5,
+    "学习价值15%": 13.3,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.mdpi.com/1424-8220/26/2/694/pdf?version=1768976463",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/s26020694",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 5（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.22260/isarc2026/0246",
+  "title": "Drone-Based Façade Defect Detection via Decision-Level Fusion of Thermal Infrared and Visible Images",
+  "year": 2026,
+  "venue": "International Symposium on Automation and Robotics in Construction (ISARC)",
+  "authors": [
+   "Jiaqi Li",
+   "Qingrui Yue",
+   "Zezhi Ding",
+   "Haofeng Yan",
+   "Nan Jin",
+   "Xincong Yang"
+  ],
+  "institution": "Harbin Institute of Technology",
+  "abstract": "Urban façade deterioration, especially tile delamination and related surface damage, poses significant safety risks in dense urban environments.Conventional inspections based on manual visual assessment and acoustic sounding are labor-intensive, hazardous, and subjective.This paper presents an autonomous UAV-based façade inspection framework that combines oblique-photogrammetrydriven path planning with decision-level fusion of infrared and visible imagery for defect identification.A 3D model of the target building is reconstructed to extract geometric features for generating safe flight trajectories at a fixed standoff distance of 10 m, supporting near-complete and spatially consistent dual-modal data acquisition under the planned inspection route.Modality-specific defects are then segmented from RGB and thermal data using deeplearning models, and the fused defect map is produced through decision-level fusion of surface appearance cues and subsurface thermal signatures.A field deployment on a building demonstrates the feasibility and efficiency of the framework, completing the inspection of approximately 4,200 m² of façade area using 208 waypoints within 50 minutes of total on-site operation.The results show that the proposed method provides a practical and safer solution for façade condition assessment and maintenance prioritization.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.22260/isarc2026/0246",
+  "oaStatus": "bronze",
+  "isOa": true,
+  "oaPdfUrl": "https://www.iaarc.org/./publications/fulltext/ISARC2026_1402.pdf",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "X216569fc",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 70,
+   "platformCoverage": 50,
+   "objectCoverage": 25,
+   "subdirectionMatch": 70,
+   "dataScenarioFit": 100,
+   "learningValue": 70,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 80.7,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 21.1,
+    "子方向匹配20%": 14.1,
+    "数据场景15%": 15.0,
+    "学习价值15%": 10.5,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.iaarc.org/./publications/fulltext/ISARC2026_1402.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.22260/isarc2026/0246",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D3-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D3-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "defec",
+     "fusio",
+     "visib"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.1016/j.heliyon.2023.e14551",
+  "title": "Fusion of UAV-based infrared and visible images for thermal leakage map generation of building facades",
+  "year": 2023,
+  "venue": "Heliyon",
+  "authors": [
+   "Soroush Motayyeb",
+   "Farhad Samadzedegan",
+   "Farzaneh Dadrass Javan",
+   "Hamidreza Hosseinpour"
+  ],
+  "abstract": "To make the best use of available energy resources and reduce costs, improving the energy efficiency of buildings has become a critical issue for the construction industry. Today, developing a three-dimensional model of the energy consumption rates in buildings based on thermal infrared images is essential to visualize, identify and increase energy efficiency. The purpose of this study is to suggest a methodology for generating a thermal leakage map of building facades utilizing the fusion of thermal infrared and visible images captured by Unmanned Aerial Vehicles (UAVs). In general, the proposed method involves three basic steps: the generation of thermal infrared and visible dense point clouds from the building's facade using Structure from Motion (SfM) and Multi-View Stereo (MVS) algorithms; the fusion of visible and thermal infrared dense point clouds using the Iterative Closest Point (ICP) algorithm to overcome thermal infrared point cloud constraints; the use of edge extraction and region-based segmentation methods to determine the location of the thermal leakage of building facade's. To that end, two datasets obtained for separate building facades are used to assess the proposed strategy. The results of the data analyses for the extraction of the desired components and determination of thermal leakage locations on the building facets provided a Precision and Recall score of 87 and 90% for the first dataset and 87 and 88 for the second dataset. Examining the outcomes of calculating thermal leakage zones indicates improving Precision and Recall.",
+  "citationCount": 31,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.1016/j.heliyon.2023.e14551",
+  "type": "journal-article",
+  "id": "Xe0d77fc6",
+  "alreadyInLocalLibrary": false,
+  "institution": "University of Tehran",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "http://www.cell.com/article/S2405844023017589/pdf",
+  "score": {
+   "relevance": 74,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 74,
+   "dataScenarioFit": 75,
+   "learningValue": 87,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 79.3,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 22.2,
+    "子方向匹配20%": 14.8,
+    "数据场景15%": 11.2,
+    "学习价值15%": 13.1,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "http://www.cell.com/article/S2405844023017589/pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1016/j.heliyon.2023.e14551",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 31（Crossref，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D1-1"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D1-1",
+    "overlap": 3,
+    "sharedTerms": [
+     "facad",
+     "point",
+     "struc"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.7771/3067-4883.1831",
+  "title": "NeRF-Enhanced Digital Twin for Building Anomaly Inspection Using Unmanned Aerial Systems (UASs)",
+  "year": 2025,
+  "venue": "CIB Conferences",
+  "authors": [
+   "Ahmad Gholizadeh Lonbar",
+   "Kaiwen Chen"
+  ],
+  "institution": "University of Alabama",
+  "abstract": "Building facade inspections are crucial for ensuring structural integrity and occupant safety, traditionally requiring physical access that can be costly and risky. Recent advancements have seen the integration of Unmanned Aerial Systems (UASs) equipped with imaging technologies to facilitate these inspections. However, the primary challenge remains in the effective detection and precise localization of facade anomalies, such as cracks, stains, and specifically, thermal anomalies. This paper investigates the fusing of diverse data sources, specifically thermal infrared (IR) imaging and high-resolution RGB data, to enhance 3D registration of thermal anomalies. Utilizing a Computational Neural Radiance Field (NeRF) approach, it aims to reconstruct detailed 3D models of building facades. This integration improves the accuracy of anomaly detection by fusing the precise camera positions derived from the original RGB data to refine the alignment and visualization of thermal anamolies in both RGB and IR imagery. We utilized COLMAP for camera position estimation and NeRF for 3D registration, employing Structure-from-Motion (SfM) and NeRF methodologies to create detailed and scalable 3D models from 2D IR and RGB images. This approach integrates the precision of camera positioning with advanced 3D reconstruction techniques to enhance the visualization and analysis of building facades. Our method automates the registration and mapping of detected thermal anomalies in 2D images onto the reconstructed 3D models, improving the diagnostics of building facades by enabling precise localization and scaling of these anomalies. The findings demonstrate the potential of our approach to reduce inspection times and enhance the safety of diagnostic procedures through higher accuracy and less invasive methods.",
+  "citationCount": 6,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.7771/3067-4883.1831",
+  "oaStatus": "hybrid",
+  "isOa": true,
+  "oaPdfUrl": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1831&context=cib-conferences",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "X4a48570a",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 63,
+   "platformCoverage": 50,
+   "objectCoverage": 38,
+   "subdirectionMatch": 80,
+   "dataScenarioFit": 75,
+   "learningValue": 66,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 76.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 18.9,
+    "子方向匹配20%": 16.0,
+    "数据场景15%": 11.2,
+    "学习价值15%": 10.0,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1831&context=cib-conferences",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.7771/3067-4883.1831",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 6（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.3390/s21134587",
+  "title": "Feature Matching Combining Radiometric and Geometric Characteristics of Images, Applied to Oblique- and Nadir-Looking Visible and TIR Sensors of UAV Imagery",
+  "year": 2021,
+  "venue": "Sensors",
+  "authors": [
+   "Hyoseon Jang",
+   "Sang-Kyun Kim",
+   "Suhong Yoo",
+   "Soohee Han",
+   "Hong‐Gyoo Sohn"
+  ],
+  "institution": "Yonsei University",
+  "abstract": "A large amount of information needs to be identified and produced during the process of promoting projects of interest. Thermal infrared (TIR) images are extensively used because they can provide information that cannot be extracted from visible images. In particular, TIR oblique images facilitate the acquisition of information of a building's facade that is challenging to obtain from a nadir image. When a TIR oblique image and the 3D information acquired from conventional visible nadir imagery are combined, a great synergy for identifying surface information can be created. However, it is an onerous task to match common points in the images. In this study, a robust matching method of image pairs combined with different wavelengths and geometries (i.e., visible nadir-looking vs. TIR oblique, and visible oblique vs. TIR nadir-looking) is proposed. Three main processes of phase congruency, histogram matching, and Image Matching by Affine Simulation (IMAS) were adjusted to accommodate the radiometric and geometric differences of matched image pairs. The method was applied to Unmanned Aerial Vehicle (UAV) images of building and non-building areas. The results were compared with frequently used matching techniques, such as scale-invariant feature transform (SIFT), speeded-up robust features (SURF), synthetic aperture radar-SIFT (SAR-SIFT), and Affine SIFT (ASIFT). The method outperforms other matching methods in root mean square error (RMSE) and matching performance (matched and not matched). The proposed method is believed to be a reliable solution for pinpointing surface information through image matching with different geometries obtained via TIR and visible sensors.",
+  "citationCount": 4,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.3390/s21134587",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "https://www.mdpi.com/1424-8220/21/13/4587/pdf?version=1625642548",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xfb08575b",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 67,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 67,
+   "dataScenarioFit": 75,
+   "learningValue": 83,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 75.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 20.0,
+    "子方向匹配20%": 13.3,
+    "数据场景15%": 11.2,
+    "学习价值15%": 12.5,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.mdpi.com/1424-8220/21/13/4587/pdf?version=1625642548",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/s21134587",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 4（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D1-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D1-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "congr",
+     "infor",
+     "phase"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1088/1755-1315/1106/1/012019",
+  "title": "Thermal and visual remote sensing of residential buildings by UAV",
+  "year": 2022,
+  "venue": "IOP Conference Series Earth and Environmental Science",
+  "authors": [
+   "Massimiliano Ottaviani",
+   "Luca Giammichele",
+   "Folco Fioretti",
+   "Renato Pietro Ricci"
+  ],
+  "institution": "Marche Polytechnic University",
+  "abstract": "Abstract This paper is aimed to define an innovative method to evaluate building envelope thermal performance over the time by infrared thermography. The remote sensing is carried out by infrared camera and digital camera. An Unmanned Aerial Vehicle (UAV) is used for the sake of image acquisition. Firstly, flight and measurement protocols are defined to guarantee a correct detection and a new dimensionless parameter (β) is introduced to compare images taken in different time instants and environmental conditions. Successively, thermal and visible 3D models of the investigated building are analyzed, and a first draft of a 3D β-map is realized.",
+  "citationCount": 1,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1088/1755-1315/1106/1/012019",
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "https://iopscience.iop.org/article/10.1088/1755-1315/1106/1/012019/pdf",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "Xc5191920",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 67,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 67,
+   "dataScenarioFit": 75,
+   "learningValue": 68,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 72.8,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 20.0,
+    "子方向匹配20%": 13.3,
+    "数据场景15%": 11.2,
+    "学习价值15%": 10.2,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://iopscience.iop.org/article/10.1088/1755-1315/1106/1/012019/pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1088/1755-1315/1106/1/012019",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 1（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.33430/v30n1thie-2020-0023",
+  "title": "AI-powered inspections of facades in reinforced concrete buildings",
+  "year": 2023,
+  "venue": "HKIE Transactions",
+  "authors": [
+   "Michele De Filippo",
+   "Sasan Asadiabadi",
+   "J. S. Kuang",
+   "Dhanada Kanta Mishra",
+   "Harris Sun"
+  ],
+  "institution": "Hong Kong University of Science and Technology",
+  "abstract": "Worldwide there are plenty of aged Reinforced Concrete (RC) buildings in need of thorough inspections. Cracks, delamination, stains, leakages, debonding and moisture ingressions are common defects found in RC structures. Such problems are typically diagnosed through qualitative assessment of visual and thermal photographs (data) by certified inspectors. However, qualitative inspections are very tedious, time-consuming and costly. This paper presents an alternative novel approach to drastically increase efficiency by decreasing the data collection and analysis time. Data collection for the inspection of facades is undertaken with Unmanned Aerial Vehicles (UAVs) either through an autonomous pre-programmed flight or through a human-piloted flight. Data analysis is performed by implementing up-to-date AI-powered algorithms to automatically detect defects on visual and thermal photographs. All the recognised defects and thermal anomalies are labelled on the building facade for comprehensive evaluation of the asset. This paper reports that the implementation of AIpowered inspections can save up to 67% of the time spent and 52% of the cost in comparison to the most commonly adopted practice in the industry with an average accuracy of 90.5% and 82% for detection of visual defects and thermal anomalies, respectively.",
+  "citationCount": 15,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.33430/v30n1thie-2020-0023",
+  "oaStatus": "bronze",
+  "isOa": true,
+  "oaPdfUrl": "https://www.hkie.org.hk/hkietransactions/doc.php?id=914",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X04778588",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 59,
+   "platformCoverage": 75,
+   "objectCoverage": 62,
+   "subdirectionMatch": 100,
+   "dataScenarioFit": 25,
+   "learningValue": 80,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 71.5,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 17.8,
+    "子方向匹配20%": 20.0,
+    "数据场景15%": 3.8,
+    "学习价值15%": 11.9,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.hkie.org.hk/hkietransactions/doc.php?id=914",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.33430/v30n1thie-2020-0023",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 15（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1016/j.jag.2021.102652",
+  "title": "Developing a deep learning-based layer-3 solution for thermal infrared large-scale photovoltaic module inspection from orthorectified big UAV imagery data",
+  "year": 2021,
+  "venue": "International Journal of Applied Earth Observation and Geoinformation",
+  "authors": [
+   "Yahya Zefri",
+   "Imane Sebari",
+   "Hicham Hajji",
+   "Ghassane Aniba"
+  ],
+  "institution": "Institut Agronomique et Vétérinaire Hassan II",
+  "abstract": "The increasing adoption of photovoltaic (PV) technology highlights the need for efficient and large-scale deployment-ready inspection solutions. In the thermal infrared imagery-based inspection framework, we develop a robust and versatile deep learning model for the classification of defect-related patterns on PV modules. The model is developed from big UAV imagery data, and designed as a layer-3 building block that can be implemented on top of any two-stage PV inspection workflow comprising: (1) An aerial Structure from Motion – MultiView Stereo (SfM-MVS) photogrammetric acquisition/processing stage, at which a georeferenced thermal orthomosaic of an inspected PV site is generated, and which enables to locate precisely defective modules on field; then (2) an instance segmentation stage that extracts the images of modules. Orthomosaics from 28 different PV sites were produced, comprising 93 220 modules with various types, layouts and thermal patterns. Modules were extracted through a developed semi-automatic workflow, then labeled into six classes. Data augmentation and balancing techniques were used to prepare a highly representative and balanced deep learning-ready dataset. The dataset was used to train, cross-validate and test the developed classifier, as well as benchmarking with the VGG16 architecture. The developed model achieves the state-of-art performance and versatility on the addressed classification problem, with a mean F1-score of 94.52%. The proposed three-layer solution resolves the issues of conventional imagery-based workflows. It ensures highly accurate and versatile defect detection, and can be efficiently deployed to real-world large-scale applications.",
+  "citationCount": 71,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1016/j.jag.2021.102652",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "https://www.sciencedirect.com/science/article/pii/S0303243421003597/pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X69f8e83c",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 67,
+   "platformCoverage": 50,
+   "objectCoverage": 12,
+   "subdirectionMatch": 67,
+   "dataScenarioFit": 50,
+   "learningValue": 83,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 71.3,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 20.0,
+    "子方向匹配20%": 13.3,
+    "数据场景15%": 7.5,
+    "学习价值15%": 12.5,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.sciencedirect.com/science/article/pii/S0303243421003597/pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1016/j.jag.2021.102652",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 71（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.31705/wcs.2025.29",
+  "title": "Causes, detection and remediation of water-induced building defects: a systematic review",
+  "year": 2025,
+  "venue": "World Construction Symposium (WCS)",
+  "authors": [
+   "A. Gurmu",
+   "D. Denipitiya",
+   "P.U. Wijeratne"
+  ],
+  "institution": "Deakin University",
+  "abstract": "Water ingress in buildings can considerably impact the building and its occupants by compromising structural integrity, health, safety, and financial stability. While existing research has identified common defects associated with water seepage, a comprehensive framework for systematically documenting these issues and their corresponding solutions is currently needed. This study aims to comprehensively review the means of water ingress, its root causes, associated defects, detection methods, and remediation techniques, using the Preferred Reporting Items for Systematic Reviews and Meta-Analysis guidelines. A comprehensive search was conducted on articles related to water ingress-related building defects in the Scopus and Web of Science databases. Content and thematic analysis methods were applied to analyze 66 publications. The study identified seven vulnerable building components: exterior and interior walls, facades, roofs, basements, wet areas, and plumbing systems. It was found that cracks, faulty joints, defective fittings, and inadequate waterproofing lead to water ingress, causing structural, aesthetic, and functional damage. Further, detection methods ranging from visual inspections to advanced technologies like thermography and unmanned aerial vehicles (UAVs) were explored and various remedial actions including repairing, replacing, or reconstructing affected elements were suggested. The framework presented in this study provides design and construction professionals with proactive strategies for detecting and remedying water-related defects, offering practical guidelines for informed decision-making to effectively manage building defects linked to water ingress.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.31705/wcs.2025.29",
+  "oaStatus": "bronze",
+  "isOa": true,
+  "oaPdfUrl": "https://dl.lib.uom.lk/bitstreams/89078602-1ccc-48d6-badd-870ac9dafd53/download",
+  "type": "review",
+  "isRetracted": false,
+  "id": "Xb2263ad3",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 59,
+   "platformCoverage": 75,
+   "objectCoverage": 38,
+   "subdirectionMatch": 100,
+   "dataScenarioFit": 25,
+   "learningValue": 65,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 71.2,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 17.8,
+    "子方向匹配20%": 20.0,
+    "数据场景15%": 3.8,
+    "学习价值15%": 9.7,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://dl.lib.uom.lk/bitstreams/89078602-1ccc-48d6-badd-870ac9dafd53/download",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.31705/wcs.2025.29",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.3390/engproc2026138015",
+  "title": "AI-Enhanced Detection of Thermal Anomalies in Urban Roofs via Drone-Assisted Infrared Thermography (UAV-IRT)",
+  "year": 2026,
+  "venue": "",
+  "authors": [
+   "Xiaojia Zhang",
+   "Andrea Garzulino",
+   "Elena Lucchi"
+  ],
+  "institution": "Politecnico di Milano",
+  "abstract": "This study investigates automated detection of rooftop thermal anomalies using Unmanned Aerial Vehicle-Based Infrared Thermography (UAV-IRT) and deep learning object detection models. UAV thermal images are used to identify potential thermal bridges on building rooftops. The experiment is framed as a preliminary workflow validation performed on a subset of the Karlsruhe reference dataset. The study evaluates four YOLO models, including YOLOv9, YOLOv10, YOLOv11, and YOLOv12. The results indicate that all models can detect major thermal anomaly regions in UAV thermal imagery. YOLOv9 achieves slightly higher detection accuracy in the tested dataset. These results demonstrate the feasibility of the proposed workflow under reference-dataset conditions, while validation on a dedicated historic-building dataset remains necessary before claiming applicability to heritage or historic urban environments.",
+  "citationCount": 1,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.3390/engproc2026138015",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "https://www.mdpi.com/2673-4591/138/1/15/pdf?version=1784533171",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "X8bb427d1",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 67,
+   "platformCoverage": 100,
+   "objectCoverage": 25,
+   "subdirectionMatch": 67,
+   "dataScenarioFit": 50,
+   "learningValue": 68,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 71.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 20.0,
+    "子方向匹配20%": 13.3,
+    "数据场景15%": 7.5,
+    "学习价值15%": 10.2,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.mdpi.com/2673-4591/138/1/15/pdf?version=1784533171",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/engproc2026138015",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 1（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.3301/rol.2021.10",
+  "title": "UAV-UGV imagery for disaster scenario mapping: aerial-terrestrial data fusion and comparison",
+  "year": 2021,
+  "venue": "Rendiconti online della Società Geologica Italiana",
+  "authors": [
+   "Ettore Potente",
+   "Cosimo Cagnazzo",
+   "Andreas Vött",
+   "Alessandro Deodat",
+   "Giuseppe Mastronuzzi"
+  ],
+  "institution": "University of Bari Aldo Moro",
+  "abstract": "This paper introduces a mobile robotic system equipped with RBG (Red, Green, Blue) and IRT (InfraRed Thermography) sensors, designed in a joint industrial research project, which aims to develop low-cost technologies for the survey of dangerous scenarios in remote mode. The methodology adopted for mapping a landslide scenario, based on aerial and terrestrial unmanned systems, is presented. The UAV (Unmanned Aerial Vehicle) has been employed to map the damaged buildings and the landslide slope, by planning ten survey missions; the UGV (Unmanned Ground Vehicle) has been employed as a complementary mobile photogrammetry technique to obtain high- resolution ground data, by planning three missions, each consisting of two passes along the same paths simulating a two-camera setting. UAV and UGV-derived datasets have been processed using the Structure-from-Motion technique in order to obtain photogrammetry products such as ortho-photomosaics, digital terrain models, point clouds and 3D models of the building. Aerial and terrestrial models have been integrated, using GCPs (ground control points) coordinates and natural/artificial control points, and have been exploited for the spatial analysis.An accuracy assessment has been carried out in CloudCompare using the Cloud-to-Cloud function and local modelling: the aerial and terrestrial models of buildings facades have been independently compared with a reference model, obtained from a stationary photogrammetry survey. The results highlight the higher reliability of the terrestrial model for accurate surfaces reconstruction, proving the potential of terrestrial mobile photogrammetry as an effective low- cost mapping solution for hazardous environments. Moreover, UGV mission settings, datasets characteristics and potential improvements are discussed in order to portray the benefits and limitations of this approach.",
+  "citationCount": 2,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.3301/rol.2021.10",
+  "oaStatus": "bronze",
+  "isOa": true,
+  "oaPdfUrl": "https://www.rendicontisocietageologicaitaliana.it/fulltext/4138/uav-ugv-imagery-for-disaster-scenario-mapping-aerial-terrestrial-data-fusion-and-comparison",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xb5fc898e",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 63,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 63,
+   "dataScenarioFit": 50,
+   "learningValue": 81,
+   "evidenceQuality": 100,
+   "recency": 80,
+   "total": 69.2,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 18.9,
+    "子方向匹配20%": 12.6,
+    "数据场景15%": 7.5,
+    "学习价值15%": 12.2,
+    "证据质量10%": 10.0,
+    "时效10%": 8.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.rendicontisocietageologicaitaliana.it/fulltext/4138/uav-ugv-imagery-for-disaster-scenario-mapping-aerial-terrestrial-data-fusion-and-comparison",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3301/rol.2021.10",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 2（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D1-1"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D1-1",
+    "overlap": 3,
+    "sharedTerms": [
+     "facad",
+     "point",
+     "struc"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.48550/arxiv.2609.12521",
+  "title": "Aligned Radiometric RGB-Thermal Fusion for UAV Facade Anomaly Screening",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "authors": [
+   "Yuan Yang",
+   "Shulei Li",
+   "Haobo Liang"
+  ],
+  "institution": "",
+  "abstract": "Unmanned aerial vehicle facade inspection can combine red, green, and blue (RGB) imagery with thermal measurements to screen surface and subsurface anomalies. However, geometric discrepancies between the sensors and thermal image rendering can obscure spatial correspondence and weak temperature contrasts. This article presents a sensor-level pipeline comprising per-sensor correction, RGB-to-thermal registration, common-support cropping, and signed local contrast encoding of 16-bit radiometric measurements. The encoding preserves the distinction between locally hotter and colder regions and supplies the fourth input channel of a compact single-stream detector. We introduce M3T, a dataset of 674 paired RGB and radiometric thermal samples from five facade-inspection projects covering eight component and anomaly categories. The median residual registration error is 3.384 pixels, and a controlled-displacement analysis characterizes how the local contrast response changes under controlled displacement. Project-grouped four-fold evaluation yields mean average precision of 0.168 over intersection-over-union thresholds from 0.5 to 0.95, using 28.50 billion floating-point operations per image. A separate single-split ablation shows improved delamination detection over RGB-only and alternative thermal inputs, although aggregate accuracy does not improve over RGB alone. Evaluation on RGBT-Tiny shows mixed performance with rendered thermal imagery. These results characterize the category-specific benefits and limitations of aligned radiometric contrast for compact facade screening.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.48550/arxiv.2609.12521",
+  "oaStatus": "green",
+  "isOa": true,
+  "oaPdfUrl": "https://arxiv.org/pdf/2609.12521",
+  "type": "preprint",
+  "isRetracted": false,
+  "id": "X46995db8",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 59,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 59,
+   "dataScenarioFit": 50,
+   "learningValue": 80,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 69.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 17.8,
+    "子方向匹配20%": 11.9,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.9,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://arxiv.org/pdf/2609.12521",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.48550/arxiv.2609.12521",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D3-1",
+   "D2-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D3-1",
+    "overlap": 4,
+    "sharedTerms": [
+     "fusio",
+     "radio",
+     "tempe",
+     "therm"
+    ]
+   },
+   {
+    "directionId": "D2-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "contr",
+     "radio",
+     "therm"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1007/s41062-026-02861-1",
+  "title": "Integration of UAV-based infrared thermography with building information modeling and digital twins for infrastructure inspection: a review",
+  "year": 2026,
+  "venue": "Innovative Infrastructure Solutions",
+  "authors": [
+   "Ri Na",
+   "tianjiao zhao"
+  ],
+  "institution": "University of Delaware",
+  "abstract": "Abstract Unmanned aerial vehicle–based infrared thermography (UAV-IRT) has emerged as a promising approach for non-contact infrastructure inspection, enabling thermal diagnostics across large and difficult-to-access built-environment assets. At the same time, the Architecture, Engineering, Construction, and Facility Management (AEC/FM) industry is increasingly adopting digital technologies such as Building Information Modeling (BIM) and digital twins (DTs) to support data-driven asset management and lifecycle decision-making. However, thermal inspection outputs are often treated as isolated datasets rather than interoperable information linked with digital asset models, limiting their value for monitoring and predictive maintenance and constraining their integration into digital asset management workflows. This study presents a review of research at the intersection of UAV-IRT, BIM, and DT technologies. Based on a structured literature screening of 110 publications, this study covers UAV-enabled inspection, thermal data processing, multimodal sensing, and digital model integration. The review synthesizes research across four themes: UAV-IRT applications, thermal data processing and AI-assisted anomaly detection, BIM-based integration approaches, and digital-twin-enabled monitoring frameworks. The analysis reveals fragmentation across sensing, data processing, and integration workflows, highlighting key challenges that hinder scalable deployment in practical infrastructure inspection and management applications. The paper further discusses key directions for future research, including workflow standardization, multimodal sensing integration, AI-enabled decision support, scalable DT ecosystems, and workforce development. The findings demonstrate how UAV-IRT can support asset management by enabling proactive maintenance and improving inspection efficiency by reducing unnecessary inspection cycles and minimizing redundant field operations. These improvements lower resource consumption and operational costs while supporting more effective lifecycle management of infrastructure systems.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1007/s41062-026-02861-1",
+  "oaStatus": "hybrid",
+  "isOa": true,
+  "oaPdfUrl": "https://link.springer.com/content/pdf/10.1007/s41062-026-02861-1.pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xb0874844",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 56,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 56,
+   "dataScenarioFit": 50,
+   "learningValue": 78,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 66.9,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 16.7,
+    "子方向匹配20%": 11.1,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.7,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://link.springer.com/content/pdf/10.1007/s41062-026-02861-1.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1007/s41062-026-02861-1",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1007/s41024-026-00780-3",
+  "title": "Enhancing façade condition assessment through CNN-based crack detection using UAS imagery",
+  "year": 2026,
+  "venue": "Journal of Building Pathology and Rehabilitation",
+  "authors": [
+   "Kayan Santos Santana",
+   "Alisson Souza Silva",
+   "Francisco Gabriel da Silva",
+   "Dayana Bastos Costa"
+  ],
+  "institution": "Universidade Federal da Bahia",
+  "abstract": "Building façades are among the most exposed components of structures, subject to degradation mechanisms that compromise safety, performance, and aesthetics. In recent years, Unmanned Aerial Systems (UAS) and Convolutional Neural Networks (CNNs) have increasingly been used to automate façade inspections. Although previous studies have demonstrated high accuracy in crack detection, most rely on close-range, high-contrast images captured under controlled conditions, limiting applicability in real-world operational settings. This study addresses this gap by developing and comparing four CNN-based models (MC, CC, RA, and RC) for crack detection in plastered and ceramic-tiled façades using RGB, thermal, and contrast-enhanced images acquired by UAS under operational conditions. Results show that the MC model achieved the highest recall (90.3%), mAP (73.2%), and F1-score (73.0%) for plastered façades, whereas the RC model achieved the highest precision (71.9%), mAP (81.1%), and F1-score (81.0%) for ceramic façades. Models based on AlexNet and ResNet achieved higher probability thresholds (MC: 98.5%; CC: 99.3%) than YOLOv11 models. The main contribution of this research lies in the comparative evaluation of multiple CNN architectures across different façade typologies using realistic UAS-acquired imagery. By demonstrating the feasibility of automated crack detection under non-ideal conditions, the study advances technical support for façade inspections and maintenance planning, bridging the gap between academic performance benchmarks and practical implementation in building pathology and rehabilitation. These findings highlight the potential of combining UASs and CNNs to improve efficiency, accuracy, and safety in large-scale building inspections.",
+  "citationCount": 3,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1007/s41024-026-00780-3",
+  "oaStatus": "hybrid",
+  "isOa": true,
+  "oaPdfUrl": "https://link.springer.com/content/pdf/10.1007/s41024-026-00780-3.pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xe98a79d5",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 48,
+   "platformCoverage": 50,
+   "objectCoverage": 38,
+   "subdirectionMatch": 60,
+   "dataScenarioFit": 50,
+   "learningValue": 74,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 65.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 14.4,
+    "子方向匹配20%": 12.0,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.1,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://link.springer.com/content/pdf/10.1007/s41024-026-00780-3.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1007/s41024-026-00780-3",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 3（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D2-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D2-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "contr",
+     "gap",
+     "therm"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1016/j.buildenv.2026.115380",
+  "title": "UAV-Assisted quantitative infrared thermography procedure for thermal measurements in building inspections",
+  "year": 2026,
+  "venue": "Building and Environment",
+  "authors": [
+   "Elena Lucchi",
+   "Andrea Garzulino"
+  ],
+  "institution": "University of Pavia",
+  "abstract": "The increasing adoption of unmanned aerial vehicles (UAVs) equipped with infrared thermography (IRT) sensors offers new opportunities for rapid and non-invasive assessment of building envelopes. However, the transition from qualitative thermal anomaly detection to reliable quantitative measurements remains limited by the lack of standardized procedures for controlling acquisition conditions, radiometric corrections, and validation strategies. This study addresses this gap by developing and experimentally validating a UAV-assisted quantitative IRT procedure for acquiring external apparent surface temperature data on existing buildings under controlled field conditions. The proposed method combines preliminary terrestrial IRT surveys, environmental monitoring, contact surface-temperature measurements, repeated UAV-based thermal acquisitions for estimating reflected apparent temperature, and controlled post-processing based on documented spectral emissivity, target distance, relative humidity, and region of interest (ROI) definition. The methodology was experimentally evaluated through six case studies in Milan (Italy), using terrestrial IRT measurements as reference data and comparative measurements acquired with two different thermal imaging cameras mounted on UAVs, together with contact temperature sensors. The results show that UAV-derived apparent surface temperature values can be considered reliable only when a tightly controlled measurement workflow is adopted. Target distance, gain mode, reflected apparent temperature estimation, ROI geometry, and software averaging method significantly affect the resulting temperature values. The High Gain mode produced acceptable or borderline deviations in several short-distance acquisitions, whereas the Low Gain mode generated unacceptable deviations for the tested range of surface temperatures of the building envelope. The study transferability the acquisition, correction, and validation steps required to improve the reproducibility and transferability of UAV-based IRT in apparent surface temperature measurements for quantitative building-diagnostics applications.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1016/j.buildenv.2026.115380",
+  "oaStatus": "hybrid",
+  "isOa": true,
+  "oaPdfUrl": "https://www.sciencedirect.com/science/article/pii/S0360132326011819/pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X9a7f824d",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 52,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 52,
+   "dataScenarioFit": 50,
+   "learningValue": 76,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 64.8,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 15.6,
+    "子方向匹配20%": 10.4,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.4,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.sciencedirect.com/science/article/pii/S0360132326011819/pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1016/j.buildenv.2026.115380",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D2-2",
+   "D3-1"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D2-2",
+    "overlap": 4,
+    "sharedTerms": [
+     "contr",
+     "gap",
+     "radio",
+     "therm"
+    ]
+   },
+   {
+    "directionId": "D3-1",
+    "overlap": 3,
+    "sharedTerms": [
+     "radio",
+     "tempe",
+     "therm"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.1145/3243394.3243696",
+  "title": "Autonomous Heat Leakage Detection from Unmanned Aerial Vehicle-Mounted Thermal Cameras",
+  "year": 2018,
+  "venue": "International Conference on Distributed Smart Cameras",
+  "authors": [
+   "Burak Kakillioglu",
+   "Senem Velipasalar",
+   "Tarek Rakha"
+  ],
+  "institution": "Syracuse University",
+  "abstract": "The efficiency of thermal insulation of buildings has direct impact on power consumption for heating and ventilation. Thermal leaks are critical defects on building insulation. Infrared sensitive handheld thermal cameras are commonly used to perform manual inspection of buildings to detect thermal leaks by human experts. In this paper, we propose an algorithm that autonomously detects heat leakages from thermal images of building structures. The target platform for the proposed algorithm is an unmanned aerial vehicle (UAV) that collects thermal images of buildings, and detects heat leakages autonomously. Using UAVs, as opposed to the current practice of doing manual inspection, not only speeds up the process, but also provides the capability of capturing data from hard to reach places, such as roofs, in a more convenient and safe manner. For evaluation, thermal images have been captured both from inside, by a handheld camera, and outside. The outside thermal images have been captured by either a handheld camera or an IR camera installed on a UAV. Experimental results show that the proposed approach is very promising with overall precision and recall rates of 91% and 89%, respectively on handheld dataset, and 34% and 77%, respectively on the UAV dataset.",
+  "citationCount": 13,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.1145/3243394.3243696",
+  "oaStatus": "closed",
+  "isOa": false,
+  "oaPdfUrl": "",
+  "type": "conference-paper",
+  "isRetracted": false,
+  "id": "X31bacdd2",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 63,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 63,
+   "dataScenarioFit": 50,
+   "learningValue": 66,
+   "evidenceQuality": 100,
+   "recency": 55,
+   "total": 64.5,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 18.9,
+    "子方向匹配20%": 12.6,
+    "数据场景15%": 7.5,
+    "学习价值15%": 10.0,
+    "证据质量10%": 10.0,
+    "时效10%": 5.5
+   }
+  },
+  "accessStatus": "paywalled",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1145/3243394.3243696",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；被引 13（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.5194/isprs-annals-iv-2-w3-25-2017",
+  "title": "PHOTOGRAMMETRIC 3D BUILDING RECONSTRUCTION FROM THERMAL IMAGES",
+  "year": 2017,
+  "venue": "ISPRS annals of the photogrammetry, remote sensing and spatial information sciences",
+  "authors": [
+   "Eleonora Maset",
+   "Andrea Fusiello",
+   "Fabio Crosilla",
+   "Roberto Toldo",
+   "D. Zorzetto"
+  ],
+  "institution": "University of Udine",
+  "abstract": "Abstract. This paper addresses the problem of 3D building reconstruction from thermal infrared (TIR) images. We show that a commercial Computer Vision software can be used to automatically orient sequences of TIR images taken from an Unmanned Aerial Vehicle (UAV) and to generate 3D point clouds, without requiring any GNSS/INS data about position and attitude of the images nor camera calibration parameters. Moreover, we propose a procedure based on Iterative Closest Point (ICP) algorithm to create a model that combines high resolution and geometric accuracy of RGB images with the thermal information deriving from TIR images. The process can be carried out entirely by the aforesaid software in a simple and efficient way.",
+  "citationCount": 39,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.5194/isprs-annals-iv-2-w3-25-2017",
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "",
+  "type": "article",
+  "isRetracted": false,
+  "id": "Xcd32be96",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 52,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 52,
+   "dataScenarioFit": 75,
+   "learningValue": 76,
+   "evidenceQuality": 100,
+   "recency": 55,
+   "total": 64.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 15.6,
+    "子方向匹配20%": 10.4,
+    "数据场景15%": 11.2,
+    "学习价值15%": 11.4,
+    "证据质量10%": 10.0,
+    "时效10%": 5.5
+   }
+  },
+  "accessStatus": "unknown",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.5194/isprs-annals-iv-2-w3-25-2017",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；被引 39（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.5194/isprs-archives-xlii-2-w6-145-2017",
+  "title": "CONCEPT FOR CLASSIFYING FACADE ELEMENTS BASED ON MATERIAL, GEOMETRY AND THERMAL RADIATION USING MULTIMODAL UAV REMOTE SENSING",
+  "year": 2017,
+  "venue": "The international archives of the photogrammetry, remote sensing and spatial information sciences/International archives of the photogrammetry, remote sensing and spatial information sciences",
+  "authors": [
+   "R. Ilehag",
+   "Andreas Schenk",
+   "Stefan Hinz"
+  ],
+  "institution": "Karlsruhe Institute of Technology",
+  "abstract": "Abstract. This paper presents a concept for classification of facade elements, based on the material and the geometry of the elements in addition to the thermal radiation of the facade with the usage of a multimodal Unmanned Aerial Vehicle (UAV) system. Once the concept is finalized and functional, the workflow can be used for energy demand estimations for buildings by exploiting existing methods for estimation of heat transfer coefficient and the transmitted heat loss. The multimodal system consists of a thermal, a hyperspectral and an optical sensor, which can be operational with a UAV. While dealing with sensors that operate in different spectra and have different technical specifications, such as the radiometric and the geometric resolution, the challenges that are faced are presented. Addressed are the different approaches of data fusion, such as image registration, generation of 3D models by performing image matching and the means for classification based on either the geometry of the object or the pixel values. As a first step towards realizing the concept, the result from a geometric calibration with a designed multimodal calibration pattern is presented.",
+  "citationCount": 6,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.5194/isprs-archives-xlii-2-w6-145-2017",
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-2-W6/145/2017/isprs-archives-XLII-2-W6-145-2017.pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X3ff2d91d",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 63,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 63,
+   "dataScenarioFit": 25,
+   "learningValue": 81,
+   "evidenceQuality": 100,
+   "recency": 55,
+   "total": 63.0,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 18.9,
+    "子方向匹配20%": 12.6,
+    "数据场景15%": 3.8,
+    "学习价值15%": 12.2,
+    "证据质量10%": 10.0,
+    "时效10%": 5.5
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-2-W6/145/2017/isprs-archives-XLII-2-W6-145-2017.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.5194/isprs-archives-xlii-2-w6-145-2017",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 6（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [
+   "D3-1"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D3-1",
+    "overlap": 4,
+    "sharedTerms": [
+     "calib",
+     "fusio",
+     "radio",
+     "therm"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "OpenAlex",
+  "doi": "10.71052/srb2024/mtpy6488",
+  "title": "Zhiyi Building Inspection: A UAV-based Building Facade Damage Detection System",
+  "year": 2026,
+  "venue": "Scientific Research Bulletin",
+  "authors": [
+   "Wenxuan Tang",
+   "Hongqi Zhang",
+   "Mengqi Li",
+   "Shuyu Yang",
+   "Furong Liu"
+  ],
+  "institution": "Zhejiang Normal University",
+  "abstract": "Building facade inspection is essential for maintaining structural safety, yet conventional approaches remain limited by high-altitude risks, labour intensity, and inconsistent evaluation. This study develops Zhiyi Building Inspection, an integrated unmanned aerial vehicle-artificial intelligence-building information modeling (UAV-AI-BIM) framework for automated facade damage detection. The system combines UAV-based image acquisition with real-time kinematic (RTK) positioning, an improved You Only Look Once version 5 Large (YOLOv5l) detection model incorporating Complete Intersection over Union (CIoU) loss and Convolutional Block Attention Module (CBAM), Sobel-based defect quantification, severity assessment, and BIM-assisted visualisation. A dataset of 3,982 high-resolution images covering eight facade-defect categories was constructed for model training and evaluation. Experimental results demonstrate that the proposed framework improves detection accuracy while maintaining real-time processing capability and provides engineering-oriented outputs including defect location, severity, and inspection reports. The study demonstrates the feasibility of integrating UAV sensing, artificial intelligence, and digital building management for safer and more efficient facade maintenance.",
+  "citationCount": 0,
+  "citationSource": "OpenAlex",
+  "paperUrl": "https://doi.org/10.71052/srb2024/mtpy6488",
+  "oaStatus": "bronze",
+  "isOa": true,
+  "oaPdfUrl": "https://wonford.com/wp-content/uploads/2026/10/Manuscript-v3n4-7-1.pdf",
+  "type": "article",
+  "isRetracted": false,
+  "id": "X1afebd95",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 52,
+   "platformCoverage": 75,
+   "objectCoverage": 25,
+   "subdirectionMatch": 80,
+   "dataScenarioFit": 0,
+   "learningValue": 76,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 62.9,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 15.6,
+    "子方向匹配20%": 16.0,
+    "数据场景15%": 0.0,
+    "学习价值15%": 11.4,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://wonford.com/wp-content/uploads/2026/10/Manuscript-v3n4-7-1.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.71052/srb2024/mtpy6488",
+  "sourceDatabase": "OpenAlex",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 0（OpenAlex，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.7708/ijtte.2018.8(1).01",
+  "title": "CRACK DAMAGE DETECTION IN UNMANNED AERIAL VEHICLE IMAGES OF CIVIL INFRASTRUCTURE USING PRE-TRAINED DEEP LEARNING MODEL",
+  "year": 2018,
+  "venue": "INTERNATIONAL JOURNAL FOR TRAFFIC AND TRANSPORT ENGINEERING",
+  "authors": [],
+  "abstract": "The field of computer vision based civil infrastructure defect detection is constantly evolving with steady advances being made in sensing technologies, hardware, and image processing techniques.Although a number of image processing techniques have been proposed over the years with varying degrees of success, real-world situations (e.g., lack of background illumination, shadow changes) pose a significant challenge to the wide adoption of such techniques, especially for routine analysis.With the emerging application of Unmanned Aerial Vehicles (UAVs) or drones for civil infrastructure inspection and condition monitoring, an added level of complexity is introduced in vision-based crack detection as the process of acquiring images using UAVs is not yet standardized resulting in images of widely varying sizes, resolutions, blurriness, etc.In recent years, Deep Learning, a generalized form of Deep Neural Network (DNN) algorithms that can learn very complex mappings between inputs and outputs directly from the data, has achieved huge success in diverse fields such as automatic speech recognition, image recognition, Natural Language Processing (NLP), drug and materials discovery, etc.However, the large number of hidden neurons and layers used in DNNs result in computationally-intensive matrix and vector computations involving millions of parameters, requiring the use of high-performance computing systems.Also, it is practically impossible to get labeled \"big data\" samples in many domains to be able to train an entire DNN from scratch.In such situations, the use of a pre-trained deep learning model and fine-tuning it to the novel task at hand with smaller datasets, has shown to be successful across domains.In this paper, we propose the use of pre-trained deep learning models with transfer learning for crack damage detection in UAV images of civil infrastructure.The robustness of the proposed approach is tested on a small set of real-world, complex UAV-sourced infrastructure images not used during training and validation.The results show that the proposed method can rapidly and easily achieve up to 90% accuracy in finding cracks in realistic situations without any augmentation and preprocessing.",
+  "citationCount": 91,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.7708/ijtte.2018.8(1).01",
+  "type": "journal-article",
+  "id": "X314afaa9",
+  "alreadyInLocalLibrary": false,
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "https://doi.org/10.7708/ijtte.2018.8(1).01",
+  "score": {
+   "relevance": 56,
+   "platformCoverage": 100,
+   "objectCoverage": 12,
+   "subdirectionMatch": 60,
+   "dataScenarioFit": 25,
+   "learningValue": 78,
+   "evidenceQuality": 100,
+   "recency": 55,
+   "total": 59.6,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 16.7,
+    "子方向匹配20%": 12.0,
+    "数据场景15%": 3.8,
+    "学习价值15%": 11.7,
+    "证据质量10%": 10.0,
+    "时效10%": 5.5
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://doi.org/10.7708/ijtte.2018.8(1).01",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.7708/ijtte.2018.8(1).01",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "标题与摘要覆盖本研究方向的核心术语；开放获取，可直接核验全文；被引 91（Crossref，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.3390/su17073180",
+  "title": "Proposal of an Integrated Method of Unmanned Aerial Vehicle and Artificial Intelligence for Crack Detection, Classification, and PCI Calculation of Airport Pavements",
+  "year": 2025,
+  "venue": "Sustainability",
+  "authors": [
+   "Valerio Perri",
+   "Misagh Ketabdari",
+   "Stefano Cimichella",
+   "Maurizio Crispino",
+   "Emanuele Toraldo"
+  ],
+  "abstract": "Assessing the condition of airport pavements is essential to ensure operational safety and efficiency. This study presents an innovative, fully automated approach to calculate the Pavement Condition Index (PCI) by combining UAV-based aerial photogrammetry with advanced Artificial Intelligence (AI) techniques. The method follows three key steps: first, analyzing orthophotos of individual pavement sections using a custom-trained AI model designed for precise crack detection and classification; second, utilizing skeletonization and semantic mask analysis to measure crack characteristics; and third, automating the PCI calculation for faster and more consistent evaluations. By leveraging high-resolution Unmanned Aerial Vehicle (UAV) imagery and advanced segmentation models, this approach achieves superior accuracy in detecting transverse and longitudinal cracks. The automated PCI calculation minimizes the need for human intervention, reduces errors, and supports more efficient, data-driven decision-making for airport pavement management. This study demonstrates the transformative potential of integrating UAV and AI technologies to facilitate infrastructure maintenance and enhance safety protocols.",
+  "citationCount": 6,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.3390/su17073180",
+  "type": "journal-article",
+  "id": "X990476ce",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 44,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 44,
+   "dataScenarioFit": 25,
+   "learningValue": 72,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 56.8,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 13.3,
+    "子方向匹配20%": 8.9,
+    "数据场景15%": 3.8,
+    "学习价值15%": 10.8,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "unknown",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/su17073180",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；被引 6（Crossref，注意跨年份不可直接比较）",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "arXiv",
+  "doi": "",
+  "arxivId": "2507.20764v1",
+  "title": "ATR-UMMIM: A Benchmark Dataset for UAV-Based Multimodal Image Registration under Complex Imaging Conditions",
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "authors": [
+   "Kangcheng Bin",
+   "Chen Chen",
+   "Ting Hu",
+   "Jiahao Qi",
+   "Ping Zhong"
+  ],
+  "abstract": "Multimodal fusion has become a key enabler for UAV-based object detection, as each modality provides complementary cues for robust feature extraction. However, due to significant differences in resolution, field of view, and sensing characteristics across modalities, accurate registration is a prerequisite before fusion. Despite its importance, there is currently no publicly available benchmark specifically designed for multimodal registration in UAV-based aerial scenarios, which severely limits the development and evaluation of advanced registration methods under real-world conditions. To bridge this gap, we present ATR-UMMIM, the first benchmark dataset specifically tailored for multimodal image registration in UAV-based applications. This dataset includes 7,969 triplets of raw visible, infrared, and precisely registered visible images captured covers diverse scenarios including flight altitudes from 80m to 300m, camera angles from 0° to 75°, and all-day, all-year temporal variations under rich weather and illumination conditions. To ensure high registration quality, we design a semi-automated annotation pipeline to introduce reliable pixel-level ground truth to each triplet. In addition, each triplet is annotated with six imaging condition attributes, enabling benchmarking of registration robustness under real-world deployment settings. To further support downstream tasks, we provide object-level annotations on all registered images, covering 11 object categories with 77,753 visible and 78,409 infrared bounding boxes. We believe ATR-UMMIM will serve as a foundational benchmark for advancing multimodal registration, fusion, and perception in real-world UAV scenarios. The datatset can be download from https://github.com/supercpy/ATR-UMMIM",
+  "citationCount": null,
+  "citationSource": "",
+  "paperUrl": "http://arxiv.org/abs/2507.20764v1",
+  "isOa": true,
+  "oaPdfUrl": "http://arxiv.org/pdf/2507.20764v1",
+  "type": "preprint",
+  "id": "X90c93e12",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 52,
+   "platformCoverage": 50,
+   "objectCoverage": 12,
+   "subdirectionMatch": 52,
+   "dataScenarioFit": 50,
+   "learningValue": 76,
+   "evidenceQuality": 80,
+   "recency": 100,
+   "total": 53.4,
+   "penalties": [
+    "应用场景词命中偏低（降权至 85%）"
+   ],
+   "breakdown": {
+    "相关性30%": 15.6,
+    "子方向匹配20%": 10.4,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.4,
+    "证据质量10%": 8.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "http://arxiv.org/pdf/2507.20764v1",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "",
+  "sourceDatabase": "arXiv",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；开放获取，可直接核验全文",
+  "directionIds": [
+   "D3-2"
+  ],
+  "directionMatch": [
+   {
+    "directionId": "D3-2",
+    "overlap": 3,
+    "sharedTerms": [
+     "fusio",
+     "super",
+     "visib"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.7764/rdlc.24.3.603",
+  "title": "Crack detection on asphalt runway using unmanned aerial vehicle data with non-crack object removal and deep learning methods",
+  "year": 2025,
+  "venue": "Revista de la construcción",
+  "authors": [
+   "Serkan Tapkın",
+   "Emre Tercan",
+   "Atila Bostan",
+   "Gökhan Şengül"
+  ],
+  "abstract": "Unmanned aerial vehicles are extensively utilized for image acquisition in a cheap, fast, and effective way. In this study, an automatic crack detection method with non-crack object removal and deep learning-based approaches are developed and tested on images captured by unmanned aerial vehicle. The motivation of this study is to detect either a crack exists or not in the asphalt-runway. The novelty of this study lies in integrating a non-crack artifact removal process with six classical edge detectors and comparing the resulting performance with four lightweight CNN models on the same UAV-acquired runway image dataset, enabling a unified evaluation of classical and learning-based approaches. For deep learning-based approach, four lightweight CNN models, namely GoogleNet, SqueezeNet, MobileNetv2, and ShuffleNet, are trained and the best accuracy of %87.9 is obtained whenever GoogleNet model is used. For the non-crack object removal approach, exclusion of non-crack objects from the images is the first step, where crack-detection which makes use of edge-detection techniques is the latter. In the study, Sobel, Prewitt, Canny, Laplacian of Gaussian, Roberts and Zero Cross edge detection algorithms are examined and their success rates in detecting cracks are comparatively presented. With sensitivity=0.981, specificity=0.744, accuracy=0.917, precision=0.912 and F-score=0.945 values Canny algorithm performs significantly better than others in detecting the cracks. This study provides enough evidence for the practicability of automated crack detection on unprocessed digital photographs by the results of the study conducted on asphalt runway.",
+  "citationCount": 1,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.7764/rdlc.24.3.603",
+  "type": "journal-article",
+  "id": "X5f475348",
+  "alreadyInLocalLibrary": false,
+  "institution": "Bayburt University",
+  "oaStatus": "diamond",
+  "isOa": true,
+  "oaPdfUrl": "https://revistahistoria.uc.cl/index.php/RDLC/article/download/86504/73380",
+  "score": {
+   "relevance": 44,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 44,
+   "dataScenarioFit": 0,
+   "learningValue": 72,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 53.1,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 13.3,
+    "子方向匹配20%": 8.9,
+    "数据场景15%": 0.0,
+    "学习价值15%": 10.8,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://revistahistoria.uc.cl/index.php/RDLC/article/download/86504/73380",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.7764/rdlc.24.3.603",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；开放获取，可直接核验全文；被引 1（Crossref，注意跨年份不可直接比较）",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "arXiv",
+  "doi": "10.22260/isarc2017/0115",
+  "arxivId": "1707.09715v1",
+  "title": "Automatic Crack Detection in Built Infrastructure Using Unmanned Aerial Vehicles",
+  "year": 2017,
+  "venue": "arXiv preprint",
+  "authors": [
+   "Manh Duong Phung",
+   "Van Truong Hoang",
+   "Tran Hiep Dinh",
+   "Quang Ha"
+  ],
+  "abstract": "This paper addresses the problem of crack detection which is essential for health monitoring of built infrastructure. Our approach includes two stages, data collection using unmanned aerial vehicles (UAVs) and crack detection using histogram analysis. For the data collection, a 3D model of the structure is first created by using laser scanners. Based on the model, geometric properties are extracted to generate way points necessary for navigating the UAV to take images of the structure. Then, our next step is to stick together those obtained images from the overlapped field of view. The resulting image is then clustered by histogram analysis and peak detection. Potential cracks are finally identified by using locally adaptive thresholds. The whole process is automatically carried out so that the inspection time is significantly improved while safety hazards can be minimised. A prototypical system has been developed for evaluation and experimental results are included.",
+  "citationCount": null,
+  "citationSource": "",
+  "paperUrl": "http://arxiv.org/abs/1707.09715v1",
+  "isOa": true,
+  "oaPdfUrl": "https://www.iaarc.org/publications/fulltext/ISARC2017-Paper115.pdf",
+  "type": "preprint",
+  "id": "Xf79d7322",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 44,
+   "platformCoverage": 75,
+   "objectCoverage": 12,
+   "subdirectionMatch": 44,
+   "dataScenarioFit": 25,
+   "learningValue": 72,
+   "evidenceQuality": 100,
+   "recency": 55,
+   "total": 52.3,
+   "penalties": [],
+   "breakdown": {
+    "相关性30%": 13.3,
+    "子方向匹配20%": 8.9,
+    "数据场景15%": 3.8,
+    "学习价值15%": 10.8,
+    "证据质量10%": 10.0,
+    "时效10%": 5.5
+   }
+  },
+  "accessStatus": "open_access",
+  "openAccessPdfUrl": "https://www.iaarc.org/publications/fulltext/ISARC2017-Paper115.pdf",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.22260/isarc2017/0115",
+  "sourceDatabase": "arXiv",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；开放获取，可直接核验全文",
+  "oaStatus": "bronze",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.3390/drones9030205",
+  "title": "Assessing Seasonal and Diurnal Thermal Dynamics of Water Channel and Highway Bridges Using Unmanned Aerial Vehicle Thermography",
+  "year": 2025,
+  "venue": "Drones",
+  "authors": [
+   "Abdulkadir Memduhoğlu",
+   "Nizar Polat"
+  ],
+  "abstract": "Bridges are critical components of modern infrastructure, yet their long-term performance is often compromised by thermal stresses induced by environmental and material factors. Despite advances in remote sensing, characterizing the complex thermal dynamics of bridge structures remains challenging. In this study, we investigate the seasonal and diurnal thermal behavior of two common bridge types—a water channel bridge with paving stone surfacing and a highway bridge with asphalt surfacing—using high-resolution UAV thermography. A pre-designed photogrammetric flight plan (yielding a ground sampling distance of &lt;5 cm) was implemented to acquire thermal and visual imagery during four distinct temporal windows (winter morning, winter evening, summer morning, and summer evening). The methodology involved generating thermal orthophotos via structure-from-motion techniques, extracting systematic temperature measurements (n=150 per bridge), and analyzing these using independent-samples and paired t-tests to quantify material-specific thermal responses and environmental coupling effects. The results reveal that the water channel bridge exhibited significantly lower thermal variability (1.54–3.48 °C) compared to the highway bridge (3.27–5.66 °C), with pronounced differences during winter mornings (Cohen’s d=2.03, p&lt;0.001). Furthermore, material properties strongly modulated thermal dynamics, as evidenced by the significant temperature differentials between the paving stone and asphalt surfaces, while ambient conditions further influence surface–ambient coupling (r=0.961 vs. 0.975). The results provide UAV-based quantitative metrics for bridge thermal assessment and empirical evidence to support the temporal monitoring of bridges with varying materials and environmental conditions for future studies.",
+  "citationCount": 1,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.3390/drones9030205",
+  "type": "journal-article",
+  "id": "X569b4d78",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 44,
+   "platformCoverage": 100,
+   "objectCoverage": 12,
+   "subdirectionMatch": 44,
+   "dataScenarioFit": 50,
+   "learningValue": 72,
+   "evidenceQuality": 100,
+   "recency": 100,
+   "total": 51.5,
+   "penalties": [
+    "应用场景词命中偏低（降权至 85%）"
+   ],
+   "breakdown": {
+    "相关性30%": 13.3,
+    "子方向匹配20%": 8.9,
+    "数据场景15%": 7.5,
+    "学习价值15%": 10.8,
+    "证据质量10%": 10.0,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "unknown",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.3390/drones9030205",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；被引 1（Crossref，注意跨年份不可直接比较）",
+  "oaStatus": "gold",
+  "isOa": true,
+  "oaPdfUrl": "",
+  "directionIds": [],
+  "directionMatch": []
+ },
+ {
+  "source": "Crossref",
+  "doi": "10.1016/j.jobe.2024.110592",
+  "title": "Impact of multiple factors on the use of an UAV-mounted infrared thermography method for detection of debonding in facade tiles",
+  "year": 2024,
+  "venue": "Journal of Building Engineering",
+  "authors": [
+   "Linyuan Ma",
+   "Bing Xiong",
+   "Qingzhao Kong",
+   "Xilin Lu"
+  ],
+  "abstract": "",
+  "citationCount": 9,
+  "citationSource": "Crossref",
+  "paperUrl": "https://doi.org/10.1016/j.jobe.2024.110592",
+  "type": "journal-article",
+  "id": "Xde013491",
+  "alreadyInLocalLibrary": false,
+  "score": {
+   "relevance": 52,
+   "platformCoverage": 25,
+   "objectCoverage": 25,
+   "subdirectionMatch": 52,
+   "dataScenarioFit": 50,
+   "learningValue": 76,
+   "evidenceQuality": 61,
+   "recency": 100,
+   "total": 48.7,
+   "penalties": [
+    "平台词仅部分命中（降权至 80%）"
+   ],
+   "breakdown": {
+    "相关性30%": 15.6,
+    "子方向匹配20%": 10.4,
+    "数据场景15%": 7.5,
+    "学习价值15%": 11.4,
+    "证据质量10%": 6.1,
+    "时效10%": 10.0
+   }
+  },
+  "accessStatus": "paywalled",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-31",
+  "doiUrl": "https://doi.org/10.1016/j.jobe.2024.110592",
+  "sourceDatabase": "Crossref",
+  "recommendationReason": "部分覆盖研究方向术语，可作为外围参考；近两年发表，可反映当前方法状态；被引 9（Crossref，注意跨年份不可直接比较）",
+  "oaStatus": "closed",
+  "isOa": false,
+  "oaPdfUrl": "",
+  "directionIds": [],
+  "directionMatch": []
+ }
+]

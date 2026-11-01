@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>/*__PAGE_TITLE__*/</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<a class="skip" href="#view">跳到主内容</a>
+<div class="app">
+  <aside class="side">
+    <div class="logo">
+      <div class="mark">/*__LOGO_MARK__*/</div>
+      <div>
+        <h1>/*__LOGO_T1__*/<br>/*__LOGO_T2__*/</h1>
+        <!-- V4.6.1：logo 下副标题（project.subtitle）整体移除。
+             "自建文献库 · N 个 PDF"这类统计行是元数据自述，侧栏下方已有篇数计数。 -->
+      </div>
+    </div>
+    <!-- 导航项由 config.json 的 views 数组生成（app.bind.js 注入），
+         这样模块增减、顺序调整都只改配置，不用碰骨架。
+         某个视图要显示右侧计数时，在 config 里给它 count:true。 -->
+    <nav class="nav" id="nav" aria-label="模块导航"></nav>
+    <div class="side-foot">
+      <!-- V4.6.1：数据来源行（project.dataSource）与生成时间行移除。
+           "库内 N 个 PDF…MDX 转换…生成于…"是施工过程记录，不是页面内容；
+           主题切换与篇数计数保留。 -->
+      <div class="row">
+        <span id="side-count"></span>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深色 / 浅色主题">深色</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <div>
+        <h2 id="viewTitle">总览仪表板</h2>
+        <!-- V4.6.1：页头副标题（#viewSub）整体移除。config.views[].desc 是写给
+             施工者的模块自述，页面定稿后就是一行没人读的灰字，不再渲染。 -->
+      </div>
+      <div class="spacer"></div>
+      <div class="search"><span>⌕</span><input id="globalSearch" type="search" aria-label="搜索文献" placeholder="搜索标题 / 作者 / 关键词 / 方法（回车定位到数据库）"></div>
+      <button class="btn" id="btnReset">重置筛选</button>
+    </header>
+    <section class="view" id="view" tabindex="-1" aria-label="内容区"></section>
+  </main>
+</div>
+
+<div class="drawer-mask" id="drawerMask" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="文献详情" aria-hidden="true" tabindex="-1">
+  <div class="dh" id="drawerHead"></div>
+  <div class="dbody" id="drawerBody"></div>
+</aside>
+<div class="tip" id="tip"></div>
+<div class="toast" id="toast"></div>
+
+<script>/*__DATA__*/</script>
+<script>/*__APP__*/</script>
+</body>
+</html>

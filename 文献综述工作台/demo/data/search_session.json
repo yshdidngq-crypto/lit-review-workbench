@@ -1,0 +1,239 @@
+{
+ "researchQuery": "uav multimodal image registration thermal visible | uav infrared visible image fusion building facade | thermal infrared building defect detection deep learning | facade crack detection unmanned aerial vehicle thermography",
+ "searchDate": "2026-10-31",
+ "sourcesAttempted": [
+  "Crossref",
+  "OpenAlex",
+  "arXiv"
+ ],
+ "sourcesSucceeded": [
+  "Crossref",
+  "OpenAlex",
+  "arXiv"
+ ],
+ "sourcesFailed": [],
+ "searchQueries": [
+  "uav multimodal image registration thermal visible",
+  "uav infrared visible image fusion building facade",
+  "thermal infrared building defect detection deep learning",
+  "facade crack detection unmanned aerial vehicle thermography",
+  "无人机 红外 可见光 图像配准",
+  "建筑 立面 裂缝 红外 检测"
+ ],
+ "candidateCount": 50,
+ "duplicateCount": 53,
+ "rawHitCount": 505,
+ "uniqueHitCount": 452,
+ "passedScreeningCount": 106,
+ "validatedCandidateCount": 50,
+ "recommendedCount": 29,
+ "localLibraryCount": 0,
+ "platformTerms": [
+  "uav",
+  "drone",
+  "aerial",
+  "unmanned"
+ ],
+ "objectTerms": [
+  "building",
+  "facade",
+  "concrete",
+  "bridge",
+  "masonry",
+  "crack",
+  "spall",
+  "delamination"
+ ],
+ "scenarioTerms": [
+  "building",
+  "facade",
+  "crack",
+  "defect",
+  "inspection"
+ ],
+ "modalityTerms": [
+  "infrared",
+  "thermal",
+  "visible",
+  "rgb"
+ ],
+ "selectionRules": [
+  "六维加权：相关性30/子方向20/数据场景15/学习价值15/证据质量10/时效10",
+  "与本地库 DOI 或标题+年份去重；已在本地库的不占新增推荐名额",
+  "单一来源不超过 70%，单一年份不超过 40%",
+  "候选不足时不补位，宁缺不造",
+  "平台词（uav drone aerial unmanned）完全未命中的条目降权至 45%，仅部分命中降权至 80%",
+  "研究对象词（building facade concrete bridge masonry crack spall delamination）完全未命中的条目硬性排除，单条理由记录在排除样例里"
+ ],
+ "coverageLimitations": [
+  "实际检索到的数据库：Crossref、OpenAlex、arXiv",
+  "arXiv 仅覆盖物理、计算机、数学等预印本，非本领域全覆盖",
+  "Semantic Scholar 未纳入（无密钥时限流），如需更全覆盖应申请 key",
+  "统计数据仅反映本次检索范围内的情况，不能代表整个领域"
+ ],
+ "rejectedSample": [
+  {
+   "id": "X65e1a3cc",
+   "title": "Investigating the Quality of UAV-Based Images for the Thermographic Analysis of Buildings",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X297d140b",
+   "title": "Application of Deep Learning and Unmanned Aerial Vehicle on Building Maintenance",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X79b54179",
+   "title": "Fusion-Based Damage Segmentation for Multimodal Building Façade Images from an End-to-End Perspective",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xe27c0a20",
+   "title": "AI-empowered digital twin modeling for high-precision building defect management integrating UAV and GeoBIM",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X60f52abc",
+   "title": "Building Façade Style Classification from UAV Imagery Using a Pareto-Optimized Deep Learning Network",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xcd1f7813",
+   "title": "Terrestrial and UAV based infrared thermography for mapping and investigating the humidity of historical buildings. The case of the Castle in Calvello.",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X36aac082",
+   "title": "IR Thermography from UAVs to Monitor Thermal Anomalies in the Envelopes of Traditional Wine Cellars: Field Test",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X1418b3e4",
+   "title": "Unified segmentation of surface and subsurface façade defects via infrared–visible fusion and temperature perturbation cloning",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X46e6b335",
+   "title": "UAV-Based Infrared Thermography for Qualitative and Quantitative Building Energy Assessment: A Review",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xc855ccf6",
+   "title": "Robotics and unmanned aerial vehicles for smart structural health monitoring: A systematic review",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xac3b3e00",
+   "title": "Building and Infrastructure Defect Detection and Visualization Using Drone and Deep Learning Technologies",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X377b6c87",
+   "title": "Using digital image processing and Unmanned Aerial Vehicle (UAV) for identifying ceramic cladding detachment in building facades",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X52602249",
+   "title": "UAV-Based Building Facade Cleaning Using Autonomous Windows Detection",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xe4114426",
+   "title": "Analysis of Methods for Monitoring the Condition of Building Facades Based on Visual Data",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xfa02d5e2",
+   "title": "3D THERMAL MAPPING OF BUILDING ROOFS BASED ON FUSION OF THERMAL AND VISIBLE POINT CLOUDS IN UAV IMAGERY",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X3d79e221",
+   "title": "Campus as a Lab for Computer Vision-based Heat Mapping Drones: A Case Study for Multiple Building Envelope Inspection using Unmanned Aerial Systems (UAS)",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xec5fc3ac",
+   "title": "HIGH-RESOLUTION MULTISENSOR INFRASTRUCTURE INSPECTION WITH UNMANNED AIRCRAFT SYSTEMS",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "Xbdd96a11",
+   "title": "Inspection of Floating Offshore Wind Turbines Using Multi-Rotor Unmanned Aerial Vehicles: Literature Review and Trends",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X1e94edd6",
+   "title": "Unmanned Aerial Vehicles (UAV) Integration with Digital Technologies toward Construction 4.0: A Systematic Literature Review",
+   "reason": "多样性上限或排序靠后"
+  },
+  {
+   "id": "X795a9194",
+   "title": "Emerging Dimensions of Unmanned Aerial Vehicle’s (UAV) 3D Reconstruction Modeling and Photogrammetry in Architecture and Construction Management",
+   "reason": "多样性上限或排序靠后"
+  }
+ ],
+ "excludedCount": 346,
+ "excludedSample": [
+  {
+   "title": "GCMR: General Cross-Modality Registration Framework for Visible and Infrared UAV Target Image Registration",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "General cross-modality registration framework for visible and infrared UAV target image registration",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Infrared and Visible Image Registration in UAV Inspection",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Retraction Note: Fusion algorithm of UAV infrared image and visible image registration",
+   "reason": "撤稿/关注声明/勘误类记录，不可作为研究依据"
+  },
+  {
+   "title": "Non-rigid image registration for visible color and thermal IR face",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "UAV-TIRVis: A Benchmark Dataset for Thermal–Visible Image Registration from Aerial Platforms",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Multimodal Image Registration in Image-Guided Prostate Brachytherapy",
+   "reason": "相关度 15 低于门槛 25（总分靠时效与证据分撑起，不代表内容相关）"
+  },
+  {
+   "title": "Retracted: Wireless Sensor System of UAV Infrared Image and Visible Light Image Registration Fusion",
+   "reason": "撤稿/关注声明/勘误类记录，不可作为研究依据"
+  },
+  {
+   "title": "A method of UAV visible light remote sensing image registration based on eigenvector technique",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "A UAV Thermal Infrared Image Super‐Resolution Method Based on Diffusion Models and Visible Image Texture Transfer",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Creation of Day-Night Visible-Thermal Paired Image Dataset via Image Registration",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Vista Morph - Unsupervised Image Registration of Visible-Thermal Facial Pairs",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "HRCP: Highly Robust Thermal Infrared and Visible Image Registration with Canny and Phase Congruence Detection",
+   "reason": "研究对象不符（未命中 building/facade/concrete/bridge），属跨领域迁移"
+  },
+  {
+   "title": "Wireless Sensor System of UAV Infrared Image and Visible Light Image Registration Fusion",
+   "reason": "撤稿/关注声明/勘误类记录，不可作为研究依据"
+  },
+  {
+   "title": "Robust multimodal medical image registration and statistical cerebrovascular segmentation",
+   "reason": "相关度 15 低于门槛 25（总分靠时效与证据分撑起，不代表内容相关）"
+  }
+ ]
+}

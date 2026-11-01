@@ -1,0 +1,35 @@
+/* ============================================================================
+ * math.css —— 公式排版的最小覆盖层（放在 katex.css 之后加载）
+ * ----------------------------------------------------------------------------
+ * KaTeX 默认按 1.21em 缩放、行间公式上下各留 1em 边距。放进 12px 的卡片正文里
+ * 会显得又大又空，把整页撑长一屏。这里只压这两处，其余交给 KaTeX 自己。
+ * ========================================================================== */
+
+.mth .katex { font-size: 1.04em; }
+
+/* 行间公式：居中、可横向滚动（长矩阵不撑破卡片） */
+.mth-d {
+  display: block;
+  margin: 7px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow-wrap: normal;
+}
+.mth-d .katex-display { margin: 0; }
+.mth-d .katex-display > .katex { white-space: nowrap; }
+
+/* 行内公式：不换行、不撑高行距 */
+.mth { white-space: nowrap; }
+
+/* 解析失败：原文照留，标红并给出原因（悬停可看） */
+.mth-err {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 11px;
+  color: var(--bad);
+  background: rgba(192, 57, 43, .07);
+  border-radius: 4px;
+  padding: 0 5px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+html[data-theme="dark"] .mth-err { background: rgba(224, 106, 92, .12); }
