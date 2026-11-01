@@ -238,6 +238,8 @@ def main():
         ("DIRECTIONS", "directions.json", []),
         ("EXTERNAL", "external.json", []),
         ("SESSION", "search_session.json", None),
+        # V4.10 查新：你的方案 vs 公开库里的已有工作。没有这份文件就没有这一页。
+        ("NOVELTY", "novelty.json", None),
         ("EXTERNAL_CANDIDATES", "external_candidates.json", []),
         # V4.0 工程思维实验室。没有这份文件的项目照旧能用，只是不显示这一页。
         ("LAB", "lab.json", None),
@@ -245,13 +247,21 @@ def main():
         p = os.path.join(proj, "data", fn)
         opt[key] = json.loads(read(p)) if os.path.isfile(p) else empty
 
-    # --- V4.9.1 本包不包含「工程实验室」
-    # 该模块仍在开发、生成耗额度较多，已从这一版拆出。
-    # 下面两个常量保留成固定值，是为了让后文的分支不必再改：
-    # 项目里放了 data/lab.json、config 写了 features.lab、命令行传了 --with-lab，
-    # 都不会出现这一页（assets/lab.js 已不在本包里）。
+    # --- V4.7 工程实验室改为「用户自选」
+    # 以前只要 data/lab.json 存在就自动长出这一页，等于替用户做了决定。
+    # 这一页是辅助学习模块（把方向拆成可执行模块、四级解释、失败案例），
+    # 仍在开发中、内容生成耗额度较多，对只想要一份文献工作台的人是纯负担。
+    # 所以改成显式开关：命令行 --with-lab，或 config.json 里 "features": {"lab": true}。
+    # 两者都没给 → 不启用；但要打印一行提示，让人知道"有这个东西、怎么开"。
+    # 本包不含工程实验室：lab.js / lab.json 都已移除，三种开关都不再起作用。
     lab_on = False
-    opt["LAB"] = None
+    if opt["LAB"] and not lab_on:
+        print("提示：检测到 data/lab.json，但未启用「工程实验室」。")
+        print("      该页是辅助学习模块，仍在开发中、生成耗额度较多，默认不启用。")
+        print("      需要它就加命令行参数 --with-lab，或在 config.json 写 "
+              "\"features\": {\"lab\": true}。")
+    if not lab_on:
+        opt["LAB"] = None
 
     # --- 资产 ---
     # 顺序：基础样式 → KaTeX 样式（含 base64 字体）→ 公式覆盖层。
@@ -280,11 +290,19 @@ def main():
         # 合并语句由下面的 MERGE 表在 src/views.js 之后插入。
         ("assets/views.base.js", os.path.join(ASSETS, "views.base.js")),
         ("src/views.js", os.path.join(proj, "src", "views.js")),
+        # lab.js 放在 views.js 之后：视图层若自己实现了 VIEWS.lab，会被这里接管；
+        # 放在 tabs 与 bind 之前：它要在 APP 就绪后才执行（APP 在 app.core.js 末尾导出）。
+        # V4.7：工程实验室是可选模块，只有用户明确选了才注入 —— 不选就不占体积。
+        ("assets/lab.js", os.path.join(ASSETS, "lab.js")),
+        # V4.11 通用标签底座：和视图同理，项目写过的覆盖它，没写的用它。
+        ("assets/tabs.base.js", os.path.join(ASSETS, "tabs.base.js")),
         ("src/tabs.js", os.path.join(proj, "src", "tabs.js")),
         ("assets/app.bind.js", os.path.join(ASSETS, "app.bind.js")),
         # math.js 最后：它只定义 afterRender 与 MutationObserver，等 APP 全都就绪再挂
         ("assets/math.js", os.path.join(ASSETS, "math.js")),
     ]
+    if not lab_on:
+        seq = [(label, path) for label, path in seq if path != os.path.join(ASSETS, "lab.js")]
     # V4.8：内容层从「必须写」改成「可选覆盖」。
     # 以前 src/views.js 缺一行就崩，等于逼着每个项目重写一千多行胶水代码；
     # 现在缺文件注入一段空声明，后面的合并语句会把通用骨架接上。
@@ -304,6 +322,12 @@ def main():
             "/* ==== 合并：项目标签覆盖通用标签 ==== */\n"
             "window.TABS = Object.assign({}, window.TABS_BASE || {}, window.TABS || {});",
     }
+    # V4.11：项目层也包进函数作用域。底座与项目层各自独立，同名顶层变量（topicName、
+    # REVIEW_FIELD、clip …）互不干扰；项目层照旧只写 window.VIEWS.xxx = function。
+    def _wrap(body):
+        return ("/* == IIFE 起点 == */\n(function () {\n'use strict';\n"
+                + body.rstrip("\n") + "\n\n})();\n/* == IIFE 终点 == */\n")
+
     blobs = []
     for label, path in seq:
         if os.path.isfile(path):
@@ -313,6 +337,9 @@ def main():
             print("提示：没有 %s —— 这一层使用通用骨架。" % os.path.relpath(path, proj))
         else:
             fail("缺少必需文件：%s" % path)
+        if path in (os.path.join(proj, "src", "views.js"), os.path.join(proj, "src", "tabs.js")) \
+                and os.path.isfile(path):
+            body = _wrap(body)
         blobs.append("/* ==== %s ==== */\n%s" % (label, body))
         if path in MERGE:
             blobs.append(MERGE[path])
@@ -330,11 +357,12 @@ def main():
         ("landscape", "LANDSCAPE",  "研究现状",   "◎"),
         ("explore",   "DIRECTIONS", "方向探索",   "⑂"),
         ("lab",       "LAB",        "工程实验室", "⚙"),
+        ("novelty",   "NOVELTY",    "查新",       "◈"),
         ("external",  "EXTERNAL",   "外部文献",   "⊕"),
         ("session",   "SESSION",    "检索记录",   "⌗"),
     ]
     # 内置视图的标准落位顺序（lab 紧跟方向探索，与 demo 一致）
-    NAV_ORDER = ["dash", "landscape", "map", "explore", "lab", "external",
+    NAV_ORDER = ["dash", "landscape", "map", "explore", "novelty", "lab", "external",
                  "db", "cmp", "decide", "prog", "session"]
     nav_added, nav_dropped = [], []
     if isinstance(cfg.get("views"), list):
@@ -376,7 +404,8 @@ def main():
 
     data = ("window.LIT_CONFIG=%s;\nwindow.LIT_PAPERS=%s;\nwindow.LIT_META=%s;\n"
             "window.LIT_LANDSCAPE=%s;\nwindow.LIT_DIRECTIONS=%s;\nwindow.LIT_EXTERNAL=%s;\n"
-            "window.LIT_SESSION=%s;\nwindow.LIT_EXTERNAL_CANDIDATES=%s;\nwindow.LIT_LAB=%s;") % (
+            "window.LIT_SESSION=%s;\nwindow.LIT_EXTERNAL_CANDIDATES=%s;\nwindow.LIT_LAB=%s;\n"
+            "window.LIT_NOVELTY=%s;") % (
         jd(cfg),
         jd(papers),
         jd(meta),
@@ -386,6 +415,7 @@ def main():
         jd(opt["SESSION"]),
         jd(opt["EXTERNAL_CANDIDATES"]),
         jd(opt["LAB"]),
+        jd(opt["NOVELTY"]),
     )
     # V4.9：图表配色盘。config.layout.palette 优先；瑞士主题给一套十色印刷盘。
     pal = (cfg.get("layout") or {}).get("palette")
@@ -429,9 +459,8 @@ def main():
     def _ids(text, pat):
         return set(re.findall(pat, text))
 
-    base_src = read(os.path.join(ASSETS, "views.base.js"))
-    base_v = _ids(base_src, r"BASE\.(\w+)\s*=")
-    base_t = _ids(base_src, r"TABS\.(\w+)\s*=")
+    base_v = _ids(read(os.path.join(ASSETS, "views.base.js")), r"VIEWS_BASE\.(\w+)\s*=")
+    base_t = _ids(read(os.path.join(ASSETS, "tabs.base.js")), r"TABS_BASE\.(\w+)\s*=")
     # 工程实验室是独立资产：它自己实现 VIEWS.lab，也算"不由项目提供"。
     if lab_on:
         base_v = base_v | _ids(read(os.path.join(ASSETS, "lab.js")), r"VIEWS\.(\w+)\s*=")

@@ -1,15 +1,20 @@
 /* ============================================================================
- * tabs.js —— 详情页标签（需要按项目改写，结构固定）
+ * tabs.base.js —— 通用详情标签（锁死文件，一个字都不要改）
  * ----------------------------------------------------------------------------
- * 每个标签是一个函数 (paper, cfg) => html 字符串，挂在 window.TABS 上。
- * 标签的 id 必须与 config.json 的 detailTabs 一一对应。
- * 同样只能用 ui.js 的构件，不要自己写卡片外壳（抽屉内直接用 card 函数）。
+ * 九个标签：understand / project / eval / guide / notes / raw / extAbs /
+ * extWhere / extDir。项目在 src/tabs.js 里覆盖同名标签即可。
  * ========================================================================== */
+/* == IIFE 起点 == */
+/* 整段包进函数作用域：底座里的 topicName / statusTag / clip … 这些顶层小工具
+   不会和项目 src/views.js 里的同名变量撞车（同学那份就这么崩过）。 */
+(function () {
+'use strict';
 
-window.TABS = window.TABS || {};
+
+window.TABS_BASE = window.TABS_BASE || {};
 
 /* ---------------------------------------------------------------- 三分钟理解 */
-window.TABS.understand = function (p) {
+window.TABS_BASE.understand = function (p) {
   const blocks = [
     ['出发点', p.overview || ''],
     ['提出问题', p.method || ''],
@@ -27,7 +32,7 @@ window.TABS.understand = function (p) {
 };
 
 /* ---------------------------------------------------------------- 与本项目的关系 */
-window.TABS.project = function (p, cfg) {
+window.TABS_BASE.project = function (p, cfg) {
   const bd = p.relevanceBreakdown || {};
   const keys = Object.keys(bd);
   return card('项目耦合度拆解', '总分 ' + Math.round(p.relevance || 0) + ' / 100',
@@ -54,7 +59,7 @@ window.TABS.project = function (p, cfg) {
 };
 
 /* ---------------------------------------------------------------- 科研评价 */
-window.TABS.eval = function (p) {
+window.TABS_BASE.eval = function (p) {
   const rows = [
     ['数据集', (p.datasets || []).length ? esc(p.datasets.join('、')) : '未报告'],
     ['评价指标', p.metrics ? esc(p.metrics) : '未报告'],
@@ -70,7 +75,7 @@ window.TABS.eval = function (p) {
 };
 
 /* ---------------------------------------------------------------- 学习指导 */
-window.TABS.guide = function (p) {
+window.TABS_BASE.guide = function (p) {
   const concepts = [];
   if ((p.dl || '').indexOf('深度') >= 0) concepts.push('卷积网络/Transformer 基础');
   if ((p.stages || []).indexOf('S2') >= 0 || (p.stages || []).indexOf('S3') >= 0) concepts.push('特征匹配与误匹配剔除');
@@ -93,11 +98,15 @@ window.TABS.guide = function (p) {
 };
 
 /* ---------------------------------------------------------------- 我的笔记 */
-window.TABS.notes = function (p, cfg) {
+window.TABS_BASE.notes = function (p, cfg) {
   const st = S.status[p.id] || '未阅读';
   const noteText = S.notes[p.id] || '';
 
-  const statusBtns = (cfg.statuses || []).map(s =>
+  /* 项目没配 statuses 时不能一个字都不给：回落到 app.core 的默认 6 档，
+     否则「阅读状态」是一块空白，用户以为这功能坏了。 */
+  const sts = (cfg.statuses && cfg.statuses.length) ? cfg.statuses
+    : ((window.APP && window.APP.STATUS) || []);
+  const statusBtns = sts.map(s =>
     `<button class="btn sm${st === s ? ' on' : ''}" data-act="status-set" data-val="${p.id}" data-status="${esc(s)}">${esc(s)}</button>`
   ).join('');
 
@@ -117,7 +126,7 @@ window.TABS.notes = function (p, cfg) {
 };
 
 /* ---------------------------------------------------------------- 原文摘要 */
-window.TABS.raw = function (p) {
+window.TABS_BASE.raw = function (p) {
   const flags = [];
   if (p.flags && p.flags.bodySuspect) flags.push('正文与标题疑似错配');
   if (p.flags && p.flags.titleEnSuspect) flags.push('英文标题存疑');
@@ -150,7 +159,7 @@ window.TABS.raw = function (p) {
  * ========================================================================== */
 
 /* ---------------------------------------------------------------- 摘要原文 */
-window.TABS.extAbs = function (e) {
+window.TABS_BASE.extAbs = function (e) {
   const a = (e.abstract || '').trim();
   return a
     ? card('摘要原文', '来自检索接口返回，未做改写或翻译',
@@ -160,7 +169,7 @@ window.TABS.extAbs = function (e) {
 };
 
 /* ---------------------------------------------------------------- 出处与获取 */
-window.TABS.extWhere = function (e) {
+window.TABS_BASE.extWhere = function (e) {
   const doiUrl = e.doiUrl || (e.doi ? 'https://doi.org/' + e.doi : '');
   const oa = e.openAccessPdfUrl || '';
   const link = (u, t) => u
@@ -181,7 +190,7 @@ window.TABS.extWhere = function (e) {
 };
 
 /* ---------------------------------------------------------------- 关联方向 */
-window.TABS.extDir = function (e) {
+window.TABS_BASE.extDir = function (e) {
   const ids = e.directionIds || [];
   const m = {};
   (e.directionMatch || []).forEach(x => { m[x.directionId] = x; });
@@ -204,3 +213,6 @@ window.TABS.extDir = function (e) {
 function accessLabel(s) {
   return s === 'open_access' ? '开放获取' : s === 'paywalled' ? '需订阅' : '状态未知';
 }
+
+})();
+/* == IIFE 终点 == */

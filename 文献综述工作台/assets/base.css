@@ -114,6 +114,8 @@ a{color:var(--accent);text-decoration:none}
   display:inline-flex;align-items:center;gap:4px;font-size:11px;line-height:1.5;
   padding:1px 7px;border-radius:20px;border:1px solid transparent;white-space:nowrap
 }
+/* V4.9.2：状态标签改成 <button>，把浏览器给按钮的默认外观清掉，只留 .tag 的样子 */
+button.tag{font:inherit;cursor:pointer;margin:0;-webkit-appearance:none;appearance:none}
 .t-topic{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 24%,transparent)}
 .t-topic.j{background:var(--line2);color:var(--muted);border-color:var(--line)}
 .t-dl{background:color-mix(in srgb,var(--violet) 10%,transparent);color:var(--violet);border-color:color-mix(in srgb,var(--violet) 22%,transparent)}

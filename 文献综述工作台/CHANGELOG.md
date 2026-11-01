@@ -6,16 +6,84 @@
 
 ---
 
-## V4.9.1 — 拆出工程实验室（本包）
+## V4.11.0
 
-- **为什么**：实验室模块仍在开发、生成耗额度较多，对只想拿一份文献工作台的人是负担。
-- **做了什么**：删掉 `assets/lab.js`、`references/08_科研工程实验室.md`、`examples/lab_*`、
-  `demo/data/lab.json`；`build.py` 里 `lab_on` 恒为 False，`--with-lab` / `features.lab` /
-  `data/lab.json` 都不会再让这一页出现。
-- **没动什么**：视图层、门禁、样式、数据契约、瑞士风主题（仍是 `config.layout.theme` 的可选项，
-  默认不启用，默认外观和以前完全一致）。
-- **对校验的影响**：实验室相关的 5 项检查因为没有数据，恒显示 `○ 未提供（跳过）`，
-  总数 24 项，不影响「通过」判定。
+**通用骨架换成原 demo 的那一版，并拆出 `assets/tabs.base.js`。**
+
+为什么改：V4.8 的 `assets/views.base.js` 是我另写的一版简装通用骨架，跟 demo 的
+手写版**版式完全不同**。项目只要没写 `src/views.js`（或者只写了 dash 一页），其余
+页面就落到那版简装骨架上 —— 用户看到的是「功能丢了、排版全错、跟演示站不是同一个
+东西」。同学实测反馈就是这么来的。
+
+现在：
+
+- `assets/views.base.js` = 原 demo 手写视图层（实测零项目专有词，可以安全当底座），
+  十一页：dash / landscape / map / explore / novelty / external / db / cmp / decide /
+  prog / session；
+- `assets/tabs.base.js` = 原 demo 手写详情标签，九个：understand / project / eval /
+  guide / notes / raw / extAbs / extWhere / extDir；
+- 两个底座与项目层**各自包进 IIFE**：过去项目是从 demo 抄 `views.js` 的，顶层
+  `const REVIEW_FIELD` / `function topicName` 会和底座重名，直接 `Identifier already
+  declared` 崩掉；隔离之后各写各的，互不干扰；
+- `accessLabel()` 上移到 `assets/ui.js`：它原来只定义在 tabs.js 里，视图层靠「同一个
+  全局作用域」才借得到，隔离后就借不到了（会报 `accessLabel is not defined`）；
+- `demo/` 不再保留 `src/views.js` 与 `src/tabs.js`：内容已整体提升为底座，留着等于
+  双份注入。demo 构建日志现在写「项目自己写 0 个，通用骨架 12 个」。
+
+升级后：任何项目重新 `python scripts/build.py <项目目录>` 一次，页面就和 demo 一样了。
+
+---
+
+## V4.10.1
+
+**查新支持一句话方向，并加了「近期」口径。**
+
+- 新参数 `--topic "一句话方向"`（可重复），不想写 200 字方案时用这个；`--draft` 仍然是主路径。
+  两者都没有时直接报错，不再默认读某个文件。
+- 新参数 `--recent N`（默认 2 年）：每个候选标 `recent`，页面三个数下面各写一句「近 N 年内 M 篇」，
+  并新增 `recent` 字段统计。排序改成「风险档 → 分 → 年份」，最近的工作会浮到前面。
+  —— 查新的问题本来就是"最近有没有人做过"，一把 2018 的论文和上月刚发的排在一起没有意义。
+- 页面底部新增「换一个方向重查」卡片：给一行可直接复制的命令，省得回去翻文档。
+- 实测（同一份数据、一句话方向 vs 长方案）：一句话方向反而更准 ——
+  4 篇可能撞车，其中 3 篇在近 2 年内，头名 83 分 `Aligned Radiometric RGB-Thermal Fusion for UAV Facade Anomaly Screening`。
+
+## V4.10
+
+**新增：查新（`scripts/novelty.py` + 侧栏「查新」页）。** 由同学的真实需求触发：
+"我已经写了一部分，帮我看看别人是不是做过，别让我白做"。
+
+- 输入是一段方案（≥200 字），输出 `data/novelty.json`：最像的 40–60 篇，三档风险。
+- 只查 **Crossref + arXiv**。OpenAlex 与 Semantic Scholar 在本机返回 429（带 `mailto` 也一样），
+  所以不依赖；两家都不可用时退出码 2，并明确说"这次没有查出任何东西，不能当成没有同类工作"。
+  —— 只查一家注册机构会系统性漏掉一整类论文，DOI 核验那次（V4.8.3）已经踩过。
+- 排序用 **IDF 加权覆盖率**：100 条结果里 60 条都含 `uav`，那 `uav` 就不算证据。
+  第一版纯计数，结果一堆并列 50 分、排序等于没排，实测后改成加权。
+- 页面上**一句结论都不写**：分数只是机械规则，撞不撞车得人读摘要。5 条 caveat 原样印在页脚
+  （中文库不在内、命中率取决于方案写得像不像摘要、分数不是判断、"暂未找到"不等于"有创新"）。
+- `build.py` 增 `NOVELTY` 数据源与「查新」导航（位置在「方向探索」之后、「工程实验室」之前）；
+  `app.core.js` 导出 `NOVELTY`；`views.base.js` 加 `BASE.novelty`（三个 KPI + 表格 + 边界说明）。
+- 实测：demo（8 个聚焦词，91 条去重）→ 1 撞车 / 8 部分 / 51 关系不大；
+  他的 174 篇项目（6 个聚焦词，110 条去重）→ 3 撞车 / 25 部分 / 32 关系不大，侧栏 11 格，
+  validate 24 项通过、smoke 全部通过。
+- **不新增校验条目**：查新页是可选模块，validate 仍 30 / 24 项。
+
+## V4.9.2
+
+**修一个「点了没反应」的真 bug：阅读状态改不了。**
+
+症状：读完一篇，回到列表还是「未阅读」。不是你没点对，是页面上根本没有能改的地方。
+
+三个成因一起修：
+
+1. `config.json` 没配 `statuses` 时，详情页「阅读状态」按钮组是**空的**——`tabs.js` 只读 `cfg.statuses`，
+   没配就是零个按钮。现在回落到默认 6 档。
+2. 数据库页的状态只显示文字，不能点。现在那一格是按钮，点一下进下一档
+   （`statusTag()` 改成 `<button class="tag" data-act="status-next">`）。
+3. 抽屉里点完状态不重画，看着像没变。`status-set` / `status-next` 现在会刷新当前详情标签。
+
+门禁：第 9 项「数据段」新增 `statuses` 检查，缺失或为空直接 ✗。**不新增检查条目，总数仍 30。**
+
+## V4.9.1
 
 ## V4.9
 

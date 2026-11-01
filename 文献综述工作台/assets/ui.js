@@ -332,4 +332,12 @@ function mountPins() {
 window.AFTER_RENDER = window.AFTER_RENDER || [];
 window.AFTER_RENDER.push(mountPins);
 
+/* V4.11：外部文献的访问状态文案。views 与 tabs 两边都要用，放到锁死层统一提供 ——
+   以前它只定义在 tabs.js 里，视图层靠&quot;同处一个全局作用域&quot;才借得到；
+   两边各自包进 IIFE 之后就借不到了（同学的项目直接报 accessLabel is not defined）。 */
+function accessLabel(s) {
+  return s === 'open_access' ? '开放获取' : s === 'paywalled' ? '需订阅' : '状态未知';
+}
+window.accessLabel = accessLabel;
+
 /* 以上为全部可用构件。视图层不得直接写 <div class="card"> / <table> / <svg>。 */

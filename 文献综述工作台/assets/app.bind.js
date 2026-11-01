@@ -72,7 +72,17 @@
       A.S.star[el.dataset.val] = !A.S.star[el.dataset.val]; A.saveState(); A.render(); return;
     }
     if (act === 'status-set') {
-      A.S.status[el.dataset.val] = el.dataset.status; A.saveState(); A.render(); return;
+      A.S.status[el.dataset.val] = el.dataset.status;
+      A.saveState(); A.render(); refreshDrawerTab(); return;
+    }
+    /* 表格里那一列状态是可以点的：点一下切到下一档。为什么不是下拉框？
+       读一篇论文最多点两三下，下拉框要点两次还得对准，反而更慢。 */
+    if (act === 'status-next') {
+      const list = (A.STATUS && A.STATUS.length) ? A.STATUS : ['未阅读'];
+      const cur = A.statusOf(el.dataset.val);
+      const i = list.indexOf(cur);
+      A.S.status[el.dataset.val] = list[(i + 1) % list.length];
+      A.saveState(); A.render(); refreshDrawerTab(); return;
     }
     if (act === 'export-note') { A.exportNote(el.dataset.val); return; }
 

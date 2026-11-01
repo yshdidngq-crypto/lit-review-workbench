@@ -28,6 +28,7 @@ const SESSION = window.LIT_SESSION || null;     // 检索会话记录
 /* V4.0 科研工程思维实验室。用户产生的状态（选择、笔记、掌握度、重要性调整）
    一律只进 S 并落 localStorage，绝不写回 lab.json —— 重新生成内容时不能覆盖人的判断。 */
 const LAB = window.LIT_LAB || null;
+const NOVELTY = window.LIT_NOVELTY || null;   // V4.10 查新：方案 vs 已有工作
 
 const TOPICS = {};          // id -> 名称
 const TOPIC_META = {};      // id -> 完整定义
@@ -547,6 +548,7 @@ window.APP = {
   S, CFG, P, M, BY, TOPICS, TOPIC_META, STAGES, STAGE_NAME, STATUS, BANDS, DL, DL_COLOR, EXTRA,
   TOPIC_ORDER, topicColorOf,
   LAND, DIRS, DIR_BY, EXT, EXT_BY, EXT_CAND, SESSION, LAB,
+  NOVELTY,
   bandOf, bandColor, statusOf, filtered, sortPapers, prio, go, render, toast, applyPreset,
   toggleIn, openDrawer, closeDrawer, showTab, saveState, exportCSV, exportNote, activeFilterCount,
   applyTheme, loadStatePublic: loadState,

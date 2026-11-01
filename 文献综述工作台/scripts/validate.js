@@ -208,7 +208,10 @@ const META = extractJSON(html, 'window.LIT_META=');
 
 if (!CFG) bad('数据段', 'window.LIT_CONFIG 无法解析', '用 build.py 生成，不要手工编辑 data 段');
 else if (!CFG.project || !CFG.topics || !CFG.views) bad('数据段', 'LIT_CONFIG 缺少 project/topics/views', '见 examples/config.example.json');
-else ok('数据段', 'LIT_CONFIG 正常（主题 ' + CFG.topics.length + ' 类，模块 ' + CFG.views.length + ' 个）');
+/* V4.9.2：没配 statuses 时详情页的「阅读状态」一个按钮都不出现，用户会以为
+   自己点了没反应。这不是可选字段，缺了就是功能静默失效，必须报出来。 */
+else if (!Array.isArray(CFG.statuses) || !CFG.statuses.length) bad('数据段', 'LIT_CONFIG 没有配 statuses（阅读状态列表）', '在 config.json 里加一段 "statuses": ["未阅读", "正在阅读", "已初读", "已精读"]；不配的话读了也改不了状态');
+else ok('数据段', 'LIT_CONFIG 正常（主题 ' + CFG.topics.length + ' 类，模块 ' + CFG.views.length + ' 个，阅读状态 ' + CFG.statuses.length + ' 档）');
 
 if (!PAPERS) bad('数据段', 'window.LIT_PAPERS 无法解析', '用 build.py 生成');
 else if (!Array.isArray(PAPERS) || !PAPERS.length) bad('数据段', 'LIT_PAPERS 为空', '检查 data/papers.json');

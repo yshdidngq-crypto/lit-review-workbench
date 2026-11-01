@@ -1,0 +1,1339 @@
+{
+  "generated": "2026-11-01",
+  "draft": {
+    "chars": 416,
+    "head": "# 拟做的部分（demo 用） 现有配准工作多用内点残差或少数配对图上的主观目视来判断成败。残差小并不等于几何正确：窗户阵列会把整层平移错位一整格，残差依然很小。缺少一个不依赖真值、又能判别结构合理性的评价口径，导致不同方法的报数无法互信。 我打算做的是：在 UAV 采集的红外与可见光影像上，先把建筑立面的层线与窗格阵",
+    "file": "_draft_demo2.md"
+  },
+  "focus": [
+    "registration",
+    "rgb-t",
+    "thermal",
+    "facade",
+    "geometry",
+    "residual",
+    "quality",
+    "uav"
+  ],
+  "queries": [
+    "registration rgb-t thermal facade",
+    "registration thermal geometry",
+    "registration rgb-t thermal facade geometry residual quality uav"
+  ],
+  "window": {
+    "since": "2021-01-01",
+    "years": 5,
+    "recentYears": 2
+  },
+  "sources": [
+    {
+      "name": "Crossref",
+      "ok": true,
+      "hits": 60,
+      "error": ""
+    },
+    {
+      "name": "arXiv",
+      "ok": true,
+      "hits": 60,
+      "error": ""
+    }
+  ],
+  "counts": {
+    "overlap": 1,
+    "partial": 8,
+    "clear": 51
+  },
+  "candidates": [
+    {
+      "source": "arXiv",
+      "id": "arxiv:2609.12521v1",
+      "title": "Aligned Radiometric RGB-Thermal Fusion for UAV Facade Anomaly Screening",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2609.12521v1",
+      "abstract": "Unmanned aerial vehicle facade inspection can combine red, green, and blue (RGB) imagery with thermal measurements to screen surface and subsurface anomalies. However, geometric discrepancies between the sensors and thermal image rendering can obscure spatial correspondence and weak temperature contrasts. This article presents a sensor-level pipeline comprising per-sensor correction, RGB-to-thermal registration, common-support cropping, and signed local contrast encoding of 16-bit radiometric measurements. The encoding preserves the distinction between locally hotter and colder regions and sup",
+      "score": 79,
+      "hitTerms": [
+        "registration",
+        "thermal",
+        "facade",
+        "residual",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade",
+        "uav"
+      ],
+      "risk": "overlap",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2306.10364v1",
+      "title": "Residual Spatial Fusion Network for RGB-Thermal Semantic Segmentation",
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2306.10364v1",
+      "abstract": "Semantic segmentation plays an important role in widespread applications such as autonomous driving and robotic sensing. Traditional methods mostly use RGB images which are heavily affected by lighting conditions, \\eg, darkness. Recent studies show thermal images are robust to the night scenario as a compensating modality for segmentation. However, existing works either simply fuse RGB-Thermal (RGB-T) images or adopt the encoder with the same structure for both the RGB stream and the thermal stream, which neglects the modality difference in segmentation under varying lighting conditions. There",
+      "score": 54,
+      "hitTerms": [
+        "rgb-t",
+        "thermal",
+        "residual"
+      ],
+      "titleHits": [
+        "thermal",
+        "residual"
+      ],
+      "risk": "partial",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.3390/s26144385",
+      "title": "Integrating Multi-Temporal UAV Thermal Imaging and 3D Path Planning for Facade Thermal Defect Diagnosis in Old Residential Buildings",
+      "year": 2026,
+      "venue": "Sensors",
+      "doi": "10.3390/s26144385",
+      "url": "https://doi.org/10.3390/s26144385",
+      "abstract": " Facade thermal defect diagnosis is a critical prerequisite for energy-efficiency retrofitting of old residential buildings. However, conventional infrared thermography is easily affected by environmental conditions and occupant behavior, making it difficult to distinguish persistent thermal defects from transient anomalies. To address this challenge, this study proposes an integrated diagnostic framework for old residential buildings in Wuhan, China, combining unmanned aerial vehicle (UAV) infrared thermography, multi-temporal data acquisition, 3D flight-path planning, thermal anomaly recogni",
+      "score": 53,
+      "hitTerms": [
+        "thermal",
+        "facade",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade",
+        "uav"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.18280/ts.430134",
+      "title": "Multimodal Image Registration and Intelligent Diagnosis of Building Facade Debonding Defects via Visible–Infrared Thermal Fusion",
+      "year": 2026,
+      "venue": "Traitement du Signal",
+      "doi": "10.18280/ts.430134",
+      "url": "https://doi.org/10.18280/ts.430134",
+      "abstract": "",
+      "score": 49,
+      "hitTerms": [
+        "registration",
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal",
+        "facade"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:1811.10048v2",
+      "title": "Joint Facade Registration and Segmentation for Urban Localization",
+      "year": 2018,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/1811.10048v2",
+      "abstract": "This paper presents an efficient approach for solving jointly facade registration and semantic segmentation. Progress in facade detection and recognition enable good initialization for the registration of a reference facade to a newly acquired target image. We propose here to rely on semantic segmentation to improve the accuracy of that initial registration. Simultaneously we aim to improve the quality of the semantic segmentation through the registration. These two problems are jointly solved in a Expectation-Maximization framework. We especially introduce a bayesian model that use prior sema",
+      "score": 49,
+      "hitTerms": [
+        "registration",
+        "facade",
+        "quality"
+      ],
+      "titleHits": [
+        "registration",
+        "facade"
+      ],
+      "risk": "partial",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.3390/geomatics6030057",
+      "title": "Comparative Evaluation of Histogram Equalization-Based Preprocessing for UAV Thermal–RGB Orthophoto Registration",
+      "year": 2026,
+      "venue": "Geomatics",
+      "doi": "10.3390/geomatics6030057",
+      "url": "https://doi.org/10.3390/geomatics6030057",
+      "abstract": " Accurate registration of UAV-derived thermal infrared orthophotos and RGB orthophotos is essential for multi-sensor geospatial analysis, but it remains challenging because thermal imagery generally has lower spatial resolution, weaker texture, and less distinct structural information than RGB imagery. This study comparatively evaluated five histogram equalization methods—histogram equalization (HE), contrast-limited adaptive histogram equalization (CLAHE), brightness-preserving bi-histogram equalization (BBHE), dualistic sub-image histogram equalization (DSIHE), and minimum mean brightness er",
+      "score": 47,
+      "hitTerms": [
+        "registration",
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal",
+        "uav"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.7467631",
+      "title": "Plume-Shift Fire-Source Field Guidance for Smoke Retrieval in UAV RGB-Thermal Early Fire Detection",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.2139/ssrn.7467631",
+      "url": "https://doi.org/10.2139/ssrn.7467631",
+      "abstract": " In UAV-based early fire detection, smoke often appears before open flames and obscures the visible scene: RGB detectors lose targets under dense smoke, while thermal infrared (TIR) detectors are easily misled by thermal distractors. Existing RGB-T fusion methods mostly exploit thermal cues from the IR input to verify flames in the RGB input; no work uses fire evidence to retrieve missed smoke in the reverse direction. This paper proposes fire-source-field guided smoke retrieval (FieldGuide): a learnable fire-source field is cross-correlated with a plume-shift kernel to produce a spatial guida",
+      "score": 47,
+      "hitTerms": [
+        "rgb-t",
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.32894/kujss.2026.172069.1330",
+      "title": "Semantic-Guided Diffusion for UAV Maritime Target Detection: Fusing RGB -Thermal Registration with Contextual Feature Modulation",
+      "year": 2026,
+      "venue": "Kirkuk Journal of Science",
+      "doi": "10.32894/kujss.2026.172069.1330",
+      "url": "https://doi.org/10.32894/kujss.2026.172069.1330",
+      "abstract": "",
+      "score": 47,
+      "hitTerms": [
+        "registration",
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal",
+        "uav"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1007/s44295-026-00103-9",
+      "title": "Fusion-oriented registration of UAV-acquired RGB–infrared images for maritime target detection and segmentation",
+      "year": 2026,
+      "venue": "Intelligent Marine Technology and Systems",
+      "doi": "10.1007/s44295-026-00103-9",
+      "url": "https://doi.org/10.1007/s44295-026-00103-9",
+      "abstract": " Abstract \n                   This study introduces a novel target-aware registration framework for infrared and visible images acquired by unmanned aerial vehicles (UAVs), designed to improve feature-matching accuracy and robustness. The proposed method begins with image segmentation to remove irrelevant background regions, thereby retaining only the target objects that require registration. This step significantly suppresses background interference during the registration process. The segmentation stage is further guided by bounding boxes generated from a target-detection model, improving th",
+      "score": 46,
+      "hitTerms": [
+        "registration",
+        "quality",
+        "uav"
+      ],
+      "titleHits": [
+        "registration",
+        "uav"
+      ],
+      "risk": "partial",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.21203/rs.3.rs-10893690/v1",
+      "title": "A generalized similarity metric based on Sobolev space geometry for deformable image registration in image-guided radiotherapy",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.21203/rs.3.rs-10893690/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-10893690/v1",
+      "abstract": " Abstract \n                 \n                   Background \n                  : Deformable image registration is an essential technique in image-guided adaptive radiotherapy. It provides voxelwise estimates of the anatomical deformations from medical image volumes acquired at different time points. However, the accuracy of the estimated motion strongly depends on image contrast, presence of noise and artifacts, and the overall image quality.\n                   Purpose \n                  : This study introduces a novel similarity metric based on the geometry of Sobolev spaces. The proposed metr",
+      "score": 44,
+      "hitTerms": [
+        "registration",
+        "geometry",
+        "quality"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2512.09407v2",
+      "title": "Geometry-to-Image Synthesis-Driven Generative Point Cloud Registration",
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2512.09407v2",
+      "abstract": "In this paper, we propose a novel 3D registration paradigm, Generative Point Cloud Registration, which bridges advanced 2D generative models with 3D matching tasks to enhance registration performance. Our key idea is to generate cross-view consistent image pairs that are well-aligned with the source and target point clouds, enabling geometry-color feature fusion to facilitate robust matching. To ensure high-quality matching, the generated image pair should feature both 2D-3D geometric consistency and cross-view texture consistency. To this end, we introduce DepthMatch-ControlNet and LiDARMatch",
+      "score": 44,
+      "hitTerms": [
+        "registration",
+        "geometry",
+        "quality"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.3390/aerospace11100817",
+      "title": "Thermal Infrared Orthophoto Geometry Correction Using RGB Orthophoto for Unmanned Aerial Vehicle",
+      "year": 2024,
+      "venue": "Aerospace",
+      "doi": "10.3390/aerospace11100817",
+      "url": "https://doi.org/10.3390/aerospace11100817",
+      "abstract": " The geometric correction of thermal infrared (TIR) orthophotos generated by unmanned aerial vehicles (UAVs) presents significant challenges due to low resolution and the difficulty of identifying ground control points (GCPs). This study addresses the limitations of real-time kinematic (RTK) UAV data acquisition, such as network instability and the inability to detect GCPs in TIR images, by proposing a method that utilizes RGB orthophotos as a reference for geometric correction. The accelerated-KAZE (AKAZE) method was applied to extract feature points between RGB and TIR orthophotos, integrati",
+      "score": 42,
+      "hitTerms": [
+        "thermal",
+        "geometry",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2603.17492v1",
+      "title": "UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2603.17492v1",
+      "abstract": "Detecting Unmanned Aerial Vehicles (UAVs) in low-altitude environments is essential for perception and defense systems but remains highly challenging due to complex backgrounds, camouflage, and multimodal interference. In real-world scenarios, UAVs are frequently visually blended with surrounding structures such as buildings, vegetation, and power lines, resulting in low contrast, weak boundaries, and strong confusion with cluttered background textures. Existing UAV detection datasets, though diverse, are not specifically designed to capture these camouflage and complex-background challenges, ",
+      "score": 39,
+      "hitTerms": [
+        "rgb-t",
+        "uav"
+      ],
+      "titleHits": [
+        "rgb-t",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.neucom.2024.127913",
+      "title": "Residual spatial fusion network for RGB-thermal semantic segmentation",
+      "year": 2024,
+      "venue": "Neurocomputing",
+      "doi": "10.1016/j.neucom.2024.127913",
+      "url": "https://doi.org/10.1016/j.neucom.2024.127913",
+      "abstract": "",
+      "score": 39,
+      "hitTerms": [
+        "thermal",
+        "residual"
+      ],
+      "titleHits": [
+        "thermal",
+        "residual"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.4132054",
+      "title": "Automatic Pavement Defect Classification Using Rgb-Thermal Image Sensor Based on Hierarchical Residual Attention Network",
+      "year": 2022,
+      "venue": "SSRN Electronic Journal",
+      "doi": "10.2139/ssrn.4132054",
+      "url": "https://doi.org/10.2139/ssrn.4132054",
+      "abstract": "",
+      "score": 39,
+      "hitTerms": [
+        "thermal",
+        "residual"
+      ],
+      "titleHits": [
+        "thermal",
+        "residual"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2605.04675v1",
+      "title": "Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2605.04675v1",
+      "abstract": "Visible-thermal (RGB-T) object detection is a crucial technology for applications such as autonomous driving, where multimodal fusion enhances performance in challenging conditions like low light. However, the security of RGB-T detectors, particularly in the physical world, has been largely overlooked. This paper proposes a novel approach to RGB-T physical attacks using adversarial clothing with a non-overlapping RGB-T pattern (NORP). To simulate full-view (0$^{\\circ}$--360$^{\\circ}$) RGB-T attacks, we construct 3D RGB-T models for human and adversarial clothing. NORP is a new adversarial patt",
+      "score": 36,
+      "hitTerms": [
+        "rgb-t",
+        "thermal"
+      ],
+      "titleHits": [
+        "rgb-t",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.23919/ccc58697.2023.10241056",
+      "title": "RGB-T Cross-Modal Image Registration Fusing Global Structure and Local Mutual Information",
+      "year": 2023,
+      "venue": "2023 42nd Chinese Control Conference (CCC)",
+      "doi": "10.23919/ccc58697.2023.10241056",
+      "url": "https://doi.org/10.23919/ccc58697.2023.10241056",
+      "abstract": "",
+      "score": 36,
+      "hitTerms": [
+        "registration",
+        "rgb-t"
+      ],
+      "titleHits": [
+        "registration",
+        "rgb-t"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2210.04266v1",
+      "title": "Does Thermal Really Always Matter for RGB-T Salient Object Detection?",
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2210.04266v1",
+      "abstract": "In recent years, RGB-T salient object detection (SOD) has attracted continuous attention, which makes it possible to identify salient objects in environments such as low light by introducing thermal image. However, most of the existing RGB-T SOD models focus on how to perform cross-modality feature fusion, ignoring whether thermal image is really always matter in SOD task. Starting from the definition and nature of this task, this paper rethinks the connotation of thermal modality, and proposes a network named TNet to solve the RGB-T SOD task. In this paper, we introduce a global illumination ",
+      "score": 36,
+      "hitTerms": [
+        "rgb-t",
+        "thermal"
+      ],
+      "titleHits": [
+        "rgb-t",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.eswa.2026.134137",
+      "title": "Thermal-gradient-guided RGB–thermal fusion for intelligent facade hollow diagnosis",
+      "year": 2027,
+      "venue": "Expert Systems with Applications",
+      "doi": "10.1016/j.eswa.2026.134137",
+      "url": "https://doi.org/10.1016/j.eswa.2026.134137",
+      "abstract": "",
+      "score": 35,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.33644/2313-6679-4-2025-5",
+      "title": "POINT THERMAL TRANSMITTANCE COEFFICIENTS OF MODERN “THERMAL” ANCHORS IN EXTERNAL WALL STRUCTURES WITH FACADE THERMAL INSULATION AND PLASTER FINISHING (ETICS)",
+      "year": 2026,
+      "venue": "Science and construction",
+      "doi": "10.33644/2313-6679-4-2025-5",
+      "url": "https://doi.org/10.33644/2313-6679-4-2025-5",
+      "abstract": "",
+      "score": 35,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2605.25396v1",
+      "title": "Subspace-Guided Semantic and Topological Invariant Registration for Annotation-Free Ultrasound Plane Quality Control",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2605.25396v1",
+      "abstract": "Reliable quality control (QC) of ultrasound images is essential for both real-time acquisition guidance and retrospective clinical audit, yet existing approaches rely heavily on per-plane annotations, or employ pseudo-labeling prone to systematic bias under spatial deformations inherent in clinical acquisition. We present STRIQ, a registration-driven framework that recasts annotation-free US plane quality control as a subspace-guided consistency measurement problem. Specifically, STRIQ introduces a Latent Registration Aligner (LRA) to establish hierarchical feature space correspondences betwee",
+      "score": 35,
+      "hitTerms": [
+        "registration",
+        "quality"
+      ],
+      "titleHits": [
+        "registration",
+        "quality"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.applthermaleng.2026.130047",
+      "title": "Temperature adaptive and angular selective sawtooth radiative regulator for all-season facade thermal management",
+      "year": 2026,
+      "venue": "Applied Thermal Engineering",
+      "doi": "10.1016/j.applthermaleng.2026.130047",
+      "url": "https://doi.org/10.1016/j.applthermaleng.2026.130047",
+      "abstract": "",
+      "score": 35,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.5690328",
+      "title": "Temperature-Adaptive and Angular Selective Sawtooth Radiative Regulator for All-Season Facade Thermal Management",
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5690328",
+      "url": "https://doi.org/10.2139/ssrn.5690328",
+      "abstract": "",
+      "score": 35,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.20944/preprints202307.0931.v1",
+      "title": "Adaptive Facade Using SMP Actuator for Enhancing Thermal Performance in Buildings",
+      "year": 2023,
+      "venue": "",
+      "doi": "10.20944/preprints202307.0931.v1",
+      "url": "https://doi.org/10.20944/preprints202307.0931.v1",
+      "abstract": " Shape Memory Polymer (SMP) actuators are smart materials that adapt and switch shape in response to environmental conditions, allowing controlled and dynamic building systems. The integrated SMP strip enabled the adaptive facade shading system to operate independently and with flexibility under certain thermoresponsive conditions to regulate building performance. This study aims to improve adaptive façade performance in a hot-humid climate by determining optimal thermal activation factors for the shape memory polymer. This was achieved by comprehensively examining and analysing the impact of ",
+      "score": 35,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "thermal",
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.buildenv.2026.115469",
+      "title": "A novel UAV-based RGB-LiDAR fusion framework for rapid building geometry acquisition and energy modelling",
+      "year": 2027,
+      "venue": "Building and Environment",
+      "doi": "10.1016/j.buildenv.2026.115469",
+      "url": "https://doi.org/10.1016/j.buildenv.2026.115469",
+      "abstract": "",
+      "score": 33,
+      "hitTerms": [
+        "geometry",
+        "uav"
+      ],
+      "titleHits": [
+        "geometry",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.compag.2026.112519",
+      "title": "RGB–multispectral image registration and generative spectral reconstruction for UAV-based jujube orchard monitoring",
+      "year": 2026,
+      "venue": "Computers and Electronics in Agriculture",
+      "doi": "10.1016/j.compag.2026.112519",
+      "url": "https://doi.org/10.1016/j.compag.2026.112519",
+      "abstract": "",
+      "score": 32,
+      "hitTerms": [
+        "registration",
+        "uav"
+      ],
+      "titleHits": [
+        "registration",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.7346847",
+      "title": "Thermal-defect-informed building energy modelling for targeted retrofits using UAV RGB-infrared 3D thermography",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.2139/ssrn.7346847",
+      "url": "https://doi.org/10.2139/ssrn.7346847",
+      "abstract": " Conventional energy retrofits for existing buildings heavily rely on code-specified homogeneous thermal parameters and empirical whole-building evaluation, which fail to capture spatially heterogeneous envelope thermal defects and thus lead to inaccurate energy prediction and unreasonable retrofit scheduling. This study proposes a thermal-defect-driven energy assessment framework integrating unmanned aerial vehicle (UAV) RGB-infrared thermography (RGB-IRT) 3D thermal modelling and calibrated building energy modelling (BEM). A high-precision multimodal 3D thermal model is established with a te",
+      "score": 32,
+      "hitTerms": [
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.3390/rs17152593",
+      "title": "A UAV-Based Multi-Scenario RGB-Thermal Dataset and Fusion Model for Enhanced Forest Fire Detection",
+      "year": 2025,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs17152593",
+      "url": "https://doi.org/10.3390/rs17152593",
+      "abstract": " UAVs are essential for forest fire detection due to vast forest areas and inaccessibility of high-risk zones, enabling rapid long-range inspection and detailed close-range surveillance. However, aerial photography faces challenges like multi-scale target recognition and complex scenario adaptation (e.g., deformation, occlusion, lighting variations). RGB-Thermal fusion methods integrate visible-light texture and thermal infrared temperature features effectively, but current approaches are constrained by limited datasets and insufficient exploitation of cross-modal complementary information, ig",
+      "score": 32,
+      "hitTerms": [
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.34257/ljervol25is3pg57",
+      "title": "Real-Time Object Detection in Disaster Zones and UAV Thermal-RGB Imagery",
+      "year": 2025,
+      "venue": "Global Journal of Researches in Engineering",
+      "doi": "10.34257/ljervol25is3pg57",
+      "url": "https://doi.org/10.34257/ljervol25is3pg57",
+      "abstract": " This research presents an innovative real-time disaster detection framework that  everages YOLOv11, a deep learning model, to enhance situational awareness and decision-making in emergency response operations. Unlike traditional UAV-based systems that often suffer reduced accuracy in low-visibility or complex environments, the proposed approach fuses RGB and thermal imagery from quadcopter drones with the advanced feature extraction and high-speed inference capabilities of YOLOv11. Integrated into an edge computing platform, the system supports low-latency, real-time object detection, making ",
+      "score": 32,
+      "hitTerms": [
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2512.12199v1",
+      "title": "Thermal RGB Fusion for Micro-UAV Wildfire Perimeter Tracking with Minimal Comms",
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2512.12199v1",
+      "abstract": "This study introduces a lightweight perimeter tracking method designed for micro UAV teams operating over wildfire environments under limited bandwidth conditions. Thermal image frames generate coarse hot region masks through adaptive thresholding and morphological refinement, while RGB frames contribute edge cues and suppress texture related false detections using gradient based filtering. A rule level merging strategy selects boundary candidates and simplifies them via the Ramer Douglas Peucker algorithm. The system incorporates periodic beacons and an inertial feedback loop that maintains t",
+      "score": 32,
+      "hitTerms": [
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/aero53065.2022.9843611",
+      "title": "Reducing Object Detection Uncertainty from RGB and Thermal Data for UAV Outdoor Surveillance",
+      "year": 2022,
+      "venue": "2022 IEEE Aerospace Conference (AERO)",
+      "doi": "10.1109/aero53065.2022.9843611",
+      "url": "https://doi.org/10.1109/aero53065.2022.9843611",
+      "abstract": "",
+      "score": 32,
+      "hitTerms": [
+        "thermal",
+        "uav"
+      ],
+      "titleHits": [
+        "thermal",
+        "uav"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2311.14746v1",
+      "title": "All in One: RGB, RGB-D, and RGB-T Salient Object Detection",
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2311.14746v1",
+      "abstract": "Salient object detection (SOD) aims to identify the most attractive objects within an image. Depending on the type of data being detected, SOD can be categorized into various forms, including RGB, RGB-D (Depth), RGB-T (Thermal) and light field SOD. Previous researches have focused on saliency detection with individual data type. If the RGB-D SOD model is forced to detect RGB-T data it will perform poorly. We propose an innovative model framework that provides a unified solution for the salient object detection task of three types of data (RGB, RGB-D, and RGB-T). The three types of data can be ",
+      "score": 31,
+      "hitTerms": [
+        "rgb-t",
+        "thermal"
+      ],
+      "titleHits": [
+        "rgb-t"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.24132/csrn.2026-e29",
+      "title": "Geometry-Aware C-Arm Camera Parameterization for Medical 2D-3D Registration",
+      "year": 2026,
+      "venue": "Computer Science Research Notes",
+      "doi": "10.24132/csrn.2026-e29",
+      "url": "https://doi.org/10.24132/csrn.2026-e29",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.7544214",
+      "title": "Iterative Geometry-Guided Graph Reweighting for Robust Point Cloud Registration",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.2139/ssrn.7544214",
+      "url": "https://doi.org/10.2139/ssrn.7544214",
+      "abstract": " Point cloud registration (PCR), which aims to estimate the rigid transformation aligning two point clouds, remains a fundamental problem in 3D computer vision. Graph-based methods have recently shown strong robustness by exploiting consistency among correspondences. However, they typically enumerate dense substructures—maximal cliques, 3-cliques, or k-truss subgraphs—within a fixed compatibility graph, making it difficult to balance efficient hypothesis generation with comprehensive exploration of alternative correspondence structures.We propose an iterative framework that alternates between ",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.7606740",
+      "title": "Iterative Geometry-Guided Graph Reweighting for Robust Point Cloud Registration",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.2139/ssrn.7606740",
+      "url": "https://doi.org/10.2139/ssrn.7606740",
+      "abstract": " Point cloud registration (PCR), which aims to estimate the rigid transformation aligning two point clouds, remains a fundamental problem in 3D computer vision. Graph-based methods have recently shown strong robustness by exploiting consistency among correspondences. However, they typically enumerate dense substructures—maximal cliques, 3-cliques, or k-truss subgraphs—within a fixed compatibility graph, making it difficult to balance efficient hypothesis generation with comprehensive exploration of alternative correspondence structures. We propose an iterative framework that alternates between",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.62717/3083-7057-2026-1-011",
+      "title": "OPTIMIZATION OF CPU HEAT SINK GEOMETRY FOR EFFECTIVE THERMAL MANAGEMENT",
+      "year": 2026,
+      "venue": "Human and Space",
+      "doi": "10.62717/3083-7057-2026-1-011",
+      "url": "https://doi.org/10.62717/3083-7057-2026-1-011",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/eibdct69742.2026.11566978",
+      "title": "Point Cloud Registration Based on Geometry Biased Attention*",
+      "year": 2026,
+      "venue": "2026 5th International Conference on Electronic Information Engineering, Big Data and Computer Technology (EIBDCT)",
+      "doi": "10.1109/eibdct69742.2026.11566978",
+      "url": "https://doi.org/10.1109/eibdct69742.2026.11566978",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1039/d6nh00145a/v2/review1",
+      "title": "Review for \"Geometry scaling of thermal boundary resistance in plasmonic nanostructures\"",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.1039/d6nh00145a/v2/review1",
+      "url": "https://doi.org/10.1039/d6nh00145a/v2/review1",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1039/d6nh00145a/v1/review1",
+      "title": "Review for \"Geometry scaling of thermal boundary resistance in plasmonic nanostructures\"",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.1039/d6nh00145a/v1/review1",
+      "url": "https://doi.org/10.1039/d6nh00145a/v1/review1",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1039/d6nh00145a/v1/review2",
+      "title": "Review for \"Geometry scaling of thermal boundary resistance in plasmonic nanostructures\"",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.1039/d6nh00145a/v1/review2",
+      "url": "https://doi.org/10.1039/d6nh00145a/v1/review2",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1039/d6nh00145a/v2/review2",
+      "title": "Review for \"Geometry scaling of thermal boundary resistance in plasmonic nanostructures\"",
+      "year": 2026,
+      "venue": "",
+      "doi": "10.1039/d6nh00145a/v2/review2",
+      "url": "https://doi.org/10.1039/d6nh00145a/v2/review2",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/tgrs.2026.3664764",
+      "title": "Robust Pixel-by-Pixel Multimodal Remote Sensing Image Registration Using Geometry Preserving Dense Registration Network",
+      "year": 2026,
+      "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+      "doi": "10.1109/tgrs.2026.3664764",
+      "url": "https://doi.org/10.1109/tgrs.2026.3664764",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.18485/mongeometrija.2026.10.ch30",
+      "title": "The Influence of Façade Geometry on Improving Indoor Thermal Comfort",
+      "year": 2026,
+      "venue": "International Scientific Conference on Geometry and Graphics moNGeometrija",
+      "doi": "10.18485/mongeometrija.2026.10.ch30",
+      "url": "https://doi.org/10.18485/mongeometrija.2026.10.ch30",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1145/3731715.3733379",
+      "title": "MaGo-I2P: Image-to-Point Cloud Registration with Mamba and Geometry Recovery",
+      "year": 2025,
+      "venue": "Proceedings of the 2025 International Conference on Multimedia Retrieval",
+      "doi": "10.1145/3731715.3733379",
+      "url": "https://doi.org/10.1145/3731715.3733379",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.5845964",
+      "title": "Tsallis’ q-Statistics and Thermal Geometry",
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5845964",
+      "url": "https://doi.org/10.2139/ssrn.5845964",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.applthermaleng.2023.121973",
+      "title": "Effect of fin geometry on the thermal performance of a phase change material heatsink",
+      "year": 2024,
+      "venue": "Applied Thermal Engineering",
+      "doi": "10.1016/j.applthermaleng.2023.121973",
+      "url": "https://doi.org/10.1016/j.applthermaleng.2023.121973",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.26593/risa.v8i02.7868.127-143",
+      "title": "OPTIMALISASI DOUBLE SKIN FACADE TERHADAP KENYAMAN TERMAL PADA BANGUNAN PANJANG",
+      "year": 2024,
+      "venue": "Riset Arsitektur (RISA)",
+      "doi": "10.26593/risa.v8i02.7868.127-143",
+      "url": "https://doi.org/10.26593/risa.v8i02.7868.127-143",
+      "abstract": " Abstract - The issue of limited urban land in Indonesia is increasing day by day, with the problem of high population growth and increasing housing needs, creating a lot of slum housing which does not pay attention to comfort and health. With this problem, the city also produces many smaller building widths and land compared to the previous one, especially in the city center and its surroundings. Nowadays buildings around urban areas in Jakarta are smaller but elongated on the sides , which uses a flat roof to add to the city view, with an elongated shape of the building that does not have op",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "facade"
+      ],
+      "titleHits": [
+        "facade"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.4579697",
+      "title": "Effect of Geometry-Aware Sampling on the Performance of the Coherent Point Drift Registration Method",
+      "year": 2023,
+      "venue": "",
+      "doi": "10.2139/ssrn.4579697",
+      "url": "https://doi.org/10.2139/ssrn.4579697",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/jbhi.2023.3270199",
+      "title": "Geometry-Consistent Adversarial Registration Model for Unsupervised Multi-Modal Medical Image Registration",
+      "year": 2023,
+      "venue": "IEEE Journal of Biomedical and Health Informatics",
+      "doi": "10.1109/jbhi.2023.3270199",
+      "url": "https://doi.org/10.1109/jbhi.2023.3270199",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.2139/ssrn.3993059",
+      "title": "Case Study on Thermal Comfort with and Without Fill Using Thermal Environment Analysis for Building Envelopes with Thermally Complex Geometry",
+      "year": 2021,
+      "venue": "",
+      "doi": "10.2139/ssrn.3993059",
+      "url": "https://doi.org/10.2139/ssrn.3993059",
+      "abstract": " In recent years, there has been an increase in buildings with curved surfaces. From a design point of view, they are not complex, but from an environmental engineering point of view, they are thermally complex. Computational fluid dynamics (CFD) is a tool for analysis in environmental engineering, but it requires advanced analysis techniques, and the analysis load is high, making it impractical for use in design. A coupled analysis method using the two-dimensional heat flow calculation tool Hygrabe2D, ES, and CFD was developed. Using this method, an environmental analysis of a building with f",
+      "score": 30,
+      "hitTerms": [
+        "thermal",
+        "geometry"
+      ],
+      "titleHits": [
+        "thermal",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.5244/c.35.337",
+      "title": "Planar Shape Based Registration for Multi-modal Geometry",
+      "year": 2021,
+      "venue": "Proceedings of the British Machine Vision Conference 2021",
+      "doi": "10.5244/c.35.337",
+      "url": "https://doi.org/10.5244/c.35.337",
+      "abstract": "",
+      "score": 30,
+      "hitTerms": [
+        "registration",
+        "geometry"
+      ],
+      "titleHits": [
+        "registration",
+        "geometry"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1007/978-3-032-29558-3_10",
+      "title": "RAM-LightGlue: Radiometric Alignment for Robust RGB–Thermal Image Registration in Hazy Conditions",
+      "year": 2026,
+      "venue": "Lecture Notes in Networks and Systems",
+      "doi": "10.1007/978-3-032-29558-3_10",
+      "url": "https://doi.org/10.1007/978-3-032-29558-3_10",
+      "abstract": "",
+      "score": 29,
+      "hitTerms": [
+        "registration",
+        "thermal"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/access.2026.3735517",
+      "title": "XGMR: Detector-Free RGB-Thermal Image Registration With Geometric Inductive Bias",
+      "year": 2026,
+      "venue": "IEEE Access",
+      "doi": "10.1109/access.2026.3735517",
+      "url": "https://doi.org/10.1109/access.2026.3735517",
+      "abstract": "",
+      "score": 29,
+      "hitTerms": [
+        "registration",
+        "thermal"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2511.22997v1",
+      "title": "MrGS: Multi-modal Radiance Fields with 3D Gaussian Splatting for RGB-Thermal Novel View Synthesis",
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2511.22997v1",
+      "abstract": "Recent advances in Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) have achieved considerable performance in RGB scene reconstruction. However, multi-modal rendering that incorporates thermal infrared imagery remains largely underexplored. Existing approaches tend to neglect distinctive thermal characteristics, such as heat conduction and the Lambertian property. In this study, we introduce MrGS, a multi-modal radiance field based on 3DGS that simultaneously reconstructs both RGB and thermal 3D scenes. Specifically, MrGS derives RGB- and thermal-related information from a singl",
+      "score": 29,
+      "hitTerms": [
+        "rgb-t",
+        "thermal"
+      ],
+      "titleHits": [
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/tip.2024.3501077",
+      "title": "RegSeg: An End-to-End Network for Multimodal RGB-Thermal Registration and Semantic Segmentation",
+      "year": 2024,
+      "venue": "IEEE Transactions on Image Processing",
+      "doi": "10.1109/tip.2024.3501077",
+      "url": "https://doi.org/10.1109/tip.2024.3501077",
+      "abstract": "",
+      "score": 29,
+      "hitTerms": [
+        "registration",
+        "thermal"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1109/icct56141.2022.10072971",
+      "title": "Infrared-RGB Image Registration for Power Thermal Fault Detection Based on Gradient Hash Matching",
+      "year": 2022,
+      "venue": "2022 IEEE 22nd International Conference on Communication Technology (ICCT)",
+      "doi": "10.1109/icct56141.2022.10072971",
+      "url": "https://doi.org/10.1109/icct56141.2022.10072971",
+      "abstract": "",
+      "score": 29,
+      "hitTerms": [
+        "registration",
+        "thermal"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1016/j.bbe.2021.07.002",
+      "title": "Non-contact breathing monitoring by integrating RGB and thermal imaging via RGB-thermal image registration",
+      "year": 2021,
+      "venue": "Biocybernetics and Biomedical Engineering",
+      "doi": "10.1016/j.bbe.2021.07.002",
+      "url": "https://doi.org/10.1016/j.bbe.2021.07.002",
+      "abstract": "",
+      "score": 29,
+      "hitTerms": [
+        "registration",
+        "thermal"
+      ],
+      "titleHits": [
+        "registration",
+        "thermal"
+      ],
+      "risk": "clear",
+      "recent": false
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.1038/s40494-025-01603-3",
+      "title": "A new method for XRF and RGB image registration",
+      "year": 2025,
+      "venue": "npj Heritage Science",
+      "doi": "10.1038/s40494-025-01603-3",
+      "url": "https://doi.org/10.1038/s40494-025-01603-3",
+      "abstract": " Abstract \n                   In recent years, the use of X-ray fluorescence (XRF) imaging has grown in the field of cultural heritage. This type of imaging can be complimentary to multi/hyperspectral imaging systems, providing the conservators with information that is useful to identify materials on paintings or manuscripts. Whereas hyperspectral imaging can provide information at the material molecular level, XRF provides information on the elements present. To extract the full information from the XRF element map (which is obtained after fitting the spectra), one should first register them ",
+      "score": 28,
+      "hitTerms": [
+        "registration",
+        "quality"
+      ],
+      "titleHits": [
+        "registration"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "Crossref",
+      "id": "doi:10.21203/rs.3.rs-4645570/v1",
+      "title": "A New Method for XRF and RGB Image Registration",
+      "year": 2024,
+      "venue": "",
+      "doi": "10.21203/rs.3.rs-4645570/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-4645570/v1",
+      "abstract": " Abstract \n         In recent years, the use of X-Ray Fluorescence (XRF) imaging has grown in the field of cultural heritage. This type of imaging can be complimentary to multi/hyperspectral imaging systems, providing the conservators with information that is useful to identify materials on paintings or manuscripts. Whereas hyperspectral imaging can provide information at the material molecular level, XRF provides elemental information on the material. To extract the full information from the XRF images it can be of great help to first register them to a reference image, generally a traditiona",
+      "score": 28,
+      "hitTerms": [
+        "registration",
+        "quality"
+      ],
+      "titleHits": [
+        "registration"
+      ],
+      "risk": "clear",
+      "recent": true
+    },
+    {
+      "source": "arXiv",
+      "id": "arxiv:2101.01035v2",
+      "title": "HyperMorph: Amortized Hyperparameter Learning for Image Registration",
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2101.01035v2",
+      "abstract": "We present HyperMorph, a learning-based strategy for deformable image registration that removes the need to tune important registration hyperparameters during training. Classical registration methods solve an optimization problem to find a set of spatial correspondences between two images, while learning-based methods leverage a training dataset to learn a function that generates these correspondences. The quality of the results for both types of techniques depends greatly on the choice of hyperparameters. Unfortunately, hyperparameter tuning is time-consuming and typically involves training m",
+      "score": 28,
+      "hitTerms": [
+        "registration",
+        "quality"
+      ],
+      "titleHits": [
+        "registration"
+      ],
+      "risk": "clear",
+      "recent": false
+    }
+  ],
+  "coverage": {
+    "rawHits": 120,
+    "unique": 91,
+    "kept": 60
+  },
+  "caveat": [
+    "只查了 Crossref 与 arXiv 这两个公开库。中文库（知网、万方、维普）不在内 —— 中文写的工作这里查不到。",
+    "命中多少取决于你那段方案写得像不像一篇论文的摘要；写得越具体，结果越可用。",
+    "风险分是三档机械规则（标题与摘要里的关键词覆盖率），不是判断。它只能把最像的几篇摆到你面前，",
+    "要不要算撞车，得你自己读过摘要之后决定。",
+    "「暂未找到同类」只等于「这两个库里没有」，不等于「你有创新」。"
+  ],
+  "recent": {
+    "overlap": 1,
+    "partial": 6,
+    "clear": 38
+  }
+}
