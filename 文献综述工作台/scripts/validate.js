@@ -389,7 +389,17 @@ else {
   if (mis.length) bad('双向关联', '共 ' + mis.length + ' 处不对称：' + mis.slice(0, 4).join('；'), '重跑 scripts/link.py');
   else {
     const linked = EXTERNAL.filter(e => (e.directionIds || []).length).length;
-    ok('双向关联', '方向↔文献两侧一致（' + linked + ' / ' + EXTERNAL.length + ' 篇已挂方向）');
+    if (linked === 0) {
+      /* V4.12.3：两侧都非空、却一篇都没挂方向——这不是"一致"，是没做关联。
+         但"外部文献要不要挂方向"是项目自己的选择，不该因为没挂就判不能交付，
+         所以只提醒，并在交付说明里要求写清"未关联"。 */
+      warn('双向关联', '外部文献 ' + EXTERNAL.length + ' 篇、方向 ' + DIRECTIONS.length
+        + ' 个，但没有一篇挂了方向（0 / ' + EXTERNAL.length
+        + '）——「外部文献」页按方向筛选会筛不出东西',
+        '想补就跑 scripts/link.py；确实不打算关联，就在交付说明里写一句"外部文献未与方向关联"，别当成已经关联了');
+    } else {
+      ok('双向关联', '方向↔文献两侧一致（' + linked + ' / ' + EXTERNAL.length + ' 篇已挂方向）');
+    }
   }
 }
 
@@ -785,7 +795,11 @@ fails.forEach(o => {
   if (o.fix) console.log('      修复：' + o.fix);
 });
 console.log(line);
-const totalChecks = oks.length + skips.length;
+/* V4.12.3：只提醒、不算通过的检查（如双向关联 0 关联）也要计入总数，
+   否则一条 ✓ 变 ! 会让"共 N 项"凭空少一项，看起来像少查了。 */
+const _okNames = oks.map(o => o.name);
+const warnOnly = warns.filter(w => _okNames.indexOf(w.name) < 0).length;
+const totalChecks = oks.length + skips.length + warnOnly;
 if (fails.length) {
   console.log('结果：不通过（' + fails.length + ' 项未过，' + warns.length + ' 项提醒）');
   console.log('要求：修到 0 项未过再交付。\n');
@@ -794,7 +808,7 @@ if (fails.length) {
   console.log('结果：通过（' + oks.length + ' 项检查通过'
     + (skips.length ? '、' + skips.length + ' 项无数据未查' : '')
     + (warns.length ? '，' + warns.length + ' 项提醒' : '') + '）'
-    + (skips.length ? '　共 ' + totalChecks + ' 项' : ''));
+    + ((skips.length || warnOnly) ? '　共 ' + totalChecks + ' 项' : ''));
   if (skips.length) {
     console.log('说明：○ 那 ' + skips.length + ' 项是因为 data/ 里没有对应数据，本次没查，'
       + '不代表通过 —— 补齐数据后再跑一次才算数。');

@@ -155,11 +155,20 @@ html = html.replace('</body>', probeFile + probe + '</body>');
 const tmp = path.join(os.tmpdir(), '_note_export_' + process.pid + '.html');
 fs.writeFileSync(tmp, html, 'utf8');
 
-const dom = execFileSync(BROWSER, [
-  '--headless=new', '--disable-gpu', '--no-sandbox',
-  '--allow-file-access-from-files', '--virtual-time-budget=8000',
-  '--dump-dom', 'file:///' + path.resolve(tmp).replace(/\\/g, '/'),
-], { encoding: 'utf8', maxBuffer: 200 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] });
+/* V4.12.3：浏览器起不来 = 没测，不是通过。统一退 2，不把 Node 堆栈甩给使用者。 */
+let dom;
+try {
+  dom = execFileSync(BROWSER, [
+    '--headless=new', '--disable-gpu', '--no-sandbox',
+    '--allow-file-access-from-files', '--virtual-time-budget=8000',
+    '--dump-dom', 'file:///' + path.resolve(tmp).replace(/\\/g, '/'),
+  ], { encoding: 'utf8', maxBuffer: 200 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] });
+} catch (e) {
+  console.error('浏览器未能启动，笔记导出未测试（退出码 2）。');
+  console.error('  装 Edge/Chrome，或设 EDGE_PATH 指向浏览器可执行文件后重跑。');
+  try { fs.unlinkSync(tmp); } catch (_) {}
+  process.exit(2);
+}
 
 let R = null;
 const m = dom.match(/<pre id="__result">([\s\S]*?)<\/pre>/);

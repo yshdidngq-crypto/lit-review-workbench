@@ -5,7 +5,7 @@ description: 把一批科研论文（论文数据文件夹、精读 HTML/CSV/Mar
 
 # 文献综述工作台 · 施工规范
 
-> 版本 4.12.2（无实验室版）
+> 版本 4.12.3（无实验室版）
 >
 > 本包**不含「工程实验室」**：`assets/lab.js`、`references/08_科研工程实验室.md`、
 > `demo/data/lab.json`、`examples/lab_*` 都不在包里，`build.py` 也不再认
