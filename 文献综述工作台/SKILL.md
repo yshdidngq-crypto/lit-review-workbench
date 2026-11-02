@@ -5,11 +5,11 @@ description: 把一批科研论文（论文数据文件夹、精读 HTML/CSV/Mar
 
 # 文献综述工作台 · 施工规范
 
-> 版本 4.12.3（无实验室版）
+> 版本 4.12.4（无实验室版）
 >
 > 本包**不含「工程实验室」**：`assets/lab.js`、`references/08_科研工程实验室.md`、
-> `demo/data/lab.json`、`examples/lab_*` 都不在包里，`build.py` 也不再认
-> `--with-lab` 与 `config.features.lab`。
+> `demo/data/lab.json`、`examples/lab_canny`、`examples/lab_uav3d` 都不在包里，
+> `build.py` 也不再认 `--with-lab` 与 `config.features.lab`（这两个开关在本包里无效）。
 >
 > 下文如果出现 lab 相关字样，是原版遗留的说明性文字，忽略即可。
 > 所有视觉一致性由 `assets/` 里的锁死文件保证，不由你的措辞保证。
@@ -426,13 +426,12 @@ node scripts/test_click.js "<项目目录>/dist/xxx_文献工作台.html" year
 | 7 | **不得编造 DOI、卷期页码、被引数** | 编出来的标识符会让下游引用链整体失效 |
 | 8 | **不得把摘要级判断冒充全文分析** | 外部文献只读过元数据，就不能写"该方法在此数据集上更优" |
 | 9 | **不得删除用户笔记、阅读状态与收藏** | 这是用户的劳动成果，任何"清理""重置"操作都必须先确认 |
-| 10 | **`lab.json` 里每条判断都要标证据等级**（`paper`/`inference`/`doc`/`ai`/`spec`），不标视为 `ai` | 把推测当论文结论，是这个模块最严重的错误 |
 | 11 | **不得因「用户看过页面」而升级掌握度**，只能由用户自己点 | 浏览行为不是掌握证据，自动升级等于教人自我欺骗 |
 | 12 | **不得在没有已知三维点时给出 P3P/EPnP 作为可行方案** | 这类方法要 3D–2D 对应；只有 2D–2D 时正确路径是先求相对位姿 |
 | 13 | **不写旁白式文案**：不写「可以把这里理解…」「点击这里可…」「这一层说明…」「供反思是否成立」这类替读者思考的话 | 页面是工具不是讲义；旁白一多，读者会以为数据本身说明不了问题 |
 | 14 | **编号必须给对照**：凡是用 S1/S2…、M1/M2…、A1/A2… 这类编号当行头列头，必须在**同一屏最上方**列出「编号 → 全名」，且全名不许截断 | 读者看到 S7 不知道是什么，整张表等于没有标签；对照压在图注或表尾等于没有 |
 | 15 | **不把某个项目的叙述写进模板**：「阶段」「基础」「专业」「方案设计/逆向复盘」这类标签属于具体项目，必须由数据自带（`profile.facts`），模板里一个都不许出现 | 这个 Skill 是给不同项目、不同人复用的；模板写死一种叙述，别人用起来就像借了别人的本子 |
-| 16 | **公式一律写 LaTeX，让页面排版**：正文与 `lab.json` 里写 `$…$`（行内）或 `$$…$$`（独立成行），不许用 `x'、σ²、√、∑` 这类字符硬拼，也不许把 TeX 源码当正文摊在页面上 | 硬拼的公式在换字体、换分辨率时错位；裸露的 `\frac` 读者根本看不懂，等于把推导删了 |
+| 16 | **公式一律写 LaTeX，让页面排版**：正文与数据文件里写 `$…$`（行内）或 `$$…$$`（独立成行），不许用 `x'、σ²、√、∑` 这类字符硬拼，也不许把 TeX 源码当正文摊在页面上 | 硬拼的公式在换字体、换分辨率时错位；裸露的 `\frac` 读者根本看不懂，等于把推导删了 |
 | 17 | **编号对照必须吸附跟随**：S1/S2… 的对照块要贴住视口顶部（`position:sticky`）并可拖动，不能只"放在最上面" | 置顶只解决第一屏；读到表格中段时对照已滚出画面，读者要么往回翻、要么放弃理解 |
 | 18 | **读者写的东西必须能导出**：笔记不能只存在 `localStorage`，必须有一键导出成单篇文件（题录 + 笔记）的入口 | 换电脑、清缓存、重装浏览器都会让 localStorage 归零；那是读者自己的劳动成果，丢了没法补（铁律 9 只管"不许删"，这条管"必须能拿走"） |
 | 19 | **施工期元数据不上页面**：页头副标题（`views[].desc`）、logo 副标题（`subtitle`）、侧栏数据来源行（`dataSource`）、生成时间，骨架已删除对应节点，config 里写了也不显示；视图层不得用"卡片副题 / 图下说明 / 步骤口径灰字"把它们变相带回来 | 这几类文字是写给施工者或系统自己看的（模块自述、检索口径、构建时间），读者视角全是噪音；V4.6.1 实测每张卡下面都会长出一行没人读的灰字。`validate.js` 的结构基线与文案腔调两道门禁都会拦 |
@@ -519,11 +518,6 @@ node scripts/test_click.js "<项目目录>/dist/xxx_文献工作台.html" year
   「阶段：贴图已完成」在别人的项目里直接是错的 —— 那就不能出现在 `assets/` 里。
 - **做法**：需要展示项目自身的叙述时，一律走 `profile.facts: [{k, v}]`，
   标签与内容都由数据给；不填就整排不显示，**不要给默认标签兜底**。
-- **同一条也管得住层级名**：六层的层名在 `data/lab.json` 的 `layers` 里，
-  `lab.js` 只留「第 N 层」这种中性兜底，不许写「现实问题与研究目标」这类具体说法。
-- **迁移**：老数据里的 `projectStage` / `mode` / `userKnowledgeLevel` 用
-  `python scripts/migrate_facts.py data/lab.json` 转成 `facts`，别手工一条条改。
-
 补充两条软约束，同样重要：
 
 - **不编数据。** 没有的信息写"未报告"。宁可页面朴素，不可页面虚假。
@@ -573,7 +567,7 @@ node scripts/test_click.js "<项目目录>/dist/xxx_文献工作台.html" year
 | `data/novelty.json` | V4.10 可选 | `novelty.py` 生成，别手写；有它侧栏就多「查新」一页 |
 
 `window.LIT_CONFIG` / `LIT_PAPERS` / `LIT_META` / `LIT_LANDSCAPE` / `LIT_DIRECTIONS` /
-`LIT_EXTERNAL` / `LIT_SESSION` / `LIT_EXTERNAL_CANDIDATES` / `LIT_LAB` **只由 build.py 生成**，
+`LIT_EXTERNAL` / `LIT_SESSION` / `LIT_EXTERNAL_CANDIDATES` **只由 build.py 生成**，
 任何情况下都不要手工编辑产出 HTML 里的这几段。
 
 ---
@@ -601,8 +595,8 @@ node scripts/test_click.js "<项目目录>/dist/xxx_文献工作台.html" year
 | `data-f="q\|relMin\|learnMin\|diffMin\|diffMax"` | 表单字段绑定 |
 | `data-act="dir-open" data-val="方向ID"` | 选中方向并跳到方向探索页（V3） |
 | `data-act="state" data-k="状态键" data-val="值"` | 直接写 `S[状态键]`（V3）。加 `data-toggle="1"` 为开关，加 `data-clear="1"` 为置空 |
-| `data-act="obj-set" data-k="labStat" data-id="M3" data-val="进行中"` | 写**对象**的某个键（V4）。`data-toggle="1"` 为数组开关，`data-clear="1"` 置空数组 |
-| `data-save-store="labDiag" data-store-id="d"` | 把文本框内容存进对象键（V4）。**不带 `data-then-render` 时不重渲染**，避免输入时光标丢焦点；带 `data-then-render="1"` 才刷新（逆向诊断这类「点了按钮才出结果」的场景用） |
+| `data-act="obj-set" data-k="objStat" data-id="M3" data-val="进行中"` | 写**对象**的某个键（V4）。`data-toggle="1"` 为数组开关，`data-clear="1"` 置空数组 |
+| `data-save-store="objDiag" data-store-id="d"` | 把文本框内容存进对象键（V4）。**不带 `data-then-render` 时不重渲染**，避免输入时光标丢焦点；带 `data-then-render="1"` 才刷新（逆向诊断这类「点了按钮才出结果」的场景用） |
 
 最后那条 `state` 是刻意留的通用口子：V3 的筛选维度（`dirSort` / `extAccess` / `extDir` /
 `dirCmp` / `dirFav`）都走它，不必每加一个维度就往 `app.bind.js` 里塞一个 `if`。
@@ -799,7 +793,7 @@ V3 再加一条：**区分"我发现了什么"和"我没检索到什么"**——
 ├── examples/
 │   ├── config.example.json  最小可用配置骨架
 │   └── data_only/           ★ 零代码示例：只有 config + data，没有 src/，两道门禁全绿
-└── demo/                    完整可跑示例（24 篇真实论文，11 视图全实现，含 lab）
+└── demo/                    完整可跑示例（24 篇真实论文，11 视图全实现）
     ├── README.md            ★ 为什么这份示例的档位是 60/45/… 而不是 85/70，值得读
     ├── config.json
     ├── data/papers.json
@@ -814,5 +808,3 @@ V3 再加一条：**区分"我发现了什么"和"我没检索到什么"**——
 `demo/data/` 里四份 V3 数据与一份 V4 实验室数据都是真实跑出来的，可以直接对照字段。
 
 若你的项目与 demo 差别很大（例如不是图像配准，而是边缘检测或三维重建），
-先看 `examples/lab_canny/` 与 `examples/lab_uav3d/`：这两个案例专门用来证明
-「同一套实验室能容纳完全不同的技术链条」，且都能直接 `build.py` 跑通。
