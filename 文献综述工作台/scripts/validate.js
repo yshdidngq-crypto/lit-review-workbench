@@ -41,14 +41,14 @@ function skip(name, detail) { skips.push({ name, detail }); }
 /* ---------------------------------------------------------------- 1. 样式基线 */
 // 这些值一旦被改动，产出就和别人的不一致了。必须精确匹配。
 const CSS_BASE = {
-  '--bg': '#f4f7fb',
-  '--panel': '#ffffff',
-  '--ink': '#13233c',
-  '--brand': '#17457f',
-  '--accent': '#2f6feb',
-  '--accent2': '#0e9c9c',
-  '--line': '#e2e9f3',
-  '--r': '12px',
+  '--bg': '#f3f1ec',
+  '--panel': '#fbfaf6',
+  '--ink': '#1c1a17',
+  '--brand': '#274b6d',
+  '--accent': '#2c5f8a',
+  '--accent2': '#3f6f5e',
+  '--line': '#e3ded3',
+  '--r': '10px',
 };
 const rootMatch = html.match(/:root\s*\{([^}]*)\}/);
 if (!rootMatch) {
@@ -72,7 +72,7 @@ if (!rootMatch) {
 
 const darkMatch = html.match(/html\[data-theme="dark"\]\s*\{([^}]*)\}/);
 if (!darkMatch) bad('深色主题', '缺少 html[data-theme="dark"] 变量块', '使用完整的 base.css');
-else if (!/--bg\s*:\s*#0d131b/i.test(darkMatch[1])) bad('深色主题', '深色主题 --bg 不是 #0d131b', '使用完整的 base.css');
+else if (!/--bg\s*:\s*#171614/i.test(darkMatch[1])) bad('深色主题', '深色主题 --bg 不是 #171614', '使用完整的 base.css');
 else ok('深色主题', '深色主题变量完整');
 
 const fontMatch = html.match(/font-family\s*:\s*"Segoe UI"[^;}]*/i);
@@ -236,6 +236,10 @@ else {
      页面上就是一个"该标签未实现"的空块 —— 这是缺件，不是提醒。 */
   if (lackV.length) bad('视图层', '以下模块在 config.views 里登记了，但 src/views.js 没有渲染函数（页面会显示占位提示）：' + lackV.join(', '), '要么在 src/views.js 补上 window.VIEWS.' + lackV[0] + ' = function(papers, cfg){...}（内置十页可省略，缺了会自动用 assets/views.base.js 的通用版），要么把它从 config.json 的 views 里删掉');
   else ok('视图层', '全部 ' + want.length + ' 个模块都有渲染函数');
+}
+if (!((CFG && CFG.detailTabs) || []).length) {
+  warn('详情页', 'config.detailTabs 是空的，点开任意一篇只会看到"该标签未实现"',
+    '在 config.json 里写 detailTabs（V4.12.1 起 build.py 会自动补 6 项默认值）');
 }
 if (!/window\.TABS\s*=/.test(html)) bad('详情页', '未找到 window.TABS 定义', 'src/tabs.js 必须以 window.TABS = {...} 导出');
 else ok('详情页', 'TABS 已定义');

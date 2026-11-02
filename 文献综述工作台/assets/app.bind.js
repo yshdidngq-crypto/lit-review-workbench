@@ -39,6 +39,18 @@
 (function () {
   const A = window.APP;
 
+  /* 详情抽屉重画：改完阅读状态后，当前那个标签页要跟着刷 ——
+     否则按钮高亮还停在旧值上，人看到的就是"点了没反应"。
+     标签栏在 #drawerHead [data-dtab]，选中的那个带 .on。 */
+  function refreshDrawerTab() {
+    try {
+      const on = document.querySelector('#drawerHead [data-dtab].on');
+      if (!on) return;
+      const id = on.getAttribute('data-dtab');
+      if (id && A && A.showTab) A.showTab(id);
+    } catch (e) { /* 抽屉没开或已关：忽略 */ }
+  }
+
   function onClick(e) {
     const el = e.target.closest('[data-act],[data-chip],[data-preset],[data-sort],[data-mode],[data-page],[data-view]');
     if (!el) return;

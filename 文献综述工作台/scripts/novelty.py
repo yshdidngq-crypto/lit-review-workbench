@@ -301,7 +301,9 @@ def main():
 
     payload = {
         "generated": datetime.date.today().isoformat(),
-        "draft": {"chars": len(body), "head": body[:160], "file": src_name},
+        # text 给页面用（要完整展示输入），head 只给日志用
+        "draft": {"chars": len(body), "head": body[:160], "text": body[:4000],
+                  "file": src_name},
         "focus": terms,
         "queries": queries,
         "window": {"since": since, "years": args.years, "recentYears": args.recent},

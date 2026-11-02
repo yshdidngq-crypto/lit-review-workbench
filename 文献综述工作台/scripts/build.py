@@ -221,6 +221,41 @@ def main():
         fail("项目目录不存在：" + proj)
 
     cfg, papers = check(proj)
+
+    # V4.12.1：这三项老项目经常不写。少写 detailTabs 的后果是详情抽屉里
+    # 只有标题、正文写着"该标签未实现"，从外面看完全像页面坏了；
+    # 少写 lsKey 的后果是阅读状态存不进浏览器。都在这里补默认值。
+    DEFAULT_DETAIL_TABS = [
+        {"id": "understand", "label": "三分钟理解"},
+        {"id": "project", "label": "与本项目的关系"},
+        {"id": "eval", "label": "科研评价"},
+        {"id": "guide", "label": "学习指导"},
+        {"id": "notes", "label": "我的笔记"},
+        {"id": "raw", "label": "原文摘要"},
+    ]
+    DEFAULT_EXT_TABS = [
+        {"id": "extAbs", "label": "摘要原文"},
+        {"id": "extWhere", "label": "出处与获取"},
+        {"id": "extDir", "label": "关联方向"},
+        {"id": "notes", "label": "我的笔记"},
+    ]
+    filled = []
+    if not (cfg.get("detailTabs") or []):
+        cfg["detailTabs"] = list(DEFAULT_DETAIL_TABS)
+        filled.append("detailTabs（6 项）")
+    if not (cfg.get("extTabs") or []):
+        cfg["extTabs"] = list(DEFAULT_EXT_TABS)
+        filled.append("extTabs（4 项）")
+    if not cfg.get("lsKey"):
+        po = cfg.get("project")
+        pid = (po.get("id") if isinstance(po, dict) else str(po or "")) or ""
+        slug = re.sub(r"[^a-z0-9]+", "-", str(pid).lower()).strip("-")
+        # 没有项目 id 时沿用历史默认键，老用户的阅读状态不会因为升级而"消失"
+        cfg["lsKey"] = ("lit-" + slug) if slug else "lit-workbench-v1"
+        filled.append('lsKey（"' + cfg["lsKey"] + '"）')
+    if filled:
+        print("  补默认值：" + "、".join(filled) + "（写进 config.json 就不会再提示）")
+
     quality_report(papers, cfg)
 
     meta = {}
@@ -253,15 +288,11 @@ def main():
     # 仍在开发中、内容生成耗额度较多，对只想要一份文献工作台的人是纯负担。
     # 所以改成显式开关：命令行 --with-lab，或 config.json 里 "features": {"lab": true}。
     # 两者都没给 → 不启用；但要打印一行提示，让人知道"有这个东西、怎么开"。
-    # 本包不含工程实验室：lab.js / lab.json 都已移除，三种开关都不再起作用。
+        # 本包不含工程实验室（assets/lab.js 已移除）。
+    # --with-lab 与 config.features.lab 都不再生效；
+    # 见 SKILL.md 顶部的四条声明。
     lab_on = False
-    if opt["LAB"] and not lab_on:
-        print("提示：检测到 data/lab.json，但未启用「工程实验室」。")
-        print("      该页是辅助学习模块，仍在开发中、生成耗额度较多，默认不启用。")
-        print("      需要它就加命令行参数 --with-lab，或在 config.json 写 "
-              "\"features\": {\"lab\": true}。")
-    if not lab_on:
-        opt["LAB"] = None
+    opt["LAB"] = None
 
     # --- 资产 ---
     # 顺序：基础样式 → KaTeX 样式（含 base64 字体）→ 公式覆盖层。

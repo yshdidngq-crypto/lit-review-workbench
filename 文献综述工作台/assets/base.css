@@ -2,27 +2,27 @@
  * base.css —— 视觉基线（锁死文件，请勿改写）
  * ----------------------------------------------------------------------------
  * 禁止事项：改颜色变量值、改圆角/阴影/间距、改字体栈、增删选择器。
- * 唯一允许的改动：:root 里的 --brand / --accent / --accent2 三个主色，
- * 且必须由用户明确要求"换主色"时才改，否则保持默认。
- * 一旦改动，你产出的 HTML 就和组里其他人的不一致了 —— 这是本规范最硬的一条。
+ * V4.12 起底色从冷白换成暖纸（#f3f1ec），面板不再是纯白；令牌值由
+ * scripts/validate.js 逐项比对，手改会和组里其他人的产出不一致。
+ * 要换主题请走构建参数（config.layout.theme），不要手改这个文件。
  * ========================================================================== */
 
 :root{
-  --bg:#f4f7fb; --panel:#ffffff; --panel2:#fafcff; --ink:#13233c; --ink2:#34455f;
-  --muted:#6b7d94; --line:#e2e9f3; --line2:#eef2f8;
-  --brand:#17457f; --accent:#2f6feb; --accent2:#0e9c9c;
-  --ok:#12855b; --warn:#c47b12; --bad:#c0392b; --violet:#6b4bbd;
-  --shadow:0 1px 2px rgba(19,35,60,.05),0 8px 24px rgba(19,35,60,.06);
-  --shadow2:0 2px 6px rgba(19,35,60,.08),0 18px 48px rgba(19,35,60,.12);
-  --r:12px;
+  --bg:#f3f1ec; --panel:#fbfaf6; --panel2:#f5f3ee; --ink:#1c1a17; --ink2:#46423a;
+  --muted:#6f6859; --line:#e3ded3; --line2:#edeae1;
+  --brand:#274b6d; --accent:#2c5f8a; --accent2:#3f6f5e;
+  --ok:#216b4c; --warn:#9a6510; --bad:#a8382a; --violet:#5d4a8c;
+  --shadow:0 1px 2px rgba(28,26,23,.05);
+  --shadow2:0 3px 10px rgba(28,26,23,.08),0 16px 40px rgba(28,26,23,.10);
+  --r:10px;
 }
 html[data-theme="dark"]{
-  --bg:#0d131b; --panel:#141c26; --panel2:#111923; --ink:#e8eff8; --ink2:#c3d0e0;
-  --muted:#8d9db2; --line:#233042; --line2:#1c2734;
-  --brand:#8fb6ea; --accent:#5b8dfa; --accent2:#2fb9b9;
-  --ok:#37b783; --warn:#e0a24a; --bad:#e06a5c; --violet:#9a80e8;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
-  --shadow2:0 2px 8px rgba(0,0,0,.5),0 18px 48px rgba(0,0,0,.45);
+  --bg:#171614; --panel:#1f1d19; --panel2:#1a1917; --ink:#ece8df; --ink2:#c6bfb1;
+  --muted:#9b9284; --line:#34302a; --line2:#2a2621;
+  --brand:#a8c2d8; --accent:#86b0d2; --accent2:#8fbfae;
+  --ok:#6fbf94; --warn:#d6a552; --bad:#e08372; --violet:#b8a8dc;
+  --shadow:0 1px 2px rgba(0,0,0,.45);
+  --shadow2:0 3px 12px rgba(0,0,0,.5),0 18px 44px rgba(0,0,0,.45);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -33,20 +33,24 @@ body{
 }
 button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
 a{color:var(--accent);text-decoration:none}
-::-webkit-scrollbar{width:10px;height:10px}
-::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px;border:2px solid var(--bg)}
+/* V4.12：滚动条只染成中性，不再做成一块带描边的胶囊（那会被读成"自造控件"） */
+html{scrollbar-color:var(--line) transparent;scrollbar-width:thin}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:0}
+::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--muted) 45%,var(--line))}
 ::-webkit-scrollbar-track{background:transparent}
+::selection{background:color-mix(in srgb,var(--accent) 20%,transparent)}
 
 /* ---------------- 布局 ---------------- */
 .app{display:flex;height:100vh;overflow:hidden}
 .side{
-  width:228px;flex:0 0 228px;background:var(--panel);border-right:1px solid var(--line);
+  width:228px;flex:0 0 228px;background:var(--bg);border-right:1px solid var(--line);
   display:flex;flex-direction:column;padding:16px 12px 10px;
 }
 .logo{display:flex;gap:10px;align-items:flex-start;padding:2px 8px 16px}
 .logo .mark{
-  width:30px;height:30px;border-radius:8px;flex:0 0 30px;
-  background:linear-gradient(135deg,var(--brand),var(--accent2));
+  width:30px;height:30px;border-radius:7px;flex:0 0 30px;
+  background:var(--brand);
   color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:.5px
 }
 .logo h1{font-size:13.5px;margin:0;line-height:1.35;font-weight:700;letter-spacing:.2px}
@@ -57,18 +61,19 @@ a{color:var(--accent);text-decoration:none}
   border-radius:8px;cursor:pointer;text-align:left;color:var(--ink2);font-size:13px;
 }
 .nav button:hover{background:var(--panel2)}
-.nav button.on{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-weight:600}
+.nav button.on{background:var(--panel);color:var(--ink);font-weight:600;
+  box-shadow:inset 0 0 0 1px var(--line),0 1px 2px rgba(28,26,23,.04)}
 .nav button .ic{width:16px;text-align:center;font-size:13px;opacity:.9}
 .nav .cnt{margin-left:auto;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
-.nav button.on .cnt{color:var(--accent)}
+.nav button.on .cnt{color:var(--ink2)}
 .side-foot{margin-top:auto;padding:10px 8px 4px;border-top:1px solid var(--line2);font-size:11px;color:var(--muted)}
 .side-foot .row{display:flex;gap:6px;align-items:center;justify-content:space-between;margin-top:6px}
 .theme-btn{border:1px solid var(--line);background:var(--panel2);border-radius:7px;padding:3px 8px;cursor:pointer;font-size:11px}
 
 .main{flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden}
 .top{
-  height:56px;flex:0 0 56px;background:color-mix(in srgb,var(--panel) 88%,transparent);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  height:52px;flex:0 0 52px;background:var(--bg);
+  border-bottom:1px solid var(--line);
   display:flex;align-items:center;gap:12px;padding:0 20px;z-index:20
 }
 .top h2{margin:0;font-size:15px;font-weight:700;letter-spacing:.2px}
@@ -87,12 +92,12 @@ a{color:var(--accent);text-decoration:none}
 .view.nopad{padding:0}
 
 /* ---------------- 通用组件 ---------------- */
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-.card-h{display:flex;align-items:center;gap:8px;padding:12px 14px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:none}
+.card-h{display:flex;align-items:center;gap:8px;padding:13px 15px 0}
 .card-h h3{margin:0;font-size:13px;font-weight:700;letter-spacing:.2px}
 .card-h .hint{color:var(--muted);font-size:11px;font-weight:400}
-.card-b{padding:12px 14px 14px}
-.grid{display:grid;gap:14px}
+.card-b{padding:13px 15px 15px}
+.grid{display:grid;gap:16px}
 .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -105,7 +110,7 @@ a{color:var(--accent);text-decoration:none}
 
 .stat{padding:13px 14px;position:relative;overflow:hidden}
 .stat .k{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
-.stat .v{font-size:25px;font-weight:700;letter-spacing:-.5px;margin-top:4px;font-variant-numeric:tabular-nums}
+.stat .v{font-size:24px;font-weight:700;letter-spacing:-.4px;margin-top:5px;font-variant-numeric:tabular-nums}
 .stat .v small{font-size:12px;font-weight:500;color:var(--muted);margin-left:4px;letter-spacing:0}
 .stat .d{font-size:11px;color:var(--muted);margin-top:2px}
 .stat .bar{height:3px;border-radius:2px;background:var(--line2);margin-top:9px;overflow:hidden}
@@ -124,7 +129,7 @@ button.tag{font:inherit;cursor:pointer;margin:0;-webkit-appearance:none;appearan
 .t-bad{background:color-mix(in srgb,var(--bad) 10%,transparent);color:var(--bad);border-color:color-mix(in srgb,var(--bad) 24%,transparent)}
 .t-mute{background:var(--line2);color:var(--muted);border-color:var(--line)}
 .btn{
-  border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:5px 11px;
+  border:1px solid var(--line);background:var(--panel);border-radius:7px;padding:5px 11px;
   cursor:pointer;font-size:12.5px;color:var(--ink2);display:inline-flex;align-items:center;gap:5px
 }
 .btn:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent)}
@@ -132,7 +137,7 @@ button.tag{font:inherit;cursor:pointer;margin:0;-webkit-appearance:none;appearan
 .btn.primary:hover{filter:brightness(1.06);color:#fff}
 .btn.sm{padding:3px 8px;font-size:11.5px}
 .btn.ghost{background:none;border-color:transparent;color:var(--muted)}
-.btn.on{background:color-mix(in srgb,var(--accent) 12%,transparent);border-color:color-mix(in srgb,var(--accent) 35%,transparent);color:var(--accent)}
+.btn.on{background:var(--panel2);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent);font-weight:600}
 .chip{
   display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--panel);
   border-radius:20px;padding:2px 9px;font-size:11.5px;cursor:pointer;color:var(--ink2);user-select:none
@@ -161,7 +166,7 @@ hr.sep{border:0;border-top:1px solid var(--line2);margin:12px 0}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:2.5px;margin-right:5px}
 .tip{
   position:fixed;z-index:999;pointer-events:none;background:var(--ink);color:var(--bg);
-  padding:6px 9px;border-radius:7px;font-size:11.5px;line-height:1.45;max-width:300px;
+  padding:6px 9px;border-radius:6px;font-size:11.5px;line-height:1.45;max-width:300px;
   box-shadow:var(--shadow2);opacity:0;transform:translateY(3px);transition:opacity .12s
 }
 .tip.on{opacity:1;transform:none}
@@ -175,7 +180,7 @@ table.db th{
   color:var(--muted);font-size:11.5px;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap
 }
 table.db td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:middle}
-table.db tr:hover td{background:color-mix(in srgb,var(--accent) 4%,transparent)}
+table.db tr:hover td{background:var(--panel2)}
 table.db td.t{max-width:460px}
 table.db .ttl{font-weight:600;color:var(--ink);cursor:pointer;line-height:1.4}
 table.db .ttl:hover{color:var(--accent)}
@@ -193,9 +198,10 @@ table.db .meta{color:var(--muted);font-size:11px;margin-top:2px}
 
 /* 卡片视图 */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
-.pcard{padding:13px;cursor:pointer;transition:transform .12s,box-shadow .12s;border-left:3px solid var(--line)}
-.pcard:hover{transform:translateY(-1px);box-shadow:var(--shadow2)}
-.pcard.hi{border-left-color:var(--accent)}
+.pcard{padding:14px;cursor:pointer;transition:transform .12s,box-shadow .12s,border-color .12s;border-left:1px solid var(--line)}
+.pcard:hover{transform:translateY(-1px);box-shadow:var(--shadow2);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.pcard.hi{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));
+  background:color-mix(in srgb,var(--accent) 3%,var(--panel))}
 .pcard .t{font-weight:650;line-height:1.45;font-size:13px}
 .pcard .m{color:var(--muted);font-size:11px;margin:3px 0 8px}
 .pcard .tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
@@ -716,4 +722,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:3
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;
     animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+
+/* 查新页：方案原文里命中的关键词（V4.12.2） */
+mark.kw {
+  background: transparent;
+  color: var(--bad);
+  font-weight: 600;
+  padding: 0;
 }

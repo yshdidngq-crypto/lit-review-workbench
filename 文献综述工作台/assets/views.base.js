@@ -599,7 +599,9 @@ window.VIEWS_BASE.landscape = function (papers, cfg) {
     if (!a || !a.rows || !a.rows.length) return '';
     if (a.id === 'q1') return donutRows(a.rows, 'topic');
     if (a.id === 'q3') return chartBox(chartTimeline(a.rows.map(r => ({ k: r.k, v: r.v }))));
-    if (a.id === 'q4' && a.cross) {
+    /* V4.12.1：交叉矩阵的列来自数据里的 dl（方法派别）受控字段。
+       这个字段为空时矩阵只剩行头、肉眼像排版坏了 —— 退回条形图。 */
+    if (a.id === 'q4' && a.cross && (a.dlCols || []).length) {
       const idx = {};
       a.cross.forEach(r => { idx[r.k] = {}; (r.cells || []).forEach(c => { idx[r.k][c.k] = c.v; }); });
       return heatMatrix(
@@ -1268,8 +1270,8 @@ window.VIEWS_BASE.novelty = function () {
   const A = window.APP || {};
   const N = A.NOVELTY;
   if (!N || !(N.candidates || []).length) {
-    return card('查新', '', emptyBox('还没有查新结果。把你打算怎么做写成一段方案，'
-      + '然后跑 python scripts/novelty.py <项目目录> --draft 方案.md'));
+    return card('查新', '', emptyBox('还没有查新结果。'
+      + '（生成方式：用一段方案跑 novelty.py，或在对话里给出方向后重新构建）'));
   }
   const c = N.counts || {};
   const near = N.recent || {};
@@ -1278,8 +1280,22 @@ window.VIEWS_BASE.novelty = function () {
   const cov = N.coverage || {};
   const src = (N.sources || []).map(x => x.name + (x.ok ? ' ' + x.hits + ' 条' : ' 不可用')).join('；');
 
-  const head = card('查的是这段方案', (N.draft && N.draft.chars ? N.draft.chars + ' 字' : ''),
-    '<div class="tiny" style="line-height:1.9;color:var(--ink2)">' + esc((N.draft || {}).head || '') + '…</div>'
+  /* 方案原文完整显示：不截断、不加省略号。命中的关键词在正文里标红，
+     比在下面单列一排 chip 更容易看出"这句话命中了什么"。 */
+  const draftText = String(((N.draft || {}).text) || ((N.draft || {}).head) || '');
+  const focusTerms = (N.focus || []).slice().sort(function (a, b) { return b.length - a.length; });
+  function markFocus(txt) {
+    let out = esc(txt);
+    focusTerms.forEach(function (t) {
+      if (!t) return;
+      const safe = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      out = out.replace(new RegExp('(' + safe + ')', 'gi'), '<mark class="kw">$1</mark>');
+    });
+    return out;
+  }
+  const head = card('所查方案', '',
+    '<div style="line-height:1.95;color:var(--ink2);white-space:pre-wrap;word-break:break-word">'
+    + markFocus(draftText) + '</div>'
     + '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">'
     + (N.focus || []).map(t => tag(t, 't-topic')).join('') + '</div>');
 
@@ -1299,27 +1315,43 @@ window.VIEWS_BASE.novelty = function () {
     esc(String(x.score == null ? '—' : x.score)),
   ]);
 
-  const tableBox = cardWide('最像的 ' + cs.length + ' 篇',
-    '按关键词覆盖率排序，越少见的词权重越高',
+  const tableBox = cardWide('最像的 ' + cs.length + ' 篇', '',
     table([{ t: '风险', w: 92 }, { t: '年份', w: 56 }, { t: '题目', w: 420 },
       { t: '命中的词', w: 150 }, { t: '来源', w: 72 }, { t: '分', w: 44 }], rows));
 
-  const cvg = '这次查了 ' + (N.queries || []).length + ' 条检索式，原始命中 ' + (cov.rawHits || 0)
+  /* 检索元信息：什么时候查的、命中的最新一篇是哪年 —— 判断"这条结果新不新"只靠这两项 */
+  const genRaw = String(N.generated || '');
+  const gen = genRaw ? genRaw.replace('T', ' ').slice(0, 16) : '未记录';
+  const nowYear = new Date().getFullYear();
+  const latest = (N.candidates || []).reduce(function (m, x) {
+    const y = Number(x.year) || 0;
+    return y > nowYear ? m : Math.max(m, y);
+  }, 0);
+  const meta = card('检索信息', '', kvList([
+    ['检索时间', esc(gen)],
+    ['命中最新', latest ? latest + ' 年' : '未记录'],
+    ['时间窗', esc(((N.window || {}).since || '') + ' 起（最近 '
+      + ((N.window || {}).years || 5) + ' 年）')],
+    ['来源', esc(src || '—')],
+  ]));
+
+  const cvg = '本次检索 ' + (N.queries || []).length + ' 条检索式，原始命中 ' + (cov.rawHits || 0)
     + ' 条，去重后 ' + (cov.unique || 0) + ' 条。来源：' + (src || '—')
-    + '。时间窗：最近 ' + ((N.window || {}).years || 5) + ' 年（' + ((N.window || {}).since || '') + ' 起）。';
+    + '。时间窗：最近 ' + ((N.window || {}).years || 5) + ' 年（'
+    + ((N.window || {}).since || '') + ' 起）；本次未查询中文论文库。';
 
   const boundary = note(cvg, 'info')
-    + '<div style="margin-top:8px">' + (N.caveat || []).map(t => note(t, 'warn')).join('') + '</div>';
+    + '<div style="margin-top:8px">'
+    + note('查新程度与准确度取决于提供给 Agent 的文案是否具体；方向越具体，结果可靠性越强。', 'info')
+    + note('风险分是三档机械规则（标题与摘要里的关键词覆盖率），不是判断。'
+      + '是否与当前方向重合，需阅读原文确认；本区域只提供参考。', 'warn')
+    + note('「暂未找到同类」只等于这两个论文库内没有；其他论文库未作查询，'
+      + '不等于方案一定创新。', 'warn')
+    + note('如需更换方向或更新时间，在本 agent 对话中重新输入更新后的论文方向，'
+      + '重新生成后本页随之更新。', 'info')
+    + '</div>';
 
-  const swap = card('换一个方向重查', '查新只认你给的那句话，不问别的',
-    '<div class="tiny" style="line-height:1.9">把方向写成一句话，桌面终端里在这份工作台的目录下跑：</div>'
-    + '<div class="tiny" style="margin:10px 0;padding:10px 12px;background:var(--panel2);'
-    + 'font-family:ui-monospace,Consolas,monospace;white-space:pre-wrap;word-break:break-all">'
-    + esc('python scripts/novelty.py <项目目录> --topic "一句话方向"') + '</div>'
-    + '<div class="tiny muted">方向可以给多条（重复写 --topic）。查完再 '
-    + esc('python scripts/build.py <项目目录>') + '，这一页就是新结果。</div>');
-
-  return head + kpis + tableBox + card('这批结果的边界', '', boundary) + swap;
+  return meta + head + kpis + tableBox + card('这批结果的边界', '', boundary);
 };
 
 })();
