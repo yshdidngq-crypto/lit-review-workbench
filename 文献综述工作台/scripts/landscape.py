@@ -141,6 +141,9 @@ def main():
     N = len(papers)
     topic_name = {t["id"]: t["name"] for t in cfg.get("topics", [])}
     topic_color = {t["id"]: t.get("color", "") for t in cfg.get("topics", [])}
+    # 主题没配色时按顺序兜底色板 —— 否则 Q1 环形图整张同色，分类维度全丢
+    FALLBACK_COLORS = ["#2f6feb", "#0e9c9c", "#c0392b", "#d97706", "#6b4bbd", "#8d9db2",
+                       "#1f7a5a", "#b3261e", "#3f3f8f", "#7a4a1f"]
     stage_name = {s["id"]: s["name"] for s in cfg.get("stages", [])}
     stages = cfg.get("stages", [])
     dl_list = cfg.get("dlCategories", [])
@@ -152,8 +155,10 @@ def main():
 
     # ---------------------------------------------------------------- Q1 主题构成
     tc = collections.Counter(p.get("topic") for p in papers if p.get("topic"))
-    rows = [{"k": tid, "name": topic_name.get(tid, tid), "v": v, "share": share(v, N),
-             "color": topic_color.get(tid, "")} for tid, v in top(tc)]
+    rows = []
+    for i, (tid, v) in enumerate(top(tc)):
+        rows.append({"k": tid, "name": topic_name.get(tid, tid), "v": v, "share": share(v, N),
+                     "color": topic_color.get(tid, "") or FALLBACK_COLORS[i % len(FALLBACK_COLORS)]})
     lead = rows[0] if rows else None
     answers.append({
         "id": "q1", "no": 1, "kind": "分布",

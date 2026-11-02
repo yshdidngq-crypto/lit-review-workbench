@@ -431,6 +431,16 @@ if (CFG && Array.isArray(CFG.topics) && CFG.topics.length) {
   else ok('主题配色', CFG.topics.length + ' 个主题均已指定颜色');
 }
 
+/* 数据侧的同一条病（V4.11.1）：config 配了色，但 data/landscape.json 是早于配色的旧文件，
+ * 里面 rows 的 color 全是空串，环形图照样只能整张一色。这里给提醒，不挡交付。 */
+const noRowColor = ((LANDSCAPE && LANDSCAPE.answers) || [])
+  .filter(a => a && a.chart === 'donut' && Array.isArray(a.rows) && a.rows.length >= 3)
+  .filter(a => a.rows.every(r => !r || !r.color))
+  .map(a => a.id || a.title || '?');
+if (noRowColor.length)
+  warn('主题配色', '现状报告里这些问题的 rows 全部没有 color：' + noRowColor.join(', ')
+    + '（像是早于配色的旧文件）', '重跑 scripts/landscape.py，或在 config.json 的 topics 里补 color 后重新生成');
+
 
 /* ---------------------------------------------------------------- 8. 工程思维实验室（V4.0）
  * 这一块查的不是"好不好看"，是"会不会教错"：

@@ -572,10 +572,10 @@ window.VIEWS_BASE.landscape = function (papers, cfg) {
   /* 环形图 + 右侧图例列表。主题构成与质量标记结构相同，抽出来免得两边各写一遍 */
   const donutRows = (rows, act) => `<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
       <div style="flex:0 0 190px;max-width:190px">${chartDonut(
-      rows.map(r => ({ k: r.name || r.k, v: r.v, c: r.color || 'var(--accent)', code: r.k })),
+      rows.map((r, i) => ({ k: r.name || r.k, v: r.v, c: r.color || seriesColor(i), code: r.k })),
       { act: act || '', centerLabel: '篇' })}</div>
-      <div style="flex:1;min-width:170px">${rows.map(r =>
-        progRowDot(r.name || r.k, r.color || 'var(--accent)', r.share || 0, r.v + ' 篇')).join('')}</div>
+      <div style="flex:1;min-width:170px">${rows.map((r, i) =>
+        progRowDot(r.name || r.k, r.color || seriesColor(i), r.share || 0, r.v + ' 篇')).join('')}</div>
     </div>`;
 
   /* 数据集清单：名字后面直接跟「哪几篇」，读者不用再跳去数据库里搜一遍。
