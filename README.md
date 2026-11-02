@@ -5,11 +5,15 @@
 
 > 给谁用：要写综述、开题、做文献调研的本科生与研究生；一次要面对 20–200 篇文献的人。
 
-> 当前版本：**4.9.1（无工程实验室版）**。这个包里不含「工程实验室」模块（仍在开发中），
+> 当前版本：**4.12.2（无工程实验室版）**。这个包里不含「工程实验室」模块（仍在开发中），
 > 即使你放了 `data/lab.json`、写了 `features.lab`、或构建时加 `--with-lab`，那一页也不会出现。
 
-**🔗 在线试玩（不用装任何东西）**：https://yshdidngq-crypto.github.io/lit-review-workbench/
-（点开就是一份用 24 篇真实论文构建的完整工作台，十一个视图都能点。）
+**🔗 在线试玩（不用装任何东西）**
+
+- 完整项目版（174 篇真实文献，11 个视图，含「查新」）：
+  https://yshdidngq-crypto.github.io/lit-review-workbench/showcase/UavStitch_%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E5%8F%B0.html
+- 24 篇的 demo（仓库内可复现）：
+  https://yshdidngq-crypto.github.io/lit-review-workbench/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0%E5%B7%A5%E4%BD%9C%E5%8F%B0/demo/dist/RGBFusion_%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E5%8F%B0.html
 
 ---
 
