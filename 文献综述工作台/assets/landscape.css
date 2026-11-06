@@ -1,0 +1,26 @@
+/* 研究现状 Q4：大量方法列在卡片内滚动，避免挤压列名或撑宽整个页面。 */
+.landscape-full{min-width:0;margin-top:14px}
+.landscape-full>.card{min-width:0}
+.landscape-matrix{min-width:0;max-width:100%}
+.landscape-matrix-note{margin-bottom:7px;color:var(--muted);font-size:11.5px}
+.landscape-matrix-scroll{
+  width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;
+  scrollbar-color:var(--accent) var(--line2);scrollbar-width:thin;
+  overscroll-behavior-inline:contain
+}
+.landscape-matrix-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.landscape-matrix .heat.hm{width:max-content;min-width:100%;table-layout:fixed}
+.landscape-matrix .heat.hm th:not(.rowh),
+.landscape-matrix .heat.hm td{width:112px;min-width:112px;max-width:112px}
+.landscape-matrix .heat.hm th:not(.rowh){
+  white-space:normal;word-break:normal;overflow-wrap:anywhere;
+  line-height:1.35;vertical-align:bottom;padding:7px 5px
+}
+.landscape-matrix .heat.hm th:not(.rowh) .hcol{display:block;white-space:normal;overflow-wrap:anywhere}
+.landscape-matrix .heat.hm th.rowh{
+  position:sticky;left:0;z-index:2;background:var(--panel);
+  width:175px;min-width:175px;max-width:175px;
+  white-space:normal;overflow:visible;text-overflow:clip;line-height:1.35
+}
+.landscape-matrix .heat.hm thead th.rowh{z-index:3}
+

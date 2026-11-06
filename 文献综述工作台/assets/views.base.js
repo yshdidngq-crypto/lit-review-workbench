@@ -604,12 +604,16 @@ window.VIEWS_BASE.landscape = function (papers, cfg) {
     if (a.id === 'q4' && a.cross && (a.dlCols || []).length) {
       const idx = {};
       a.cross.forEach(r => { idx[r.k] = {}; (r.cells || []).forEach(c => { idx[r.k][c.k] = c.v; }); });
-      return heatMatrix(
+      const matrix = heatMatrix(
         a.cross.map(r => ({ k: r.name, raw: r.k })),
         (a.dlCols || []).map(k => ({ k })),
         (row, col) => (idx[row.raw] || {})[col.k] || 0,
         { corner: '主题 ＼ 方法' }
       );
+      return `<div class="landscape-matrix">
+        <div class="landscape-matrix-note">共 ${(a.dlCols || []).length} 种方法；横向滚动表格可查看全部列，悬停列名可查看全称。</div>
+        <div class="landscape-matrix-scroll" role="region" aria-label="主题与方法交叉表，可横向滚动" tabindex="0">${matrix}</div>
+      </div>`;
     }
     if (a.id === 'q5') {
       return chartHBars(a.rows.map(r => ({ k: r.k, v: r.v, c: 'var(--accent)' })),
@@ -645,7 +649,9 @@ window.VIEWS_BASE.landscape = function (papers, cfg) {
   };
   const row = (x, y) => { const s = pair(x, y); return s ? `<div style="margin-top:14px">${s}</div>` : ''; };
 
-  return kpiRow + boundary + row('q1', 'q2') + row('q3', 'q4') + row('q5', 'q6') + row('q7', 'q8');
+  const full = key => A[key] ? `<div class="landscape-full">${qblock(A[key], bodyOf(A[key]))}</div>` : '';
+  return kpiRow + boundary + row('q1', 'q2') + full('q3') + full('q4')
+    + row('q5', 'q6') + row('q7', 'q8');
 };
 
 /* ---------------------------------------------------------------- 方向探索 */

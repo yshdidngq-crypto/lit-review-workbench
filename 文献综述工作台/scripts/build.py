@@ -307,6 +307,7 @@ def main():
     ]
     if theme == "swiss":
         css_parts.append(read(os.path.join(ASSETS, "swiss.css")))
+    css_parts.append(read(os.path.join(ASSETS, "landscape.css")))
     css = "\n".join(css_parts)
     # 注入顺序有强依赖，不可调换：
     #   katex 先于 math.js（后者要用 window.katex）；
